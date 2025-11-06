@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>心有所向，日复一日，必有精进</title>
-    <link>http://localhost:1313/algolia.json</link>
+    <link>https://l-luoluo.github.io/algolia.json</link>
     <description>Recent content from 心有所向，日复一日，必有精进</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Tue, 04 Nov 2025 15:00:00 +0800</lastBuildDate>
     
     
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://l-luoluo.github.io/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>CNN卷积神经网络算法原理 第二章</title>
-      <link>http://localhost:1313/post/no.5/</link>
+      <link>https://l-luoluo.github.io/post/no.5/</link>
       <pubDate>Tue, 04 Nov 2025 15:00:00 &#43;0800</pubDate>
       <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no.5/</guid>
+      <guid>https://l-luoluo.github.io/post/no.5/</guid>
       <description>
         <![CDATA[<h1>CNN卷积神经网络算法原理 第二章</h1><p>作者：落-luo（xxx@example.com）</p>
         
@@ -42,7 +42,7 @@
 损失函数
 </h3><p><strong>在神经网络中我们一般使用的是均方误差损失函数，公式如下：</strong></p>
         
-        <hr><p>本文2025-11-04首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-04</p>]]>
+        <hr><p>本文2025-11-04首发于<a href='https://l-luoluo.github.io/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-04</p>]]>
       </description>
       
     </item>
@@ -51,10 +51,10 @@
 
     <item>
       <title>CNN卷积神经网络算法原理 第一章</title>
-      <link>http://localhost:1313/post/no.4/</link>
+      <link>https://l-luoluo.github.io/post/no.4/</link>
       <pubDate>Mon, 03 Nov 2025 15:00:00 &#43;0800</pubDate>
       <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no.4/</guid>
+      <guid>https://l-luoluo.github.io/post/no.4/</guid>
       <description>
         <![CDATA[<h1>CNN卷积神经网络算法原理 第一章</h1><p>作者：落-luo（xxx@example.com）</p>
         
@@ -75,7 +75,7 @@
 全连接神经网络的单元结构
 </h4><p>每个神经元的计算过程如下：</p>
         
-        <hr><p>本文2025-11-03首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-03</p>]]>
+        <hr><p>本文2025-11-03首发于<a href='https://l-luoluo.github.io/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-03</p>]]>
       </description>
       
     </item>
@@ -84,10 +84,10 @@
 
     <item>
       <title>线性回归模型案例的代码复现</title>
-      <link>http://localhost:1313/post/no3/</link>
+      <link>https://l-luoluo.github.io/post/no3/</link>
       <pubDate>Sun, 02 Nov 2025 15:00:00 &#43;0800</pubDate>
       <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no3/</guid>
+      <guid>https://l-luoluo.github.io/post/no3/</guid>
       <description>
         <![CDATA[<h1>线性回归模型案例的代码复现</h1><p>作者：落-luo（xxx@example.com）</p>
         
@@ -144,7 +144,7 @@
 结果
 </h4><p>运行上述的代码，我们不难得出当w接近2时，损失函数也接近0，这也验证了我们的模型是正确的。</p>
         
-        <hr><p>本文2025-11-02首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-02</p>]]>
+        <hr><p>本文2025-11-02首发于<a href='https://l-luoluo.github.io/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-02</p>]]>
       </description>
       
     </item>
@@ -153,10 +153,10 @@
 
     <item>
       <title>梯度更新</title>
-      <link>http://localhost:1313/post/no2/</link>
+      <link>https://l-luoluo.github.io/post/no2/</link>
       <pubDate>Sat, 01 Nov 2025 15:00:00 &#43;0800</pubDate>
       <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no2/</guid>
+      <guid>https://l-luoluo.github.io/post/no2/</guid>
       <description>
         <![CDATA[<h1>梯度更新</h1><p>作者：落-luo（xxx@example.com）</p>
         
@@ -165,7 +165,7 @@
 梯度下降法
 </h4><p><span style="font-size: 18px; color: blue;">根据上一篇的文章我们知道，我们可以用最小二乘法根据损失函数与参数w来求w的最优解。具体该怎么做呢？我们可以联想到以下的场景：</span></p>
         
-        <hr><p>本文2025-11-01首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-01</p>]]>
+        <hr><p>本文2025-11-01首发于<a href='https://l-luoluo.github.io/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-01</p>]]>
       </description>
       
     </item>
@@ -174,10 +174,10 @@
 
     <item>
       <title>线性回归原理详解</title>
-      <link>http://localhost:1313/post/no.1/</link>
+      <link>https://l-luoluo.github.io/post/no.1/</link>
       <pubDate>Thu, 30 Oct 2025 15:00:00 &#43;0800</pubDate>
       <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no.1/</guid>
+      <guid>https://l-luoluo.github.io/post/no.1/</guid>
       <description>
         <![CDATA[<h1>线性回归原理详解</h1><p>作者：落-luo（xxx@example.com）</p>
         
@@ -189,7 +189,7 @@
 <span style="font-size: 18px; color: blue;">就像我们如何判断一个人是否为男性，我们一般会根据他的特征来判断，比如他是否有长的头发、是否有喉结等；而机器学习就是通过学习大量的样本，然后根据样本中的特征去判断新的样本是否为男性。</span>
 <span style="font-size: 18px; color: blue;">所以线性回归模型就可以简化为y关于x的求解，就是已知x，然后根据x去预测y。而机器学习的目的就是确定x的系数，从而对新的样本进行预测。</span></p>
         
-        <hr><p>本文2025-10-30首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-10-30</p>]]>
+        <hr><p>本文2025-10-30首发于<a href='https://l-luoluo.github.io/'>心有所向，日复一日，必有精进</a>，最后修改于2025-10-30</p>]]>
       </description>
       
     </item>

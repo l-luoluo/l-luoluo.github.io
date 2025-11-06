@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 心有所向，日复一日，必有精进</title>
-    <link>http://localhost:1313/en/categories/</link>
+    <link>https://l-luoluo.github.io/en/categories/</link>
     <description>Recent content from 心有所向，日复一日，必有精进</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -13,7 +13,7 @@
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
     
-    <atom:link href="http://localhost:1313/en/categories/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://l-luoluo.github.io/en/categories/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     

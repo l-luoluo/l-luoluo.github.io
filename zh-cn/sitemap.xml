@@ -2,86 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/post/no.5/</loc>
+    <loc>https://l-luoluo.github.io/post/no.5/</loc>
     <lastmod>2025-11-04T15:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://l-luoluo.github.io/</loc>
     <lastmod>2025-11-04T15:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/"
+                href="https://l-luoluo.github.io/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="http://localhost:1313/ja/"
+                href="https://l-luoluo.github.io/ja/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="http://localhost:1313/zh-tw/"
+                href="https://l-luoluo.github.io/zh-tw/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/"
+                href="https://l-luoluo.github.io/"
                 />
   </url><url>
-    <loc>http://localhost:1313/post/no.4/</loc>
+    <loc>https://l-luoluo.github.io/post/no.4/</loc>
     <lastmod>2025-11-03T15:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/no3/</loc>
+    <loc>https://l-luoluo.github.io/post/no3/</loc>
     <lastmod>2025-11-02T15:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/no2/</loc>
+    <loc>https://l-luoluo.github.io/post/no2/</loc>
     <lastmod>2025-11-01T15:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/no.1/</loc>
+    <loc>https://l-luoluo.github.io/post/no.1/</loc>
     <lastmod>2025-10-30T15:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://l-luoluo.github.io/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/categories/"
+                href="https://l-luoluo.github.io/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="http://localhost:1313/ja/categories/"
+                href="https://l-luoluo.github.io/ja/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="http://localhost:1313/zh-tw/categories/"
+                href="https://l-luoluo.github.io/zh-tw/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/categories/"
+                href="https://l-luoluo.github.io/categories/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://l-luoluo.github.io/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/tags/"
+                href="https://l-luoluo.github.io/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="http://localhost:1313/ja/tags/"
+                href="https://l-luoluo.github.io/ja/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="http://localhost:1313/zh-tw/tags/"
+                href="https://l-luoluo.github.io/zh-tw/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/tags/"
+                href="https://l-luoluo.github.io/tags/"
                 />
   </url>
 </urlset>

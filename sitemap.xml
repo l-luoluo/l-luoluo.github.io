@@ -2,24 +2,24 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <sitemap>
-    <loc>http://localhost:1313/zh-cn/sitemap.xml</loc>
+    <loc>https://l-luoluo.github.io/zh-cn/sitemap.xml</loc>
     
       <lastmod>2025-11-04T15:00:00+08:00</lastmod>
     
   </sitemap>
   
   <sitemap>
-    <loc>http://localhost:1313/en/sitemap.xml</loc>
+    <loc>https://l-luoluo.github.io/en/sitemap.xml</loc>
     
   </sitemap>
   
   <sitemap>
-    <loc>http://localhost:1313/ja/sitemap.xml</loc>
+    <loc>https://l-luoluo.github.io/ja/sitemap.xml</loc>
     
   </sitemap>
   
   <sitemap>
-    <loc>http://localhost:1313/zh-tw/sitemap.xml</loc>
+    <loc>https://l-luoluo.github.io/zh-tw/sitemap.xml</loc>
     
   </sitemap>
   
