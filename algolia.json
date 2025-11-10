@@ -1,5 +1,11 @@
 [
   {
+    "objectID": "e40b2dcacce9614e71e176b88c4ce4ec40e43809",
+    "permalink": "/post/no.9/",
+    "title": "LeNet模型-训练代码搭建","content": "\r前言\r本片文章主要是通用的模型训练代码搭建，这个代码搭建完成后，我们就可以直接使用这个代码来训练我们的模型了。 而且后面的模型都可以复用这一套的代码，只需要修改一下模型的参数即可。\n代码搭建\r1.导入必要的库\r在这一步中，我们需要导入一些必要的库，这些库包括：\ncopy：用于复制对象 time：用于计算时间 torch：用于深度学习 torchvision：用于处理图像数据 numpy：用于数值计算 matplotlib：用于数据可视化 modle：用于导入模型 torch.nn：用于定义神经网络层 pandas：用于数据处理 import copy import time import torch from torchvision.datasets import FashionMNIST from torchvision import transforms import torch.utils.data as Data import numpy as np import matplotlib.pyplot as plt from modle import AlexNet import torch.nn as nn import pandas as pd 2. 数据处理\rdef train_val_data_process(): # 从FashionMNIST中导入训练数据，将数据转换为227*227的大小，同时将数据转换为tensor类型 train_data = FashionMNIST(root=\u0026amp;#39;./data\u0026amp;#39;, train=True, transform=transforms.Compose([transforms.Resize(size=227), transforms.ToTensor()]), download=True) # 划分训练集和验证集，训练集占80%，验证集占20% train_data, val_data = Data.random_split(train_data, [round(0.8*len(train_data)), round(0.2*len(train_data))]) # 划分训练集数据的批次大小，每个批次32个样本 train_dataloader = …","date": "2025-11-07 15:00:00",
+    "updated": "2025-11-07 15:00:00"
+  }, 
+  {
     "objectID": "6e41b93accb5d6faf5456a18f36f45c2689f1da9",
     "permalink": "/post/no.8/",
     "title": "AlexNet原理","content": "\r1. 背景\rAlexNet 是 2012 年由 Alex Krizhevsky、Ilya Sutskever 和 Geoffrey Hinton 提出的卷积神经网络架构。它在 ImageNet 图像分类任务上取得了显著的成果，成为了卷积神经网络的一个重要里程碑。 它在当年的 ImageNet 图像分类任务上，取得第一名的成绩，也向世界证明了卷积神经网络在图像识别任务上要优于传统的机器学习算法。\n2. AlexNet 网络结构\r3. 网络参数详解\r4. Dropout 层\r为什么要加入 Dropout 层？\n其实是为了降低网络的参数，由于层数的增加，网络的参数也会增加，而 Dropout 层可以随机的将一些神经元的输出设为 0，从而减少网络的参数。 加快了网络的训练速度，同时也提高了网络的泛化能力。\n5. 图像增强\r5.1 水平翻转\r将图像左右翻转，增加数据集的多样性。\n5.2 随机裁剪\r从图像中随机裁剪出一个子区域，增加数据集的多样性。\n5.3 PCA\rPCA：主成分分析，将图像的像素值转换为主成分，从而减少图像的维度。\n5.4 LRN正则化\rLRN 正则化：局部响应归一化，对每个像素的响应进行归一化，从而提高模型的泛化能力。\n总的来说，图像增强技术可以增加数据集的多样性，提高模型的泛化能力。\n6. 总结\r","date": "2025-11-06 15:00:00",

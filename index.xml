@@ -12,12 +12,36 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Thu, 06 Nov 2025 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 07 Nov 2025 15:00:00 +0800</lastBuildDate>
     
     
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>LeNet模型-训练代码搭建</title>
+      <link>http://localhost:1313/post/no.9/</link>
+      <pubDate>Fri, 07 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.9/</guid>
+      <description>
+        <![CDATA[<h1>LeNet模型-训练代码搭建</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="前言">
+<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
+前言
+</h3><p>本片文章主要是通用的模型训练代码搭建，这个代码搭建完成后，我们就可以直接使用这个代码来训练我们的模型了。
+而且后面的模型都可以复用这一套的代码，只需要修改一下模型的参数即可。</p>
+        
+        <hr><p>本文2025-11-07首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-07</p>]]>
+      </description>
+      
+        <category>CNN</category><category>深度学习</category><category>代码实现</category><category>模型训练</category>
+      
+    </item>
     
     
 
@@ -38,6 +62,8 @@
         
         <hr><p>本文2025-11-06首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-06</p>]]>
       </description>
+      
+        <category>CNN</category><category>深度学习</category><category>经典模型</category>
       
     </item>
     
@@ -61,6 +87,8 @@
         
         <hr><p>本文2025-11-06首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-06</p>]]>
       </description>
+      
+        <category>CNN</category><category>深度学习</category><category>经典模型</category>
       
     </item>
     
@@ -91,6 +119,8 @@
         <hr><p>本文2025-11-05首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-05</p>]]>
       </description>
       
+        <category>CNN</category><category>深度学习</category><category>神经网络</category>
+      
     </item>
     
     
@@ -118,6 +148,8 @@
         
         <hr><p>本文2025-11-04首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-04</p>]]>
       </description>
+      
+        <category>CNN</category><category>深度学习</category><category>神经网络</category>
       
     </item>
     
@@ -151,6 +183,8 @@
         
         <hr><p>本文2025-11-03首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-03</p>]]>
       </description>
+      
+        <category>CNN</category><category>深度学习</category><category>神经网络</category>
       
     </item>
     
@@ -221,6 +255,8 @@
         <hr><p>本文2025-11-02首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-02</p>]]>
       </description>
       
+        <category>线性回归</category><category>机器学习基础</category><category>代码实现</category>
+      
     </item>
     
     
@@ -241,6 +277,8 @@
         
         <hr><p>本文2025-11-01首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-01</p>]]>
       </description>
+      
+        <category>线性回归</category><category>机器学习基础</category><category>优化算法</category>
       
     </item>
     
@@ -265,6 +303,8 @@
         
         <hr><p>本文2025-10-30首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-10-30</p>]]>
       </description>
+      
+        <category>线性回归</category><category>机器学习基础</category>
       
     </item>
     
