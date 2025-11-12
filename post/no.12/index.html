@@ -8,11 +8,11 @@
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
 /><title>
-  CNN | 落-luo
+  AlexNet模型-模型代码搭建 | 落-luo
 </title>
 <meta
   name="description"
-  content="少女祈祷中..."
+  content="文中所有所用资料均来自bilibli的up主：炮哥带你学"
 /><script>
   window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"http://localhost:1313/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"i18n_languages\":[{\"Lang\":\"en\",\"LanguageName\":\"English\",\"LanguageCode\":\"\",\"Title\":\"\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false},{\"Lang\":\"ja\",\"LanguageName\":\"日本語\",\"LanguageCode\":\"\",\"Title\":\"\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false},{\"Lang\":\"zh-cn\",\"LanguageName\":\"简体中文\",\"LanguageCode\":\"\",\"Title\":\"\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false},{\"Lang\":\"zh-tw\",\"LanguageName\":\"繁體中文\",\"LanguageCode\":\"\",\"Title\":\"\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false}],\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
   
@@ -37,12 +37,12 @@
     crossorigin="anonymous"
   /><link rel="stylesheet" href="/css/loader.css" />
 <meta property="og:type" content="website" />
-  <meta property="og:title" content="CNN | 落-luo" />
+  <meta property="og:title" content="AlexNet模型-模型代码搭建 | 落-luo" />
   <meta
     property="og:description"
-    content="少女祈祷中..."
+    content="文中所有所用资料均来自bilibli的up主：炮哥带你学"
   />
-  <meta property="og:url" content="http://localhost:1313/categories/cnn/" />
+  <meta property="og:url" content="http://localhost:1313/post/no.12/" />
   <meta
     property="og:site_name"
     content="心有所向，日复一日，必有精进"
@@ -52,9 +52,9 @@
     content="/"
   />
   <meta property="article:author" content="落-luo" />
-  <meta property="article:published_time" content="2025-11-07T15:00:00&#43;08:00" />
-  <meta property="article:modified_time" content="2025-11-07T15:00:00&#43;08:00" /><meta name="twitter:card" content="summary" />
-  <meta name="twitter:image" content="/" /><link rel="alternate" type="application/rss+xml" href="http://localhost:1313/categories/cnn/index.xml" title="心有所向，日复一日，必有精进">
+  <meta property="article:published_time" content="2025-11-09T15:00:00&#43;08:00" />
+  <meta property="article:modified_time" content="2025-11-09T15:00:00&#43;08:00" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/" />
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.css" />
 <link
     rel="preload"
@@ -131,7 +131,7 @@
         <span class="main-nav-link">友链</span>
       </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
   </nav>
-  <nav id="sub-nav" aria-label="Secondary navigation"><a id="nav-rss-link" class="nav-icon" href="/categories/cnn/index.xml" title="RSS 订阅" aria-label="RSS 订阅" target="_blank"></a></nav><nav id="i18n-nav" aria-label="Language selection">
+  <nav id="sub-nav" aria-label="Secondary navigation"></nav><nav id="i18n-nav" aria-label="Language selection">
       <div class="custom-dropdown">
         <div class="select-selected" id="select-selected" role="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language menu">
           <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
@@ -181,19 +181,32 @@
         });
       </script>
     </nav></div>
-<header id="header" aria-label="Site header"><picture></picture><img crossorigin="anonymous" fetchpriority="high" src="/images/banner1.webp" alt="CNN"><div id="header-outer">
+<header id="header" aria-label="Site header"><picture></picture><img crossorigin="anonymous" fetchpriority="high" src="/images/banner1.webp" alt="AlexNet模型-模型代码搭建"><div id="header-outer">
     <div id="header-title"><span id="logo">
-            <h1 data-aos="slide-up">目录</h1>
-          </span><h2 id="subtitle-wrap" data-aos="slide-down"><span id="subtitle">CNN</span></h2></div>
+            <h1 data-aos="slide-up">AlexNet模型-模型代码搭建</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
   </div>
 </header><div id="content"
           aria-label="Page content"
           
-          class="sidebar-left"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container "><div class="sidebar-wrapper">
+          class="sidebar-left"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
     <div
       class="sidebar-wrap"
       data-aos="fade-up"
-    ><div class="sidebar-author">
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#前言">前言</a></li>
+        <li><a href="#模型代码搭建">模型代码搭建</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
   <img
     data-src="/avatar/avatar1.webp"
     data-sizes="auto"
@@ -251,230 +264,139 @@
       ></a>
       <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
       <div class="sidebar-menu-link">友链</div>
-    </div></div></div>
-  </div><div class="sidebar-widget"><div class="widget-wrapper">
-    <div
-      class="widget-wrap"
-      data-aos="fade-up"
-    >
-      <div style="display: flex; justify-content: space-between;">
-        <h3 class="widget-title">分类</h3></div>
-      <div class="widget">
-        <ul class="category-list"><li class="category-list-item">
-                <a class="category-list-link" href="/categories/cnn/" 
-                  title="CNN"
-                  >CNN</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/" 
-                  title="代码实现"
-                  >代码实现</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" 
-                  title="优化算法"
-                  >优化算法</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" 
-                  title="机器学习基础"
-                  >机器学习基础</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/" 
-                  title="模型训练"
-                  >模型训练</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" 
-                  title="深度学习"
-                  >深度学习</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" 
-                  title="神经网络"
-                  >神经网络</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" 
-                  title="线性回归"
-                  >线性回归</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E7%BB%8F%E5%85%B8%E6%A8%A1%E5%9E%8B/" 
-                  title="经典模型"
-                  >经典模型</a
-                >
-              </li></ul>
-      </div>
-    </div>
-  </div><div class="widget-wrapper">
-    <div
-      class="widget-wrap"
-      data-aos="fade-up"
-    >
-      <h3 class="widget-title">最新文章</h3>
-      <div class="widget">
-        <ul><li>
-              <a href="/post/no.12/" title="AlexNet模型-模型代码搭建">AlexNet模型-模型代码搭建</a>
-            </li><li>
-              <a href="/post/no.10/" title="LeNet模型-测试代码搭建">LeNet模型-测试代码搭建</a>
-            </li><li>
-              <a href="/post/no.11/" title="LeNet模型-模型代码搭建">LeNet模型-模型代码搭建</a>
-            </li><li>
-              <a href="/post/no.9/" title="LeNet模型-训练代码搭建">LeNet模型-训练代码搭建</a>
-            </li><li>
-              <a href="/post/no.8/" title="AlexNet原理">AlexNet原理</a>
-            </li></ul>
-      </div>
-    </div>
-  </div></div></div></aside>
-<section id="main" aria-label="Main content"><div
-    class="archives-outer-wrap"
+    </div></div></div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
     data-aos="fade-up"
-  ><div class="tag-wrap"></div>
-<div class="category-wrap"><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2025-11-09 15:00:00 &#43;0800 CST" itemprop="datePublished"
+      >2025-11-09</time
     >
-      <a class="archives-category-list-link" href="/categories/cnn/"
-        >CNN</a
-      >
-    </div><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
+    <time style="display: none;" id="post-update-time"
+      >2025-11-09</time
     >
-      <a class="archives-category-list-link" href="/categories/%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/"
-        >代码实现</a
-      >
-    </div><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-category-list-link" href="/categories/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/"
-        >优化算法</a
-      >
-    </div><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/"
-        >机器学习基础</a
-      >
-    </div><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-category-list-link" href="/categories/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"
-        >模型训练</a
-      >
-    </div><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"
-        >深度学习</a
-      >
-    </div><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-category-list-link" href="/categories/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"
-        >神经网络</a
-      >
-    </div><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-category-list-link" href="/categories/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"
-        >线性回归</a
-      >
-    </div><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-category-list-link" href="/categories/%E7%BB%8F%E5%85%B8%E6%A8%A1%E5%9E%8B/"
-        >经典模型</a
-      >
-    </div></div><section class="archives-wrap" data-aos="fade-up">
-    <div class="archive-year-wrap">
-      <span class="archive-year">2025</span>
-    </div>
-    <ul><li class="archive-article">
-          <div class="archive-article-date">
-            <span>
-              <time
-                class="dt-published"
-                datetime="2025-11-07 15:00:00 &#43;0800 CST"
-                itemprop="datePublished"
-                >2025-11</time
-              >
-            </span>
-          </div><a class="archive-article-title" href="/post/no.9/"
-              >LeNet模型-训练代码搭建</a
-            ></li><li class="archive-article">
-          <div class="archive-article-date">
-            <span>
-              <time
-                class="dt-published"
-                datetime="2025-11-06 15:00:00 &#43;0800 CST"
-                itemprop="datePublished"
-                >2025-11</time
-              >
-            </span>
-          </div><a class="archive-article-title" href="/post/no.8/"
-              >AlexNet原理</a
-            ></li><li class="archive-article">
-          <div class="archive-article-date">
-            <span>
-              <time
-                class="dt-published"
-                datetime="2025-11-06 14:00:00 &#43;0800 CST"
-                itemprop="datePublished"
-                >2025-11</time
-              >
-            </span>
-          </div><a class="archive-article-title" href="/post/no.7/"
-              >LeNet原理</a
-            ></li><li class="archive-article">
-          <div class="archive-article-date">
-            <span>
-              <time
-                class="dt-published"
-                datetime="2025-11-05 15:00:00 &#43;0800 CST"
-                itemprop="datePublished"
-                >2025-11</time
-              >
-            </span>
-          </div><a class="archive-article-title" href="/post/no.6/"
-              >CNN卷积神经网络算法原理：第三章</a
-            ></li><li class="archive-article">
-          <div class="archive-article-date">
-            <span>
-              <time
-                class="dt-published"
-                datetime="2025-11-04 15:00:00 &#43;0800 CST"
-                itemprop="datePublished"
-                >2025-11</time
-              >
-            </span>
-          </div><a class="archive-article-title" href="/post/no.5/"
-              >CNN卷积神经网络算法原理：第二章</a
-            ></li><li class="archive-article">
-          <div class="archive-article-date">
-            <span>
-              <time
-                class="dt-published"
-                datetime="2025-11-03 15:00:00 &#43;0800 CST"
-                itemprop="datePublished"
-                >2025-11</time
-              >
-            </span>
-          </div><a class="archive-article-title" href="/post/no.4/"
-              >CNN卷积神经网络算法原理：第一章</a
-            ></li></ul>
-  </section></div><nav id="page-nav" aria-label="Pagination navigation" data-aos="fade-up"><span class="page-number current">1</span></nav>
-</section>
+  </span></div>
+<div class="article-category"></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h3 id="前言">
+<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
+前言
+</h3><p><span style="font-size: 20px;color: red;">之后的文章只会介绍模型的代码搭建，而训练代码和测试代码可以看前面LeNet模型的文章。
+里面有详细的代码，这里就不重复介绍了。</span></p>
+<h3 id="模型代码搭建">
+<a class="header-anchor" href="#%e6%a8%a1%e5%9e%8b%e4%bb%a3%e7%a0%81%e6%90%ad%e5%bb%ba"></a>
+模型代码搭建
+</h3><h4 id="1-导入所需的库">
+<a class="header-anchor" href="#1-%e5%af%bc%e5%85%a5%e6%89%80%e9%9c%80%e7%9a%84%e5%ba%93"></a>
+1. 导入所需的库
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torchsummary</span> <span class="kn">import</span> <span class="n">summary</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+</span></span></code></pre></div><h4 id="2-模型搭建">
+<a class="header-anchor" href="#2-%e6%a8%a1%e5%9e%8b%e6%90%ad%e5%bb%ba"></a>
+2. 模型搭建
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">AlexNet</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">(</span><span class="n">AlexNet</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">ReLU</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">c1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">out_channels</span><span class="o">=</span><span class="mi">96</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">s2</span> <span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">c3</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="mi">96</span><span class="p">,</span> <span class="n">out_channels</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">padding</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">s4</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">c5</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">out_channels</span><span class="o">=</span><span class="mi">384</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">c6</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="mi">384</span><span class="p">,</span> <span class="n">out_channels</span><span class="o">=</span><span class="mi">384</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">c7</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="mi">384</span><span class="p">,</span> <span class="n">out_channels</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">s8</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Flatten</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">fc1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">6</span><span class="o">*</span><span class="mi">6</span><span class="o">*</span><span class="mi">256</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">4096</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">4096</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">fc3</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</span></span></code></pre></div><p><span style="font-size: 20px;">其中c代表卷积层，s代表池化层，fc代表全连接层。</span></p>
+<h4 id="3-模型前向传播">
+<a class="header-anchor" href="#3-%e6%a8%a1%e5%9e%8b%e5%89%8d%e5%90%91%e4%bc%a0%e6%92%ad"></a>
+3. 模型前向传播
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">c1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">s2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">c3</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">s4</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">c5</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">c6</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">c7</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">s8</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fc1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">dropout</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fc2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">dropout</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc3</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">x</span>
+</span></span></code></pre></div><h4 id="4-模型测试代码">
+<a class="header-anchor" href="#4-%e6%a8%a1%e5%9e%8b%e6%b5%8b%e8%af%95%e4%bb%a3%e7%a0%81"></a>
+4. 模型测试代码
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&#34;cuda&#34;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&#34;cpu&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span> <span class="o">=</span> <span class="n">AlexNet</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">summary</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">227</span><span class="p">,</span> <span class="mi">227</span><span class="p">)))</span>
+</span></span></code></pre></div></div>
+    <footer class="article-footer"><a
+          data-aos="zoom-in"
+          href="/post/no.12/#comments"
+          class="article-comment-link"
+        >
+          <span
+            class="post-comments-count valine-comment-count"
+            data-xid="/post/no.12/"
+            itemprop="commentCount"
+          ></span>
+          留言
+        </a><ul class="article-tag-list" itemprop="keywords"></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+              data-src="https://d-sketon.top/img/_backwebp/bg1.webp"
+              data-sizes="auto"
+              alt="LeNet模型-测试代码搭建"
+              class="lazyload"
+            /><a
+          href="/post/no.10/"
+          aria-label="前一篇:LeNet模型-测试代码搭建"
+          title="前一篇:LeNet模型-测试代码搭建"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">LeNet模型-测试代码搭建</h3>
+      </div></nav></article><section id="comments" data-aos="fade-up">
+<div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
+  <div class="comment-selector">
+    <div class="comment-selector-wrap"><div class="selector-item" data-selector="valine">
+          <span>valine</span>
+        </div></div>
+  </div>
+</div>
+
+<div class="comment-content"><div class="comment valine-comment" data-aos="fade-up"
+     >
+    </div></div>
+</section></section>
         </div><footer id="footer" aria-label="Site footer">
   <div style="width: 100%; overflow: hidden">
     <div class="footer-line"></div>
@@ -521,7 +443,20 @@
             <div class="arrow-up"></div>
           </div><div id="mask" class="hide"></div>
       </div><nav id="mobile-nav" aria-label="Mobile navigation">
-  <div class="sidebar-wrap"><div class="sidebar-author">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#前言">前言</a></li>
+        <li><a href="#模型代码搭建">模型代码搭建</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
   <img
     data-src="/avatar/avatar1.webp"
     data-sizes="auto"
@@ -579,7 +514,10 @@
       ></a>
       <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
       <div class="sidebar-menu-link">友链</div>
-    </div></div></div></nav>
+    </div></div></div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
 </div><script
     src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
     integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
@@ -617,9 +555,9 @@
   <div><script data-pjax>
         window.REIMU_POST = {
           author: "落-luo",
-          title: "CNN",
-          url: "http:\/\/localhost:1313\/categories\/cnn\/",
-          description: "",
+          title: "AlexNet模型-模型代码搭建",
+          url: "http:\/\/localhost:1313\/post\/no.12\/",
+          description: "文中所有所用资料均来自bilibli的up主：炮哥带你学",
           cover: "http:\/\/localhost:1313\/images\/banner1.webp",
         };
       </script><script src="/js/insert_highlight.js" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

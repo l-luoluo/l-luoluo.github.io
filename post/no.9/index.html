@@ -219,7 +219,7 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">11</div>
+    <div>文章</div><div class="sidebar-state-number">12</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -344,9 +344,14 @@
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.utils.data</span> <span class="k">as</span> <span class="nn">Data</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">modle</span> <span class="kn">import</span> <span class="n">AlexNet</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">LeNet</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</span></span></code></pre></div><p><span style="font-size: 20px; color: red;">有关库的导入这里其中有一个库是model，这个是我们搭建模型时自己创建的一个文件，所以在引入的时候要和模型文件在同一个目录下，并且要和模型文件的文件名一致。</span>
+<span style="font-size: 20px; color: red;">就像时我的模型文件是model.py，所以在引入的时候要写</span></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">LeNet</span>
+</span></span></code></pre></div><p>而你们的就是</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">你模型的文件名</span> <span class="kn">import</span> <span class="n">LeNet</span>
 </span></span></code></pre></div><h4 id="2-数据处理">
 <a class="header-anchor" href="#2-%e6%95%b0%e6%8d%ae%e5%a4%84%e7%90%86"></a>
 2. 数据处理
@@ -504,7 +509,12 @@
 </span></span><span class="line"><span class="cl">                                       <span class="s2">&#34;val_acc_all&#34;</span><span class="p">:</span><span class="n">val_acc_all</span><span class="p">,})</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">train_process</span>
-</span></span></code></pre></div><h4 id="4模型结果可视化">
+</span></span></code></pre></div><p><span style="font-size: 25px;">里面有一个代码是</span></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">torch.save(best_model_wts, &#34;C:/code/test/AlexNet/best_model.pth&#34;)
+</span></span></code></pre></div><p><span style="font-size: 20px;">这行代码的作用是将模型的最优参数保存到一个文件中，方便后续的测试和使用。</span>
+<span style="font-size: 20px;">这里的路径需要该为你自己的路径，我这里是C:/code/test/AlexNet/best_model.pth，你需要根据你自己的路径来修改。</span>
+<span style="font-size: 20px;">但最好不要有中文路径，不然会报错。</span></p>
+<h4 id="4模型结果可视化">
 <a class="header-anchor" href="#4%e6%a8%a1%e5%9e%8b%e7%bb%93%e6%9e%9c%e5%8f%af%e8%a7%86%e5%8c%96"></a>
 4.模型结果可视化
 </h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
@@ -530,11 +540,11 @@
 </h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># 加载需要的模型</span>
-</span></span><span class="line"><span class="cl">    <span class="n">AlexNet</span> <span class="o">=</span> <span class="n">AlexNet</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">LeNet</span> <span class="o">=</span> <span class="n">LeNet</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># 加载数据集</span>
 </span></span><span class="line"><span class="cl">    <span class="n">train_data</span><span class="p">,</span> <span class="n">val_data</span> <span class="o">=</span> <span class="n">train_val_data_process</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># 利用现有的模型进行模型的训练</span>
-</span></span><span class="line"><span class="cl">    <span class="n">train_process</span> <span class="o">=</span> <span class="n">train_model_process</span><span class="p">(</span><span class="n">AlexNet</span><span class="p">,</span> <span class="n">train_data</span><span class="p">,</span> <span class="n">val_data</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">train_process</span> <span class="o">=</span> <span class="n">train_model_process</span><span class="p">(</span><span class="n">LeNet</span><span class="p">,</span> <span class="n">train_data</span><span class="p">,</span> <span class="n">val_data</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">matplot_acc_loss</span><span class="p">(</span><span class="n">train_process</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="完整代码展示">
 <a class="header-anchor" href="#%e5%ae%8c%e6%95%b4%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba"></a>
@@ -548,7 +558,7 @@
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.utils.data</span> <span class="k">as</span> <span class="nn">Data</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">modle</span> <span class="kn">import</span> <span class="n">AlexNet</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">LeNet</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </span></span><span class="line"><span class="cl">
@@ -693,8 +703,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 选择最优参数，保存最优参数的模型</span>
 </span></span><span class="line"><span class="cl">    <span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">best_model_wts</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># torch.save(model.load_state_dict(best_model_wts), &#34;C:/Users/86159/Desktop/LeNet/best_model.pth&#34;)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">best_model_wts</span><span class="p">,</span> <span class="s2">&#34;C:/code/test/AlexNet/best_model.pth&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">best_model_wts</span><span class="p">,</span> <span class="s2">&#34;C:/code/test/LeNet/best_model.pth&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">train_process</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;epoch&#34;</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">),</span>
@@ -726,11 +735,11 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># 加载需要的模型</span>
-</span></span><span class="line"><span class="cl">    <span class="n">AlexNet</span> <span class="o">=</span> <span class="n">AlexNet</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">LeNet</span> <span class="o">=</span> <span class="n">LeNet</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># 加载数据集</span>
 </span></span><span class="line"><span class="cl">    <span class="n">train_data</span><span class="p">,</span> <span class="n">val_data</span> <span class="o">=</span> <span class="n">train_val_data_process</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># 利用现有的模型进行模型的训练</span>
-</span></span><span class="line"><span class="cl">    <span class="n">train_process</span> <span class="o">=</span> <span class="n">train_model_process</span><span class="p">(</span><span class="n">AlexNet</span><span class="p">,</span> <span class="n">train_data</span><span class="p">,</span> <span class="n">val_data</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">train_process</span> <span class="o">=</span> <span class="n">train_model_process</span><span class="p">(</span><span class="n">LeNet</span><span class="p">,</span> <span class="n">train_data</span><span class="p">,</span> <span class="n">val_data</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">matplot_acc_loss</span><span class="p">(</span><span class="n">train_process</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    
 </span></span></code></pre></div></div>
@@ -809,10 +818,10 @@
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;8.3k</span
+          >&nbsp;8.8k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;00:23</span>
+        <span class="icon-coffee">&nbsp;00:24</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -860,7 +869,7 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">11</div>
+    <div>文章</div><div class="sidebar-state-number">12</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
