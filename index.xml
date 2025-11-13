@@ -12,12 +12,60 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Sun, 09 Nov 2025 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 Nov 2025 15:00:00 +0800</lastBuildDate>
     
     
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>VGG模型原理</title>
+      <link>http://localhost:1313/post/no.13/</link>
+      <pubDate>Mon, 10 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.13/</guid>
+      <description>
+        <![CDATA[<h1>VGG模型原理</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h4 id="vgg诞生背景">
+<a class="header-anchor" href="#vgg%e8%af%9e%e7%94%9f%e8%83%8c%e6%99%af"></a>
+VGG诞生背景
+</h4><p><img src="/img/NO.13/%E5%9B%BE1.png" alt=""></p>
+<p>VGG的模型比AlexNet的更大，参数更多
+在AlexNet的基础上，VGG提出了一种新的网络结构，即使用多个3x3的卷积核代替AlexNet中的11x11、5x5的卷积核，同时减少了参数数量。
+由于3x3的卷积核可以覆盖更多的像素，因此VGG的模型在保持参数数量的同时，也提高了模型的表达能力。
+卷积块的应用也使得VGG的模型可移植性比较好
+本篇文章主要介绍VGG-16模型,也就是下面图中D的结构</p>
+        
+        <hr><p>本文2025-11-10首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-10</p>]]>
+      </description>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>VGG模型-模型搭建</title>
+      <link>http://localhost:1313/post/no.14/</link>
+      <pubDate>Mon, 10 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.14/</guid>
+      <description>
+        <![CDATA[<h1>VGG模型-模型搭建</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="前言">
+<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
+前言
+</h3><p>关于训练代码，可以看之前LeNet模型的训练代码，VGG模型的训练代码与LeNet模型的训练代码基本相同，只是模型不同。
+测试的代码也是基本相同，只是模型不同。</p>
+        
+        <hr><p>本文2025-11-10首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-10</p>]]>
+      </description>
+      
+    </item>
     
     
 
@@ -228,112 +276,6 @@
       </description>
       
         <category>CNN</category><category>深度学习</category><category>神经网络</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>CNN卷积神经网络算法原理：第一章</title>
-      <link>http://localhost:1313/post/no.4/</link>
-      <pubDate>Mon, 03 Nov 2025 15:00:00 &#43;0800</pubDate>
-      <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no.4/</guid>
-      <description>
-        <![CDATA[<h1>CNN卷积神经网络算法原理：第一章</h1><p>作者：落-luo（xxx@example.com）</p>
-        
-          <h4 id="全连接神经网络整体结构">
-<a class="header-anchor" href="#%e5%85%a8%e8%bf%9e%e6%8e%a5%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e6%95%b4%e4%bd%93%e7%bb%93%e6%9e%84"></a>
-全连接神经网络整体结构
-</h4><p>全连接神经网络的整体结构如下：</p>
-<p><img src="/img/NO.4/%E5%9B%BE1.png" alt=""></p>
-<p><img src="/img/NO.4/%E5%9B%BE2.png" alt=""></p>
-<p>上述图片就是一个全连接神经网络的整体结构，它基本上有以下几个部分：</p>
-<ol>
-<li>输入层：输入层主要是接收外部输入的数据</li>
-<li>隐藏层：隐藏层可以有多个，每个隐藏层由多个神经元组成，每个神经元接收来自上一层的所有节点的输入</li>
-<li>输出层：输出层的节点数等于分类的类别数，每个节点对应一个类别。</li>
-</ol>
-<h4 id="全连接神经网络的单元结构">
-<a class="header-anchor" href="#%e5%85%a8%e8%bf%9e%e6%8e%a5%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e7%9a%84%e5%8d%95%e5%85%83%e7%bb%93%e6%9e%84"></a>
-全连接神经网络的单元结构
-</h4><p>每个神经元的计算过程如下：</p>
-        
-        <hr><p>本文2025-11-03首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-03</p>]]>
-      </description>
-      
-        <category>CNN</category><category>深度学习</category><category>神经网络</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>线性回归模型案例的代码复现</title>
-      <link>http://localhost:1313/post/no.3/</link>
-      <pubDate>Sun, 02 Nov 2025 15:00:00 &#43;0800</pubDate>
-      <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no.3/</guid>
-      <description>
-        <![CDATA[<h1>线性回归模型案例的代码复现</h1><p>作者：落-luo（xxx@example.com）</p>
-        
-          <h4 id="案例">
-<a class="header-anchor" href="#%e6%a1%88%e4%be%8b"></a>
-案例
-</h4><p><img src="/img/NO.1/%E5%9B%BE2.png" alt=""></p>
-<p>上述就是我们要解决的问题，即通过线性回归模型来对未知的y值进行预测。下面我们将通过代码复现一下这个案例。</p>
-<h4 id="代码复现">
-<a class="header-anchor" href="#%e4%bb%a3%e7%a0%81%e5%a4%8d%e7%8e%b0"></a>
-代码复现
-</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">#</span> <span class="err">定义数据集</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="err">#</span> <span class="err">定义数据特征</span>
-</span></span><span class="line"><span class="cl"><span class="err">x_data</span> <span class="err">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="err">#</span> <span class="err">定义数据标签</span>
-</span></span><span class="line"><span class="cl"><span class="err">y_data</span> <span class="err">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="err">#</span> <span class="err">初始化参数W</span>
-</span></span><span class="line"><span class="cl"><span class="err">w</span> <span class="err">=</span> <span class="mi">4</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="err">#定义线性回归模型</span>
-</span></span><span class="line"><span class="cl"><span class="err">def</span> <span class="err">forword(x):</span>
-</span></span><span class="line"><span class="cl">    <span class="err">return</span> <span class="err">x</span> <span class="err">*</span> <span class="err">w</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="err">#定义损失函数</span>
-</span></span><span class="line"><span class="cl"><span class="err">def</span> <span class="err">cost(xs,</span> <span class="err">ys):</span>
-</span></span><span class="line"><span class="cl">    <span class="err">costvalue</span> <span class="err">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">    <span class="err">for</span> <span class="err">x</span> <span class="err">,</span> <span class="err">y</span> <span class="err">in</span> <span class="err">zip(xs,</span> <span class="err">ys):</span>
-</span></span><span class="line"><span class="cl">        <span class="err">y_pred</span> <span class="err">=</span> <span class="err">forword(x)</span>
-</span></span><span class="line"><span class="cl">        <span class="err">costvalue</span> <span class="err">+=</span> <span class="err">(y_pred</span> <span class="err">-</span> <span class="err">y)**</span><span class="mi">2</span>
-</span></span><span class="line"><span class="cl">    <span class="err">return</span> <span class="err">costvalue</span> <span class="err">/</span> <span class="err">len(xs)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="err">#定义计算梯度的函数</span>
-</span></span><span class="line"><span class="cl"><span class="err">def</span> <span class="err">gradient(xs,</span> <span class="err">ys):</span>
-</span></span><span class="line"><span class="cl">    <span class="err">grad</span> <span class="err">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">    <span class="err">for</span> <span class="err">x,</span> <span class="err">y</span> <span class="err">in</span> <span class="err">zip(xs,</span> <span class="err">ys):</span>
-</span></span><span class="line"><span class="cl">        <span class="err">grad</span> <span class="err">+=</span> <span class="mi">2</span> <span class="err">*</span> <span class="err">x</span> <span class="err">*</span> <span class="err">(x</span> <span class="err">*</span> <span class="err">w</span> <span class="err">-</span> <span class="err">y)</span>
-</span></span><span class="line"><span class="cl">    <span class="err">return</span> <span class="err">grad</span> <span class="err">/</span> <span class="err">len(xs)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="err">for</span> <span class="err">epoch</span> <span class="err">in</span> <span class="err">range(</span><span class="mi">100</span><span class="err">):</span>
-</span></span><span class="line"><span class="cl">    <span class="err">#计算误差损失</span>
-</span></span><span class="line"><span class="cl">    <span class="err">cost_val</span> <span class="err">=</span> <span class="err">cost(x_data,</span> <span class="err">y_data)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="err">grad_val</span> <span class="err">=</span> <span class="err">gradient(x_data,</span> <span class="err">y_data)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="err">w</span> <span class="err">=w</span><span class="mf">-0.01</span> <span class="err">*</span> <span class="err">grad_val</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="err">print(&#39;训练轮次：&#39;,</span> <span class="err">epoch,</span> <span class="s2">&#34;w=&#34;</span><span class="err">,</span> <span class="err">w,</span><span class="s2">&#34;loss&#34;</span><span class="err">,</span> <span class="err">cost_val)</span>
-</span></span><span class="line"><span class="cl">    
-</span></span></code></pre></div><h4 id="结果">
-<a class="header-anchor" href="#%e7%bb%93%e6%9e%9c"></a>
-结果
-</h4><p>运行上述的代码，我们不难得出当w接近2时，损失函数也接近0，这也验证了我们的模型是正确的。</p>
-        
-        <hr><p>本文2025-11-02首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-02</p>]]>
-      </description>
-      
-        <category>线性回归</category><category>机器学习基础</category><category>代码实现</category>
       
     </item>
     

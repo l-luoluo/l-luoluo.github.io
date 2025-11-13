@@ -8,11 +8,11 @@
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
 /><title>
-  优化算法 | 落-luo
+  VGG模型原理 | 落-luo
 </title>
 <meta
   name="description"
-  content="少女祈祷中..."
+  content="文中所有所用资料均来自bilibli的up主：炮哥带你学"
 /><script>
   window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"http://localhost:1313/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"i18n_languages\":[{\"Lang\":\"en\",\"LanguageName\":\"English\",\"LanguageCode\":\"\",\"Title\":\"\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false},{\"Lang\":\"ja\",\"LanguageName\":\"日本語\",\"LanguageCode\":\"\",\"Title\":\"\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false},{\"Lang\":\"zh-cn\",\"LanguageName\":\"简体中文\",\"LanguageCode\":\"\",\"Title\":\"\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false},{\"Lang\":\"zh-tw\",\"LanguageName\":\"繁體中文\",\"LanguageCode\":\"\",\"Title\":\"\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false}],\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
   
@@ -37,12 +37,12 @@
     crossorigin="anonymous"
   /><link rel="stylesheet" href="/css/loader.css" />
 <meta property="og:type" content="website" />
-  <meta property="og:title" content="优化算法 | 落-luo" />
+  <meta property="og:title" content="VGG模型原理 | 落-luo" />
   <meta
     property="og:description"
-    content="少女祈祷中..."
+    content="文中所有所用资料均来自bilibli的up主：炮哥带你学"
   />
-  <meta property="og:url" content="http://localhost:1313/categories/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" />
+  <meta property="og:url" content="http://localhost:1313/post/no.13/" />
   <meta
     property="og:site_name"
     content="心有所向，日复一日，必有精进"
@@ -52,9 +52,9 @@
     content="/"
   />
   <meta property="article:author" content="落-luo" />
-  <meta property="article:published_time" content="2025-11-01T15:00:00&#43;08:00" />
-  <meta property="article:modified_time" content="2025-11-01T15:00:00&#43;08:00" /><meta name="twitter:card" content="summary" />
-  <meta name="twitter:image" content="/" /><link rel="alternate" type="application/rss+xml" href="http://localhost:1313/categories/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/index.xml" title="心有所向，日复一日，必有精进">
+  <meta property="article:published_time" content="2025-11-10T15:00:00&#43;08:00" />
+  <meta property="article:modified_time" content="2025-11-10T15:00:00&#43;08:00" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/" />
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.css" />
 <link
     rel="preload"
@@ -131,7 +131,7 @@
         <span class="main-nav-link">友链</span>
       </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
   </nav>
-  <nav id="sub-nav" aria-label="Secondary navigation"><a id="nav-rss-link" class="nav-icon" href="/categories/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/index.xml" title="RSS 订阅" aria-label="RSS 订阅" target="_blank"></a></nav><nav id="i18n-nav" aria-label="Language selection">
+  <nav id="sub-nav" aria-label="Secondary navigation"></nav><nav id="i18n-nav" aria-label="Language selection">
       <div class="custom-dropdown">
         <div class="select-selected" id="select-selected" role="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language menu">
           <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
@@ -181,19 +181,31 @@
         });
       </script>
     </nav></div>
-<header id="header" aria-label="Site header"><picture></picture><img crossorigin="anonymous" fetchpriority="high" src="/images/banner1.webp" alt="优化算法"><div id="header-outer">
+<header id="header" aria-label="Site header"><picture></picture><img crossorigin="anonymous" fetchpriority="high" src="/images/banner1.webp" alt="VGG模型原理"><div id="header-outer">
     <div id="header-title"><span id="logo">
-            <h1 data-aos="slide-up">目录</h1>
-          </span><h2 id="subtitle-wrap" data-aos="slide-down"><span id="subtitle">优化算法</span></h2></div>
+            <h1 data-aos="slide-up">VGG模型原理</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
   </div>
 </header><div id="content"
           aria-label="Page content"
           
-          class="sidebar-left"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container "><div class="sidebar-wrapper">
+          class="sidebar-left"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
     <div
       class="sidebar-wrap"
       data-aos="fade-up"
-    ><div class="sidebar-author">
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
   <img
     data-src="/avatar/avatar1.webp"
     data-sizes="auto"
@@ -251,170 +263,134 @@
       ></a>
       <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
       <div class="sidebar-menu-link">友链</div>
-    </div></div></div>
-  </div><div class="sidebar-widget"><div class="widget-wrapper">
-    <div
-      class="widget-wrap"
-      data-aos="fade-up"
-    >
-      <div style="display: flex; justify-content: space-between;">
-        <h3 class="widget-title">分类</h3></div>
-      <div class="widget">
-        <ul class="category-list"><li class="category-list-item">
-                <a class="category-list-link" href="/categories/cnn/" 
-                  title="CNN"
-                  >CNN</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/" 
-                  title="代码实现"
-                  >代码实现</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" 
-                  title="优化算法"
-                  >优化算法</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" 
-                  title="机器学习基础"
-                  >机器学习基础</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/" 
-                  title="模型训练"
-                  >模型训练</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" 
-                  title="深度学习"
-                  >深度学习</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" 
-                  title="神经网络"
-                  >神经网络</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" 
-                  title="线性回归"
-                  >线性回归</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E7%BB%8F%E5%85%B8%E6%A8%A1%E5%9E%8B/" 
-                  title="经典模型"
-                  >经典模型</a
-                >
-              </li></ul>
-      </div>
-    </div>
-  </div><div class="widget-wrapper">
-    <div
-      class="widget-wrap"
-      data-aos="fade-up"
-    >
-      <h3 class="widget-title">最新文章</h3>
-      <div class="widget">
-        <ul><li>
-              <a href="/post/no.14/" title="VGG模型-模型搭建">VGG模型-模型搭建</a>
-            </li><li>
-              <a href="/post/no.13/" title="VGG模型原理">VGG模型原理</a>
-            </li><li>
-              <a href="/post/no.12/" title="AlexNet模型-模型代码搭建">AlexNet模型-模型代码搭建</a>
-            </li><li>
-              <a href="/post/no.10/" title="LeNet模型-测试代码搭建">LeNet模型-测试代码搭建</a>
-            </li><li>
-              <a href="/post/no.11/" title="LeNet模型-模型代码搭建">LeNet模型-模型代码搭建</a>
-            </li></ul>
-      </div>
-    </div>
-  </div></div></div></aside>
-<section id="main" aria-label="Main content"><div
-    class="archives-outer-wrap"
+    </div></div></div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
     data-aos="fade-up"
-  ><div class="tag-wrap"></div>
-<div class="category-wrap"><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2025-11-10 15:00:00 &#43;0800 CST" itemprop="datePublished"
+      >2025-11-10</time
     >
-      <a class="archives-category-list-link" href="/categories/cnn/"
-        >CNN</a
-      >
-    </div><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
+    <time style="display: none;" id="post-update-time"
+      >2025-11-10</time
     >
-      <a class="archives-category-list-link" href="/categories/%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/"
-        >代码实现</a
-      >
-    </div><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-category-list-link" href="/categories/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/"
-        >优化算法</a
-      >
-    </div><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/"
-        >机器学习基础</a
-      >
-    </div><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-category-list-link" href="/categories/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"
-        >模型训练</a
-      >
-    </div><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"
-        >深度学习</a
-      >
-    </div><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-category-list-link" href="/categories/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"
-        >神经网络</a
-      >
-    </div><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-category-list-link" href="/categories/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"
-        >线性回归</a
-      >
-    </div><div
-      class="archives-category-list-item"
-      data-aos="zoom-in"
-    >
-      <a class="archives-category-list-link" href="/categories/%E7%BB%8F%E5%85%B8%E6%A8%A1%E5%9E%8B/"
-        >经典模型</a
-      >
-    </div></div><section class="archives-wrap" data-aos="fade-up">
-    <div class="archive-year-wrap">
-      <span class="archive-year">2025</span>
-    </div>
-    <ul><li class="archive-article">
-          <div class="archive-article-date">
-            <span>
-              <time
-                class="dt-published"
-                datetime="2025-11-01 15:00:00 &#43;0800 CST"
-                itemprop="datePublished"
-                >2025-11</time
-              >
-            </span>
-          </div><a class="archive-article-title" href="/post/no.2/"
-              >梯度更新</a
-            ></li></ul>
-  </section></div><nav id="page-nav" aria-label="Pagination navigation" data-aos="fade-up"><span class="page-number current">1</span></nav>
-</section>
+  </span></div>
+<div class="article-category"></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h4 id="vgg诞生背景">
+<a class="header-anchor" href="#vgg%e8%af%9e%e7%94%9f%e8%83%8c%e6%99%af"></a>
+VGG诞生背景
+</h4><p><img src="/img/NO.13/%E5%9B%BE1.png" alt=""></p>
+<p>VGG的模型比AlexNet的更大，参数更多
+在AlexNet的基础上，VGG提出了一种新的网络结构，即使用多个3x3的卷积核代替AlexNet中的11x11、5x5的卷积核，同时减少了参数数量。
+由于3x3的卷积核可以覆盖更多的像素，因此VGG的模型在保持参数数量的同时，也提高了模型的表达能力。
+卷积块的应用也使得VGG的模型可移植性比较好
+本篇文章主要介绍VGG-16模型,也就是下面图中D的结构</p>
+<h4 id="vgg-16模型结构">
+<a class="header-anchor" href="#vgg-16%e6%a8%a1%e5%9e%8b%e7%bb%93%e6%9e%84"></a>
+VGG-16模型结构
+</h4><p><img src="/img/NO.13/%E5%9B%BE2.png" alt="">
+<img src="/img/NO.13/%E5%9B%BE3.png" alt="">
+<img src="/img/NO.13/%E5%9B%BE4.png" alt=""></p>
+<p>VGG-16模型的结构与AlexNet的结构类似，都是由5个卷积块和3个全连接层组成。
+每个卷积块由2个卷积层和1个池化层组成，卷积层的核大小都是3x3，步长都是1，填充都是1。
+池化层的核大小都是2x2，步长都是2，填充都是0。
+全连接层的节点数分别是4096、4096、1000。</p>
+<h5 id="卷积块结构">
+<a class="header-anchor" href="#%e5%8d%b7%e7%a7%af%e5%9d%97%e7%bb%93%e6%9e%84"></a>
+卷积块结构
+</h5><h6 id="block1详细参数">
+<a class="header-anchor" href="#block1%e8%af%a6%e7%bb%86%e5%8f%82%e6%95%b0"></a>
+block1详细参数
+</h6><p><img src="/img/NO.13/%E5%9B%BE5.png" alt=""></p>
+<h6 id="block2详细参数">
+<a class="header-anchor" href="#block2%e8%af%a6%e7%bb%86%e5%8f%82%e6%95%b0"></a>
+block2详细参数
+</h6><p><img src="/img/NO.13/%E5%9B%BE6.png" alt=""></p>
+<h6 id="block3详细参数">
+<a class="header-anchor" href="#block3%e8%af%a6%e7%bb%86%e5%8f%82%e6%95%b0"></a>
+block3详细参数
+</h6><p><img src="/img/NO.13/%E5%9B%BE7.png" alt=""></p>
+<h6 id="block4详细参数">
+<a class="header-anchor" href="#block4%e8%af%a6%e7%bb%86%e5%8f%82%e6%95%b0"></a>
+block4详细参数
+</h6><p><img src="/img/NO.13/%E5%9B%BE8.png" alt=""></p>
+<h6 id="block5详细参数">
+<a class="header-anchor" href="#block5%e8%af%a6%e7%bb%86%e5%8f%82%e6%95%b0"></a>
+block5详细参数
+</h6><p><img src="/img/NO.13/%E5%9B%BE9.png" alt=""></p>
+<h4 id="总结">
+<a class="header-anchor" href="#%e6%80%bb%e7%bb%93"></a>
+总结
+</h4><p><img src="/img/NO.13/%E5%9B%BE10.png" alt=""></p>
+</div>
+    <footer class="article-footer"><a
+          data-aos="zoom-in"
+          href="/post/no.13/#comments"
+          class="article-comment-link"
+        >
+          <span
+            class="post-comments-count valine-comment-count"
+            data-xid="/post/no.13/"
+            itemprop="commentCount"
+          ></span>
+          留言
+        </a><ul class="article-tag-list" itemprop="keywords"></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+              data-src="https://d-sketon.top/img/_backwebp/bg1.webp"
+              data-sizes="auto"
+              alt="AlexNet模型-模型代码搭建"
+              class="lazyload"
+            /><a
+          href="/post/no.12/"
+          aria-label="前一篇:AlexNet模型-模型代码搭建"
+          title="前一篇:AlexNet模型-模型代码搭建"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">AlexNet模型-模型代码搭建</h3>
+      </div><div class="article-nav-link-wrap right"><img
+              data-src="https://d-sketon.top/img/_backwebp/bg1.webp"
+              data-sizes="auto"
+              alt="VGG模型-模型搭建"
+              class="lazyload"
+            /><a
+          href="/post/no.14/"
+          aria-label="后一篇:VGG模型-模型搭建"
+          title="后一篇:VGG模型-模型搭建"
+        ></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">VGG模型-模型搭建</h3>
+      </div></nav></article><section id="comments" data-aos="fade-up">
+<div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
+  <div class="comment-selector">
+    <div class="comment-selector-wrap"><div class="selector-item" data-selector="valine">
+          <span>valine</span>
+        </div></div>
+  </div>
+</div>
+
+<div class="comment-content"><div class="comment valine-comment" data-aos="fade-up"
+     >
+    </div></div>
+</section></section>
         </div><footer id="footer" aria-label="Site footer">
   <div style="width: 100%; overflow: hidden">
     <div class="footer-line"></div>
@@ -461,7 +437,19 @@
             <div class="arrow-up"></div>
           </div><div id="mask" class="hide"></div>
       </div><nav id="mobile-nav" aria-label="Mobile navigation">
-  <div class="sidebar-wrap"><div class="sidebar-author">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
   <img
     data-src="/avatar/avatar1.webp"
     data-sizes="auto"
@@ -519,7 +507,10 @@
       ></a>
       <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
       <div class="sidebar-menu-link">友链</div>
-    </div></div></div></nav>
+    </div></div></div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
 </div><script
     src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
     integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
@@ -557,9 +548,9 @@
   <div><script data-pjax>
         window.REIMU_POST = {
           author: "落-luo",
-          title: "优化算法",
-          url: "http:\/\/localhost:1313\/categories\/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95\/",
-          description: "",
+          title: "VGG模型原理",
+          url: "http:\/\/localhost:1313\/post\/no.13\/",
+          description: "文中所有所用资料均来自bilibli的up主：炮哥带你学",
           cover: "http:\/\/localhost:1313\/images\/banner1.webp",
         };
       </script><script src="/js/insert_highlight.js" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
