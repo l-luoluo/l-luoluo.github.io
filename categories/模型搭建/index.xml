@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>模型搭建 on 心有所向，日复一日，必有精进</title>
+    <link>http://localhost:1313/categories/%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/</link>
+    <description>Recent content from 心有所向，日复一日，必有精进</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    
+    <managingEditor>xxx@example.com (落-luo)</managingEditor>
+    <webMaster>xxx@example.com (落-luo)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Tue, 11 Nov 2025 15:00:00 +0800</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/categories/%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>GoogleNet模型原理</title>
+      <link>http://localhost:1313/post/no.16/</link>
+      <pubDate>Tue, 11 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.16/</guid>
+      <description>
+        <![CDATA[<h1>GoogleNet模型原理</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="前言">
+<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
+前言
+</h3><p>关于训练代码，可以看之前LeNet-5模型的训练代码，GoogleNet模型的训练代码与LeNet模型的训练代码基本相同，只是模型不同。
+测试的代码也是基本相同，只是模型不同。</p>
+        
+        <hr><p>本文2025-11-11首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-11</p>]]>
+      </description>
+      
+        <category>GoogleNet</category><category>CNN</category><category>经典模型</category><category>模型搭建</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>VGG模型-模型搭建</title>
+      <link>http://localhost:1313/post/no.14/</link>
+      <pubDate>Mon, 10 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.14/</guid>
+      <description>
+        <![CDATA[<h1>VGG模型-模型搭建</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="前言">
+<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
+前言
+</h3><p>关于训练代码，可以看之前LeNet-5模型的训练代码，VGG模型的训练代码与LeNet模型的训练代码基本相同，只是模型不同。
+测试的代码也是基本相同，只是模型不同。</p>
+        
+        <hr><p>本文2025-11-10首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-10</p>]]>
+      </description>
+      
+        <category>VGG</category><category>CNN</category><category>经典模型</category><category>模型搭建</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>AlexNet模型-模型代码搭建</title>
+      <link>http://localhost:1313/post/no.12/</link>
+      <pubDate>Sun, 09 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.12/</guid>
+      <description>
+        <![CDATA[<h1>AlexNet模型-模型代码搭建</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="前言">
+<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
+前言
+</h3><p><span style="font-size: 20px;color: red;">之后的文章只会介绍模型的代码搭建，而训练代码和测试代码可以看前面LeNet模型的文章。
+里面有详细的代码，这里就不重复介绍了。</span></p>
+        
+        <hr><p>本文2025-11-09首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-09</p>]]>
+      </description>
+      
+        <category>AlexNet</category><category>CNN</category><category>代码实现</category><category>模型搭建</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>LeNet模型-模型代码搭建</title>
+      <link>http://localhost:1313/post/no.11/</link>
+      <pubDate>Sat, 08 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.11/</guid>
+      <description>
+        <![CDATA[<h1>LeNet模型-模型代码搭建</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="前言">
+<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
+前言
+</h3><p>这篇文章主要为LeNet模型的代码搭建，代码主要参考了炮哥带你学的视频，但是我自己也添加了一些注释，希望可以帮助到大家。
+代码运行的详细环境搭建可以参考炮哥的视频<a href="https://www.bilibili.com/video/BV1e34y1M7wR?spm_id_from=333.788.videopod.episodes&amp;vd_source=dd1d3ef45b7fa14b9604277983db3fc3&amp;p=22">代码环境搭建</a></p>
+        
+        <hr><p>本文2025-11-08首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-08</p>]]>
+      </description>
+      
+        <category>LeNet-5</category><category>CNN</category><category>代码实现</category><category>模型搭建</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -12,12 +12,65 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Mon, 10 Nov 2025 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 11 Nov 2025 15:00:00 +0800</lastBuildDate>
     
     
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>GoogleNet模型原理</title>
+      <link>http://localhost:1313/post/no.16/</link>
+      <pubDate>Tue, 11 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.16/</guid>
+      <description>
+        <![CDATA[<h1>GoogleNet模型原理</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="前言">
+<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
+前言
+</h3><p>关于训练代码，可以看之前LeNet-5模型的训练代码，GoogleNet模型的训练代码与LeNet模型的训练代码基本相同，只是模型不同。
+测试的代码也是基本相同，只是模型不同。</p>
+        
+        <hr><p>本文2025-11-11首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-11</p>]]>
+      </description>
+      
+        <category>GoogleNet</category><category>CNN</category><category>经典模型</category><category>模型搭建</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>GoogleNet模型原理</title>
+      <link>http://localhost:1313/post/no.15/</link>
+      <pubDate>Tue, 11 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.15/</guid>
+      <description>
+        <![CDATA[<h1>GoogleNet模型原理</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h4 id="googlenet诞生背景">
+<a class="header-anchor" href="#googlenet%e8%af%9e%e7%94%9f%e8%83%8c%e6%99%af"></a>
+GoogleNet诞生背景
+</h4><p><img src="/img/NO.15/%E5%9B%BE_01.png" alt=""></p>
+<p>GoogleNet的模型的诞生主要是为了解决卷积核大小的问题，早期的模型使用的卷积核大小都是比较大的，比如11x11、5x5等，
+而为了验证卷积核大小对模型的影响，GoogleNet创新型的使用了多个不同大小的卷积核，比如1x1、3x3、5x5等，
+让模型自己去选择合适的卷积核大小，去更新相关的参数，从而提高了模型的表达能力。
+而这个创新型的设计，也使得GoogleNet的模型在当时的时间点上，成为了一个比较有代表性的模型。
+这个块提出者将他命名为Inception块，因为这个块的设计灵感来自于电影《盗梦空间》中的场景，
+其中主角在梦境中被一个inception结构的神经网络所干扰，导致他的梦境被改变。</p>
+        
+        <hr><p>本文2025-11-11首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-11</p>]]>
+      </description>
+      
+        <category>GoogleNet</category><category>CNN</category><category>经典模型</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+      
+    </item>
     
     
 
@@ -43,6 +96,8 @@ VGG诞生背景
         <hr><p>本文2025-11-10首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-10</p>]]>
       </description>
       
+        <category>VGG</category><category>CNN</category><category>经典模型</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+      
     </item>
     
     
@@ -59,11 +114,13 @@ VGG诞生背景
           <h3 id="前言">
 <a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
 前言
-</h3><p>关于训练代码，可以看之前LeNet模型的训练代码，VGG模型的训练代码与LeNet模型的训练代码基本相同，只是模型不同。
+</h3><p>关于训练代码，可以看之前LeNet-5模型的训练代码，VGG模型的训练代码与LeNet模型的训练代码基本相同，只是模型不同。
 测试的代码也是基本相同，只是模型不同。</p>
         
         <hr><p>本文2025-11-10首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-10</p>]]>
       </description>
+      
+        <category>VGG</category><category>CNN</category><category>经典模型</category><category>模型搭建</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
       
     </item>
     
@@ -87,6 +144,8 @@ VGG诞生背景
         <hr><p>本文2025-11-09首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-09</p>]]>
       </description>
       
+        <category>AlexNet</category><category>CNN</category><category>代码实现</category><category>模型搭建</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+      
     </item>
     
     
@@ -108,6 +167,8 @@ VGG诞生背景
         
         <hr><p>本文2025-11-08首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-08</p>]]>
       </description>
+      
+        <category>LeNet-5</category><category>CNN</category><category>代码实现</category><category>模型搭建</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
       
     </item>
     
@@ -143,6 +204,8 @@ VGG诞生背景
         <hr><p>本文2025-11-08首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-08</p>]]>
       </description>
       
+        <category>LeNet-5</category><category>CNN</category><category>代码实现</category><category>模型测试</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+      
     </item>
     
     
@@ -165,7 +228,7 @@ VGG诞生背景
         <hr><p>本文2025-11-07首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-07</p>]]>
       </description>
       
-        <category>CNN</category><category>深度学习</category><category>代码实现</category><category>模型训练</category>
+        <category>LeNet-5</category><category>CNN</category><category>代码实现</category><category>模型训练</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
       
     </item>
     
@@ -190,7 +253,7 @@ VGG诞生背景
         <hr><p>本文2025-11-06首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-06</p>]]>
       </description>
       
-        <category>CNN</category><category>深度学习</category><category>经典模型</category>
+        <category>AlexNet</category><category>CNN</category><category>经典模型</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
       
     </item>
     
@@ -214,68 +277,7 @@ VGG诞生背景
         <hr><p>本文2025-11-06首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-06</p>]]>
       </description>
       
-        <category>CNN</category><category>深度学习</category><category>经典模型</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>CNN卷积神经网络算法原理：第三章</title>
-      <link>http://localhost:1313/post/no.6/</link>
-      <pubDate>Wed, 05 Nov 2025 15:00:00 &#43;0800</pubDate>
-      <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no.6/</guid>
-      <description>
-        <![CDATA[<h1>CNN卷积神经网络算法原理：第三章</h1><p>作者：落-luo（xxx@example.com）</p>
-        
-          <h3 id="图片在计算机中的本质">
-<a class="header-anchor" href="#%e5%9b%be%e7%89%87%e5%9c%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e4%b8%ad%e7%9a%84%e6%9c%ac%e8%b4%a8"></a>
-图片在计算机中的本质
-</h3><h4 id="单色图片">
-<a class="header-anchor" href="#%e5%8d%95%e8%89%b2%e5%9b%be%e7%89%87"></a>
-单色图片
-</h4><p><img src="/img/NO.6/%E5%9B%BE1.png" alt=""></p>
-<h4 id="彩色图片">
-<a class="header-anchor" href="#%e5%bd%a9%e8%89%b2%e5%9b%be%e7%89%87"></a>
-彩色图片
-</h4><p><img src="/img/NO.6/%E5%9B%BE2.png" alt=""></p>
-<p><span style="font-size: 20px;">其实从图片中我们可以看出，图片在计算机中的本质就是一个二维数组，每个元素就是一个像素点，每个像素点有三个通道，分别是RGB通道，每个通道的值范围是0-255，0表示该通道的亮度最低，255表示该通道的亮度最高。</span></p>
-        
-        <hr><p>本文2025-11-05首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-05</p>]]>
-      </description>
-      
-        <category>CNN</category><category>深度学习</category><category>神经网络</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>CNN卷积神经网络算法原理：第二章</title>
-      <link>http://localhost:1313/post/no.5/</link>
-      <pubDate>Tue, 04 Nov 2025 15:00:00 &#43;0800</pubDate>
-      <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no.5/</guid>
-      <description>
-        <![CDATA[<h1>CNN卷积神经网络算法原理：第二章</h1><p>作者：落-luo（xxx@example.com）</p>
-        
-          <h3 id="前向传播">
-<a class="header-anchor" href="#%e5%89%8d%e5%90%91%e4%bc%a0%e6%92%ad"></a>
-前向传播
-</h3><p><strong>如下图所示，这就是神经网络前向传播的计算过程</strong></p>
-<p><img src="/img/NO.5/%E5%9B%BE1.png" alt=""></p>
-<p><strong>而下图所示，是一个具体的前向传播计算过程</strong></p>
-<p><img src="/img/NO.5/%E5%9B%BE2.png" alt=""></p>
-<h3 id="损失函数">
-<a class="header-anchor" href="#%e6%8d%9f%e5%a4%b1%e5%87%bd%e6%95%b0"></a>
-损失函数
-</h3><p><strong>在神经网络中我们一般使用的是均方误差损失函数，公式如下：</strong></p>
-        
-        <hr><p>本文2025-11-04首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-04</p>]]>
-      </description>
-      
-        <category>CNN</category><category>深度学习</category><category>神经网络</category>
+        <category>LeNet-5</category><category>CNN</category><category>经典模型</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
       
     </item>
     

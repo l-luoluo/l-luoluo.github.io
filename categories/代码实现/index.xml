@@ -12,12 +12,96 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Fri, 07 Nov 2025 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Nov 2025 15:00:00 +0800</lastBuildDate>
     
     
     <atom:link href="http://localhost:1313/categories/%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>AlexNet模型-模型代码搭建</title>
+      <link>http://localhost:1313/post/no.12/</link>
+      <pubDate>Sun, 09 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.12/</guid>
+      <description>
+        <![CDATA[<h1>AlexNet模型-模型代码搭建</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="前言">
+<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
+前言
+</h3><p><span style="font-size: 20px;color: red;">之后的文章只会介绍模型的代码搭建，而训练代码和测试代码可以看前面LeNet模型的文章。
+里面有详细的代码，这里就不重复介绍了。</span></p>
+        
+        <hr><p>本文2025-11-09首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-09</p>]]>
+      </description>
+      
+        <category>AlexNet</category><category>CNN</category><category>代码实现</category><category>模型搭建</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>LeNet模型-模型代码搭建</title>
+      <link>http://localhost:1313/post/no.11/</link>
+      <pubDate>Sat, 08 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.11/</guid>
+      <description>
+        <![CDATA[<h1>LeNet模型-模型代码搭建</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="前言">
+<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
+前言
+</h3><p>这篇文章主要为LeNet模型的代码搭建，代码主要参考了炮哥带你学的视频，但是我自己也添加了一些注释，希望可以帮助到大家。
+代码运行的详细环境搭建可以参考炮哥的视频<a href="https://www.bilibili.com/video/BV1e34y1M7wR?spm_id_from=333.788.videopod.episodes&amp;vd_source=dd1d3ef45b7fa14b9604277983db3fc3&amp;p=22">代码环境搭建</a></p>
+        
+        <hr><p>本文2025-11-08首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-08</p>]]>
+      </description>
+      
+        <category>LeNet-5</category><category>CNN</category><category>代码实现</category><category>模型搭建</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>LeNet模型-测试代码搭建</title>
+      <link>http://localhost:1313/post/no.10/</link>
+      <pubDate>Sat, 08 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.10/</guid>
+      <description>
+        <![CDATA[<h1>LeNet模型-测试代码搭建</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="前言">
+<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
+前言
+</h3><p><strong>同样这一套的代码依旧是一套通用的代码，可以反复于其他模型的测试。</strong></p>
+<h3 id="测试代码搭建">
+<a class="header-anchor" href="#%e6%b5%8b%e8%af%95%e4%bb%a3%e7%a0%81%e6%90%ad%e5%bb%ba"></a>
+测试代码搭建
+</h3><h4 id="1-导入必要的库">
+<a class="header-anchor" href="#1-%e5%af%bc%e5%85%a5%e5%bf%85%e8%a6%81%e7%9a%84%e5%ba%93"></a>
+1. 导入必要的库
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.utils.data</span> <span class="k">as</span> <span class="nn">Data</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">transforms</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torchvision.datasets</span> <span class="kn">import</span> <span class="n">FashionMNIST</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">LeNet</span>
+</span></span></code></pre></div><p>同样的，这里的模型文件也需要和测试代码在同一个目录下，并且要和模型文件的文件名一致。
+可以参考</p>
+        
+        <hr><p>本文2025-11-08首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-08</p>]]>
+      </description>
+      
+        <category>LeNet-5</category><category>CNN</category><category>代码实现</category><category>模型测试</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+      
+    </item>
     
     
 
@@ -39,7 +123,7 @@
         <hr><p>本文2025-11-07首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-07</p>]]>
       </description>
       
-        <category>CNN</category><category>深度学习</category><category>代码实现</category><category>模型训练</category>
+        <category>LeNet-5</category><category>CNN</category><category>代码实现</category><category>模型训练</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
       
     </item>
     
@@ -110,7 +194,7 @@
         <hr><p>本文2025-11-02首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-02</p>]]>
       </description>
       
-        <category>线性回归</category><category>机器学习基础</category><category>代码实现</category>
+        <category>线性回归</category><category>代码实现</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
       
     </item>
     

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>算法原理 on 心有所向，日复一日，必有精进</title>
+    <link>http://localhost:1313/categories/%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/</link>
+    <description>Recent content from 心有所向，日复一日，必有精进</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    
+    <managingEditor>xxx@example.com (落-luo)</managingEditor>
+    <webMaster>xxx@example.com (落-luo)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Wed, 05 Nov 2025 15:00:00 +0800</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/categories/%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>CNN卷积神经网络算法原理：第三章</title>
+      <link>http://localhost:1313/post/no.6/</link>
+      <pubDate>Wed, 05 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.6/</guid>
+      <description>
+        <![CDATA[<h1>CNN卷积神经网络算法原理：第三章</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="图片在计算机中的本质">
+<a class="header-anchor" href="#%e5%9b%be%e7%89%87%e5%9c%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e4%b8%ad%e7%9a%84%e6%9c%ac%e8%b4%a8"></a>
+图片在计算机中的本质
+</h3><h4 id="单色图片">
+<a class="header-anchor" href="#%e5%8d%95%e8%89%b2%e5%9b%be%e7%89%87"></a>
+单色图片
+</h4><p><img src="/img/NO.6/%E5%9B%BE1.png" alt=""></p>
+<h4 id="彩色图片">
+<a class="header-anchor" href="#%e5%bd%a9%e8%89%b2%e5%9b%be%e7%89%87"></a>
+彩色图片
+</h4><p><img src="/img/NO.6/%E5%9B%BE2.png" alt=""></p>
+<p><span style="font-size: 20px;">其实从图片中我们可以看出，图片在计算机中的本质就是一个二维数组，每个元素就是一个像素点，每个像素点有三个通道，分别是RGB通道，每个通道的值范围是0-255，0表示该通道的亮度最低，255表示该通道的亮度最高。</span></p>
+        
+        <hr><p>本文2025-11-05首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-05</p>]]>
+      </description>
+      
+        <category>CNN</category><category>算法原理</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>CNN卷积神经网络算法原理：第二章</title>
+      <link>http://localhost:1313/post/no.5/</link>
+      <pubDate>Tue, 04 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.5/</guid>
+      <description>
+        <![CDATA[<h1>CNN卷积神经网络算法原理：第二章</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="前向传播">
+<a class="header-anchor" href="#%e5%89%8d%e5%90%91%e4%bc%a0%e6%92%ad"></a>
+前向传播
+</h3><p><strong>如下图所示，这就是神经网络前向传播的计算过程</strong></p>
+<p><img src="/img/NO.5/%E5%9B%BE1.png" alt=""></p>
+<p><strong>而下图所示，是一个具体的前向传播计算过程</strong></p>
+<p><img src="/img/NO.5/%E5%9B%BE2.png" alt=""></p>
+<h3 id="损失函数">
+<a class="header-anchor" href="#%e6%8d%9f%e5%a4%b1%e5%87%bd%e6%95%b0"></a>
+损失函数
+</h3><p><strong>在神经网络中我们一般使用的是均方误差损失函数，公式如下：</strong></p>
+        
+        <hr><p>本文2025-11-04首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-04</p>]]>
+      </description>
+      
+        <category>CNN</category><category>算法原理</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>CNN卷积神经网络算法原理：第一章</title>
+      <link>http://localhost:1313/post/no.4/</link>
+      <pubDate>Mon, 03 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.4/</guid>
+      <description>
+        <![CDATA[<h1>CNN卷积神经网络算法原理：第一章</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h4 id="全连接神经网络整体结构">
+<a class="header-anchor" href="#%e5%85%a8%e8%bf%9e%e6%8e%a5%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e6%95%b4%e4%bd%93%e7%bb%93%e6%9e%84"></a>
+全连接神经网络整体结构
+</h4><p>全连接神经网络的整体结构如下：</p>
+<p><img src="/img/NO.4/%E5%9B%BE1.png" alt=""></p>
+<p><img src="/img/NO.4/%E5%9B%BE2.png" alt=""></p>
+<p>上述图片就是一个全连接神经网络的整体结构，它基本上有以下几个部分：</p>
+<ol>
+<li>输入层：输入层主要是接收外部输入的数据</li>
+<li>隐藏层：隐藏层可以有多个，每个隐藏层由多个神经元组成，每个神经元接收来自上一层的所有节点的输入</li>
+<li>输出层：输出层的节点数等于分类的类别数，每个节点对应一个类别。</li>
+</ol>
+<h4 id="全连接神经网络的单元结构">
+<a class="header-anchor" href="#%e5%85%a8%e8%bf%9e%e6%8e%a5%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e7%9a%84%e5%8d%95%e5%85%83%e7%bb%93%e6%9e%84"></a>
+全连接神经网络的单元结构
+</h4><p>每个神经元的计算过程如下：</p>
+        
+        <hr><p>本文2025-11-03首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-03</p>]]>
+      </description>
+      
+        <category>CNN</category><category>算法原理</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+      
+    </item>
+    
+  </channel>
+</rss>
