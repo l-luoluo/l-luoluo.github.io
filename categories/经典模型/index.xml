@@ -23,30 +23,6 @@
 
     <item>
       <title>GoogleNet模型原理</title>
-      <link>http://localhost:1313/post/no.16/</link>
-      <pubDate>Tue, 11 Nov 2025 15:00:00 &#43;0800</pubDate>
-      <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no.16/</guid>
-      <description>
-        <![CDATA[<h1>GoogleNet模型原理</h1><p>作者：落-luo（xxx@example.com）</p>
-        
-          <h3 id="前言">
-<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
-前言
-</h3><p>关于训练代码，可以看之前LeNet-5模型的训练代码，GoogleNet模型的训练代码与LeNet模型的训练代码基本相同，只是模型不同。
-测试的代码也是基本相同，只是模型不同。</p>
-        
-        <hr><p>本文2025-11-11首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-11</p>]]>
-      </description>
-      
-        <category>GoogleNet</category><category>CNN</category><category>经典模型</category><category>模型搭建</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>GoogleNet模型原理</title>
       <link>http://localhost:1313/post/no.15/</link>
       <pubDate>Tue, 11 Nov 2025 15:00:00 &#43;0800</pubDate>
       <author>xxx@example.com (落-luo)</author>
@@ -68,7 +44,31 @@ GoogleNet诞生背景
         <hr><p>本文2025-11-11首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-11</p>]]>
       </description>
       
-        <category>GoogleNet</category><category>CNN</category><category>经典模型</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+        <category>GoogleNet</category><category>经典模型</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>GoogleNet模型搭建</title>
+      <link>http://localhost:1313/post/no.16/</link>
+      <pubDate>Tue, 11 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.16/</guid>
+      <description>
+        <![CDATA[<h1>GoogleNet模型搭建</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="前言">
+<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
+前言
+</h3><p>关于训练代码，可以看之前LeNet-5模型的训练代码，GoogleNet模型的训练代码与LeNet模型的训练代码基本相同，只是模型不同。
+测试的代码也是基本相同，只是模型不同。</p>
+        
+        <hr><p>本文2025-11-11首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-11</p>]]>
+      </description>
+      
+        <category>GoogleNet</category><category>经典模型</category><category>模型搭建</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
       
     </item>
     
@@ -96,7 +96,7 @@ VGG诞生背景
         <hr><p>本文2025-11-10首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-10</p>]]>
       </description>
       
-        <category>VGG</category><category>CNN</category><category>经典模型</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+        <category>VGG</category><category>经典模型</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
       
     </item>
     
@@ -120,7 +120,7 @@ VGG诞生背景
         <hr><p>本文2025-11-10首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-10</p>]]>
       </description>
       
-        <category>VGG</category><category>CNN</category><category>经典模型</category><category>模型搭建</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+        <category>VGG</category><category>经典模型</category><category>模型搭建</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
       
     </item>
     
@@ -145,7 +145,7 @@ VGG诞生背景
         <hr><p>本文2025-11-06首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-06</p>]]>
       </description>
       
-        <category>AlexNet</category><category>CNN</category><category>经典模型</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+        <category>AlexNet</category><category>经典模型</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
       
     </item>
     
@@ -169,7 +169,7 @@ VGG诞生背景
         <hr><p>本文2025-11-06首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-06</p>]]>
       </description>
       
-        <category>LeNet-5</category><category>CNN</category><category>经典模型</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+        <category>LeNet-5</category><category>经典模型</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
       
     </item>
     

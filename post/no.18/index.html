@@ -8,7 +8,7 @@
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
 /><title>
-  LeNet模型-训练代码搭建 | 落-luo
+  GoogleNet模型实践——猫狗分类.2 | 落-luo
 </title>
 <meta
   name="description"
@@ -37,12 +37,12 @@
     crossorigin="anonymous"
   /><link rel="stylesheet" href="/css/loader.css" />
 <meta property="og:type" content="website" />
-  <meta property="og:title" content="LeNet模型-训练代码搭建 | 落-luo" />
+  <meta property="og:title" content="GoogleNet模型实践——猫狗分类.2 | 落-luo" />
   <meta
     property="og:description"
     content="文中所有所用资料均来自bilibli的up主：炮哥带你学"
   />
-  <meta property="og:url" content="http://localhost:1313/post/no.9/" />
+  <meta property="og:url" content="http://localhost:1313/post/no.18/" />
   <meta
     property="og:site_name"
     content="心有所向，日复一日，必有精进"
@@ -52,8 +52,8 @@
     content="/"
   />
   <meta property="article:author" content="落-luo" />
-  <meta property="article:published_time" content="2025-11-07T15:00:00&#43;08:00" />
-  <meta property="article:modified_time" content="2025-11-07T15:00:00&#43;08:00" /><meta name="twitter:card" content="summary" />
+  <meta property="article:published_time" content="2025-11-12T15:00:00&#43;08:00" />
+  <meta property="article:modified_time" content="2025-11-12T15:00:00&#43;08:00" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/" />
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.css" />
 <link
@@ -181,9 +181,9 @@
         });
       </script>
     </nav></div>
-<header id="header" aria-label="Site header"><picture></picture><img crossorigin="anonymous" fetchpriority="high" src="/images/banner1.webp" alt="LeNet模型-训练代码搭建"><div id="header-outer">
+<header id="header" aria-label="Site header"><picture></picture><img crossorigin="anonymous" fetchpriority="high" src="/images/banner1.webp" alt="GoogleNet模型实践——猫狗分类.2"><div id="header-outer">
     <div id="header-title"><span id="logo">
-            <h1 data-aos="slide-up">LeNet模型-训练代码搭建</h1>
+            <h1 data-aos="slide-up">GoogleNet模型实践——猫狗分类.2</h1>
           </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
   </div>
 </header><div id="content"
@@ -200,8 +200,8 @@
     <li>
       <ul>
         <li><a href="#前言">前言</a></li>
-        <li><a href="#代码搭建">代码搭建</a></li>
-        <li><a href="#完整代码展示">完整代码展示</a></li>
+        <li><a href="#训练代码">训练代码</a></li>
+        <li><a href="#完整代码">完整代码</a></li>
       </ul>
     </li>
   </ul>
@@ -284,28 +284,28 @@
     class="article-date-link icon-calendar"
     data-aos="zoom-in"
   >
-    <time datetime="2025-11-07 15:00:00 &#43;0800 CST" itemprop="datePublished"
-      >2025-11-07</time
+    <time datetime="2025-11-12 15:00:00 &#43;0800 CST" itemprop="datePublished"
+      >2025-11-12</time
     >
     <time style="display: none;" id="post-update-time"
-      >2025-11-07</time
+      >2025-11-12</time
     >
   </span></div>
 <div class="article-category"><a
       class="article-category-link"
-      href="/categories/lenet-5"
+      href="/categories/googlenet"
       data-aos="zoom-in"
-      >LENET-5</a
+      >GOOGLENET</a
     ><a
       class="article-category-link"
-      href="/categories/%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0"
+      href="/categories/%e6%a8%a1%e5%9e%8b%e5%ae%9e%e8%b7%b5"
       data-aos="zoom-in"
-      >代码实现</a
+      >模型实践</a
     ><a
       class="article-category-link"
-      href="/categories/%e6%a8%a1%e5%9e%8b%e8%ae%ad%e7%bb%83"
+      href="/categories/%e6%a8%a1%e5%9e%8b%e6%90%ad%e5%bb%ba"
       data-aos="zoom-in"
-      >模型训练</a
+      >模型搭建</a
     ><a
       class="article-category-link"
       href="/categories/%e7%82%ae%e5%93%a5%e5%b8%a6%e4%bd%a0%e5%ad%a6"
@@ -320,210 +320,200 @@
 </div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h3 id="前言">
 <a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
 前言
-</h3><p>本片文章主要是通用的模型训练代码搭建，这个代码搭建完成后，我们就可以直接使用这个代码来训练我们的模型了。
-而且后面的模型都可以复用这一套的代码，只需要修改一下模型的参数即可。</p>
-<h3 id="代码搭建">
-<a class="header-anchor" href="#%e4%bb%a3%e7%a0%81%e6%90%ad%e5%bb%ba"></a>
-代码搭建
-</h3><h4 id="1导入必要的库">
-<a class="header-anchor" href="#1%e5%af%bc%e5%85%a5%e5%bf%85%e8%a6%81%e7%9a%84%e5%ba%93"></a>
-1.导入必要的库
-</h4><p>在这一步中，我们需要导入一些必要的库，这些库包括：</p>
-<ul>
-<li>copy：用于复制对象</li>
-<li>time：用于计算时间</li>
-<li>torch：用于深度学习</li>
-<li>torchvision：用于处理图像数据</li>
-<li>numpy：用于数值计算</li>
-<li>matplotlib：用于数据可视化</li>
-<li>modle：用于导入模型</li>
-<li>torch.nn：用于定义神经网络层</li>
-<li>pandas：用于数据处理</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">copy</span>
+</h3><p>这篇文章主要是关于猫狗分类的详细的训练代码,关于模型的代码还是沿用前面的GoogleNet模型，
+其实训练代码和前面的文章是差不多的，只是修改了部分参数。</p>
+<h3 id="训练代码">
+<a class="header-anchor" href="#%e8%ae%ad%e7%bb%83%e4%bb%a3%e7%a0%81"></a>
+训练代码
+</h3><h4 id="1-导入必要的库">
+<a class="header-anchor" href="#1-%e5%af%bc%e5%85%a5%e5%bf%85%e8%a6%81%e7%9a%84%e5%ba%93"></a>
+1. 导入必要的库
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">copy</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
-</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torchvision.datasets</span> <span class="kn">import</span> <span class="n">FashionMNIST</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torchvision.datasets</span> <span class="kn">import</span> <span class="n">ImageFolder</span>
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">transforms</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.utils.data</span> <span class="k">as</span> <span class="nn">Data</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">LeNet</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">GoogLeNet</span><span class="p">,</span><span class="n">Inception</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</span></span></code></pre></div><p><span style="font-size: 20px; color: red;">有关库的导入这里其中有一个库是model，这个是我们搭建模型时自己创建的一个文件，所以在引入的时候要和模型文件在同一个目录下，并且要和模型文件的文件名一致。</span>
-<span style="font-size: 20px; color: red;">就像时我的模型文件是model.py，所以在引入的时候要写</span></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">LeNet</span>
-</span></span></code></pre></div><p>而你们的就是</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">你模型的文件名</span> <span class="kn">import</span> <span class="n">LeNet</span>
-</span></span></code></pre></div><h4 id="2-数据处理">
-<a class="header-anchor" href="#2-%e6%95%b0%e6%8d%ae%e5%a4%84%e7%90%86"></a>
-2. 数据处理
-</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">train_val_data_process</span><span class="p">():</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 从FashionMNIST中导入训练数据，将数据转换为227*227的大小，同时将数据转换为tensor类型</span>
-</span></span><span class="line"><span class="cl">    <span class="n">train_data</span> <span class="o">=</span> <span class="n">FashionMNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                              <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                              <span class="n">transform</span><span class="o">=</span><span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">227</span><span class="p">),</span> <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">()]),</span>
-</span></span><span class="line"><span class="cl">                              <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 划分训练集和验证集，训练集占80%，验证集占20%</span>
+</span></span></code></pre></div><h4 id="2-数据预处理">
+<a class="header-anchor" href="#2-%e6%95%b0%e6%8d%ae%e9%a2%84%e5%a4%84%e7%90%86"></a>
+2. 数据预处理
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 定义数据集路径</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ROOT_TRAIN</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;data\train&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">normalize</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="p">[</span><span class="mf">0.162</span><span class="p">,</span> <span class="mf">0.151</span><span class="p">,</span> <span class="mf">0.138</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">                                     <span class="n">std</span><span class="o">=</span><span class="p">[</span><span class="mf">0.058</span><span class="p">,</span> <span class="mf">0.052</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 定义数据集处理方法变量</span>
+</span></span><span class="line"><span class="cl">    <span class="n">train_transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">((</span><span class="mi">224</span><span class="p">,</span><span class="mi">224</span><span class="p">)),</span> <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span><span class="n">normalize</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 加载数据集</span>
+</span></span><span class="line"><span class="cl">    <span class="n">train_data</span> <span class="o">=</span> <span class="n">ImageFolder</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="n">ROOT_TRAIN</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">train_transform</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">train_data</span><span class="p">,</span> <span class="n">val_data</span> <span class="o">=</span> <span class="n">Data</span><span class="o">.</span><span class="n">random_split</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="mf">0.8</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">train_data</span><span class="p">)),</span> <span class="nb">round</span><span class="p">(</span><span class="mf">0.2</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">train_data</span><span class="p">))])</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 划分训练集数据的批次大小，每个批次32个样本</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">train_dataloader</span> <span class="o">=</span> <span class="n">Data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">train_data</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                                       <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                       <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">                                       <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                                       <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 划分验证集数据的批次大小</span>
+</span></span><span class="line"><span class="cl">                                       <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">val_dataloader</span> <span class="o">=</span> <span class="n">Data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">val_data</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                                       <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                       <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">                                       <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                                       <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 返回训练集和验证集的dataloader</span>
+</span></span><span class="line"><span class="cl">                                       <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">train_dataloader</span><span class="p">,</span> <span class="n">val_dataloader</span>
-</span></span></code></pre></div><h4 id="3-模型训练">
-<a class="header-anchor" href="#3-%e6%a8%a1%e5%9e%8b%e8%ae%ad%e7%bb%83"></a>
-3. 模型训练
+</span></span></code></pre></div><p>这里与前面的文章不同的是，我们将数据集的来源由FashionMNIST改为了我们自己的数据集。
+并对数据集进行了预处理，其他部分与前面的文章相同。</p>
+<ul>
+<li>ROOT_TRAIN ：数据集的路径，这里我将数据集放在了data\train文件夹下，你们如果也是用之前的那个脚本进行的分类，
+那么数据集的路径也应该是data\train。</li>
+<li>normalize ：归一化操作，这里我用的是之前的那个脚本中计算得到的均值和标准差。
+也就是运行前一篇文章中的第二个代码块中计算得到的结果。将结果填入normalize中。</li>
+</ul>
+<h4 id="3模型训练">
+<a class="header-anchor" href="#3%e6%a8%a1%e5%9e%8b%e8%ae%ad%e7%bb%83"></a>
+3.模型训练
 </h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">train_model_process</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">train_dataloader</span><span class="p">,</span> <span class="n">val_dataloader</span><span class="p">,</span> <span class="n">num_epochs</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 设定训练所用到的设备，有GPU用GPU没有GPU用CPU</span>
-</span></span><span class="line"><span class="cl">    <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&#34;cuda&#34;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&#34;cpu&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 使用Adam优化器，学习率为0.001</span>
-</span></span><span class="line"><span class="cl">    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 损失函数为交叉熵函数</span>
-</span></span><span class="line"><span class="cl">    <span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 将模型放入到训练设备中</span>
-</span></span><span class="line"><span class="cl">    <span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 复制当前模型的参数</span>
-</span></span><span class="line"><span class="cl">    <span class="n">best_model_wts</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">   <span class="c1"># 设定训练所用到的设备，有GPU用GPU没有GPU用CPU</span>
+</span></span><span class="line"><span class="cl">   <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&#34;cuda&#34;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&#34;cpu&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="c1"># 使用Adam优化器，学习率为0.001</span>
+</span></span><span class="line"><span class="cl">   <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="c1"># 损失函数为交叉熵函数</span>
+</span></span><span class="line"><span class="cl">   <span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">   <span class="c1"># 将模型放入到训练设备中</span>
+</span></span><span class="line"><span class="cl">   <span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="c1"># 复制当前模型的参数</span>
+</span></span><span class="line"><span class="cl">   <span class="n">best_model_wts</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1"># 初始化参数</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 最高准确度</span>
-</span></span><span class="line"><span class="cl">    <span class="n">best_acc</span> <span class="o">=</span> <span class="mf">0.0</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 训练集损失列表</span>
-</span></span><span class="line"><span class="cl">    <span class="n">train_loss_all</span> <span class="o">=</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 验证集损失列表</span>
-</span></span><span class="line"><span class="cl">    <span class="n">val_loss_all</span> <span class="o">=</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 训练集准确度列表</span>
-</span></span><span class="line"><span class="cl">    <span class="n">train_acc_all</span> <span class="o">=</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 验证集准确度列表</span>
-</span></span><span class="line"><span class="cl">    <span class="n">val_acc_all</span> <span class="o">=</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 当前时间</span>
-</span></span><span class="line"><span class="cl">    <span class="n">since</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">   <span class="c1"># 初始化参数</span>
+</span></span><span class="line"><span class="cl">   <span class="c1"># 最高准确度</span>
+</span></span><span class="line"><span class="cl">   <span class="n">best_acc</span> <span class="o">=</span> <span class="mf">0.0</span>
+</span></span><span class="line"><span class="cl">   <span class="c1"># 训练集损失列表</span>
+</span></span><span class="line"><span class="cl">   <span class="n">train_loss_all</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">   <span class="c1"># 验证集损失列表</span>
+</span></span><span class="line"><span class="cl">   <span class="n">val_loss_all</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">   <span class="c1"># 训练集准确度列表</span>
+</span></span><span class="line"><span class="cl">   <span class="n">train_acc_all</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">   <span class="c1"># 验证集准确度列表</span>
+</span></span><span class="line"><span class="cl">   <span class="n">val_acc_all</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">   <span class="c1"># 当前时间</span>
+</span></span><span class="line"><span class="cl">   <span class="n">since</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Epoch </span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;-&#34;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">       <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Epoch </span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">       <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;-&#34;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1"># 初始化参数</span>
-</span></span><span class="line"><span class="cl">        <span class="c1"># 训练集损失函数</span>
-</span></span><span class="line"><span class="cl">        <span class="n">train_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
-</span></span><span class="line"><span class="cl">        <span class="c1"># 训练集准确度</span>
-</span></span><span class="line"><span class="cl">        <span class="n">train_corrects</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">        <span class="c1"># 验证集损失函数</span>
-</span></span><span class="line"><span class="cl">        <span class="n">val_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
-</span></span><span class="line"><span class="cl">        <span class="c1"># 验证集准确度</span>
-</span></span><span class="line"><span class="cl">        <span class="n">val_corrects</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">        <span class="c1"># 训练集样本数量</span>
-</span></span><span class="line"><span class="cl">        <span class="n">train_num</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">        <span class="c1"># 验证集样本数量</span>
-</span></span><span class="line"><span class="cl">        <span class="n">val_num</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">       <span class="c1"># 初始化参数</span>
+</span></span><span class="line"><span class="cl">       <span class="c1"># 训练集损失函数</span>
+</span></span><span class="line"><span class="cl">       <span class="n">train_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+</span></span><span class="line"><span class="cl">       <span class="c1"># 训练集准确度</span>
+</span></span><span class="line"><span class="cl">       <span class="n">train_corrects</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">       <span class="c1"># 验证集损失函数</span>
+</span></span><span class="line"><span class="cl">       <span class="n">val_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+</span></span><span class="line"><span class="cl">       <span class="c1"># 验证集准确度</span>
+</span></span><span class="line"><span class="cl">       <span class="n">val_corrects</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">       <span class="c1"># 训练集样本数量</span>
+</span></span><span class="line"><span class="cl">       <span class="n">train_num</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">       <span class="c1"># 验证集样本数量</span>
+</span></span><span class="line"><span class="cl">       <span class="n">val_num</span> <span class="o">=</span> <span class="mi">0</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1"># 对每一个mini-batch训练和计算</span>
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">step</span><span class="p">,</span> <span class="p">(</span><span class="n">b_x</span><span class="p">,</span> <span class="n">b_y</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 将特征放入到训练设备中</span>
-</span></span><span class="line"><span class="cl">            <span class="n">b_x</span> <span class="o">=</span> <span class="n">b_x</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 将标签放入到训练设备中</span>
-</span></span><span class="line"><span class="cl">            <span class="n">b_y</span> <span class="o">=</span> <span class="n">b_y</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 设置模型为训练模式</span>
-</span></span><span class="line"><span class="cl">            <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">       <span class="c1"># 对每一个mini-batch训练和计算</span>
+</span></span><span class="line"><span class="cl">       <span class="k">for</span> <span class="n">step</span><span class="p">,</span> <span class="p">(</span><span class="n">b_x</span><span class="p">,</span> <span class="n">b_y</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 将特征放入到训练设备中</span>
+</span></span><span class="line"><span class="cl">           <span class="n">b_x</span> <span class="o">=</span> <span class="n">b_x</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 将标签放入到训练设备中</span>
+</span></span><span class="line"><span class="cl">           <span class="n">b_y</span> <span class="o">=</span> <span class="n">b_y</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 设置模型为训练模式</span>
+</span></span><span class="line"><span class="cl">           <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="c1"># 前向传播过程，输入为一个batch，输出为一个batch中对应的预测</span>
-</span></span><span class="line"><span class="cl">            <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">b_x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 查找每一行中最大值对应的行标</span>
-</span></span><span class="line"><span class="cl">            <span class="n">pre_lab</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 计算每一个batch的损失函数</span>
-</span></span><span class="line"><span class="cl">            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">b_y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 前向传播过程，输入为一个batch，输出为一个batch中对应的预测</span>
+</span></span><span class="line"><span class="cl">           <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">b_x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 查找每一行中最大值对应的行标</span>
+</span></span><span class="line"><span class="cl">           <span class="n">pre_lab</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 计算每一个batch的损失函数</span>
+</span></span><span class="line"><span class="cl">           <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">b_y</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="c1"># 将梯度初始化为0</span>
-</span></span><span class="line"><span class="cl">            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 反向传播计算</span>
-</span></span><span class="line"><span class="cl">            <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 根据网络反向传播的梯度信息来更新网络的参数，以起到降低loss函数计算值的作用</span>
-</span></span><span class="line"><span class="cl">            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 对损失函数进行累加</span>
-</span></span><span class="line"><span class="cl">            <span class="n">train_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">*</span> <span class="n">b_x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 如果预测正确，则准确度train_corrects加1</span>
-</span></span><span class="line"><span class="cl">            <span class="n">train_corrects</span> <span class="o">+=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">pre_lab</span> <span class="o">==</span> <span class="n">b_y</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 当前用于训练的样本数量</span>
-</span></span><span class="line"><span class="cl">            <span class="n">train_num</span> <span class="o">+=</span> <span class="n">b_x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">step</span><span class="p">,</span> <span class="p">(</span><span class="n">b_x</span><span class="p">,</span> <span class="n">b_y</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">val_dataloader</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 将特征放入到验证设备中</span>
-</span></span><span class="line"><span class="cl">            <span class="n">b_x</span> <span class="o">=</span> <span class="n">b_x</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 将标签放入到验证设备中</span>
-</span></span><span class="line"><span class="cl">            <span class="n">b_y</span> <span class="o">=</span> <span class="n">b_y</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 设置模型为评估模式</span>
-</span></span><span class="line"><span class="cl">            <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 前向传播过程，输入为一个batch，输出为一个batch中对应的预测</span>
-</span></span><span class="line"><span class="cl">            <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">b_x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 查找每一行中最大值对应的行标</span>
-</span></span><span class="line"><span class="cl">            <span class="n">pre_lab</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 计算每一个batch的损失函数</span>
-</span></span><span class="line"><span class="cl">            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">b_y</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="c1"># 对损失函数进行累加</span>
-</span></span><span class="line"><span class="cl">            <span class="n">val_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">*</span> <span class="n">b_x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 如果预测正确，则准确度train_corrects加1</span>
-</span></span><span class="line"><span class="cl">            <span class="n">val_corrects</span> <span class="o">+=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">pre_lab</span> <span class="o">==</span> <span class="n">b_y</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 当前用于验证的样本数量</span>
-</span></span><span class="line"><span class="cl">            <span class="n">val_num</span> <span class="o">+=</span> <span class="n">b_x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1"># 计算并保存每一次迭代的loss值和准确率</span>
-</span></span><span class="line"><span class="cl">        <span class="c1"># 计算并保存训练集的loss值</span>
-</span></span><span class="line"><span class="cl">        <span class="n">train_loss_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_loss</span> <span class="o">/</span> <span class="n">train_num</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="c1"># 计算并保存训练集的准确率</span>
-</span></span><span class="line"><span class="cl">        <span class="n">train_acc_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_corrects</span><span class="o">.</span><span class="n">double</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">/</span> <span class="n">train_num</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1"># 计算并保存验证集的loss值</span>
-</span></span><span class="line"><span class="cl">        <span class="n">val_loss_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val_loss</span> <span class="o">/</span> <span class="n">val_num</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="c1"># 计算并保存验证集的准确率</span>
-</span></span><span class="line"><span class="cl">        <span class="n">val_acc_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val_corrects</span><span class="o">.</span><span class="n">double</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">/</span> <span class="n">val_num</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">{}</span><span class="s2"> train loss:</span><span class="si">{:.4f}</span><span class="s2"> train acc: </span><span class="si">{:.4f}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">train_loss_all</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">train_acc_all</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">{}</span><span class="s2"> val loss:</span><span class="si">{:.4f}</span><span class="s2"> val acc: </span><span class="si">{:.4f}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">val_loss_all</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">val_acc_all</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">val_acc_all</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">best_acc</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 保存当前最高准确度</span>
-</span></span><span class="line"><span class="cl">            <span class="n">best_acc</span> <span class="o">=</span> <span class="n">val_acc_all</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 保存当前最高准确度的模型参数</span>
-</span></span><span class="line"><span class="cl">            <span class="n">best_model_wts</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1"># 计算训练和验证的耗时</span>
-</span></span><span class="line"><span class="cl">        <span class="n">time_use</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">since</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;训练和验证耗费的时间</span><span class="si">{:.0f}</span><span class="s2">m</span><span class="si">{:.0f}</span><span class="s2">s&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time_use</span><span class="o">//</span><span class="mi">60</span><span class="p">,</span> <span class="n">time_use</span><span class="o">%</span><span class="mi">60</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1"># 选择最优参数，保存最优参数的模型</span>
-</span></span><span class="line"><span class="cl">    <span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">best_model_wts</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">best_model_wts</span><span class="p">,</span> <span class="s2">&#34;C:/code/test/AlexNet/best_model.pth&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 将梯度初始化为0</span>
+</span></span><span class="line"><span class="cl">           <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 反向传播计算</span>
+</span></span><span class="line"><span class="cl">           <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 根据网络反向传播的梯度信息来更新网络的参数，以起到降低loss函数计算值的作用</span>
+</span></span><span class="line"><span class="cl">           <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 对损失函数进行累加</span>
+</span></span><span class="line"><span class="cl">           <span class="n">train_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">*</span> <span class="n">b_x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 如果预测正确，则准确度train_corrects加1</span>
+</span></span><span class="line"><span class="cl">           <span class="n">train_corrects</span> <span class="o">+=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">pre_lab</span> <span class="o">==</span> <span class="n">b_y</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 当前用于训练的样本数量</span>
+</span></span><span class="line"><span class="cl">           <span class="n">train_num</span> <span class="o">+=</span> <span class="n">b_x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">       <span class="k">for</span> <span class="n">step</span><span class="p">,</span> <span class="p">(</span><span class="n">b_x</span><span class="p">,</span> <span class="n">b_y</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">val_dataloader</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 将特征放入到验证设备中</span>
+</span></span><span class="line"><span class="cl">           <span class="n">b_x</span> <span class="o">=</span> <span class="n">b_x</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 将标签放入到验证设备中</span>
+</span></span><span class="line"><span class="cl">           <span class="n">b_y</span> <span class="o">=</span> <span class="n">b_y</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 设置模型为评估模式</span>
+</span></span><span class="line"><span class="cl">           <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 前向传播过程，输入为一个batch，输出为一个batch中对应的预测</span>
+</span></span><span class="line"><span class="cl">           <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">b_x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 查找每一行中最大值对应的行标</span>
+</span></span><span class="line"><span class="cl">           <span class="n">pre_lab</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 计算每一个batch的损失函数</span>
+</span></span><span class="line"><span class="cl">           <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">b_y</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">train_process</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;epoch&#34;</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">                                       <span class="s2">&#34;train_loss_all&#34;</span><span class="p">:</span><span class="n">train_loss_all</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                                       <span class="s2">&#34;val_loss_all&#34;</span><span class="p">:</span><span class="n">val_loss_all</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                                       <span class="s2">&#34;train_acc_all&#34;</span><span class="p">:</span><span class="n">train_acc_all</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                                       <span class="s2">&#34;val_acc_all&#34;</span><span class="p">:</span><span class="n">val_acc_all</span><span class="p">,})</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 对损失函数进行累加</span>
+</span></span><span class="line"><span class="cl">           <span class="n">val_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">*</span> <span class="n">b_x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 如果预测正确，则准确度train_corrects加1</span>
+</span></span><span class="line"><span class="cl">           <span class="n">val_corrects</span> <span class="o">+=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">pre_lab</span> <span class="o">==</span> <span class="n">b_y</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 当前用于验证的样本数量</span>
+</span></span><span class="line"><span class="cl">           <span class="n">val_num</span> <span class="o">+=</span> <span class="n">b_x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">train_process</span>
-</span></span></code></pre></div><p><span style="font-size: 25px;">里面有一个代码是</span></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">torch.save(best_model_wts, &#34;C:/code/test/AlexNet/best_model.pth&#34;)
-</span></span></code></pre></div><p><span style="font-size: 20px;">这行代码的作用是将模型的最优参数保存到一个文件中，方便后续的测试和使用。</span>
-<span style="font-size: 20px;">这里的路径需要该为你自己的路径，我这里是C:/code/test/AlexNet/best_model.pth，你需要根据你自己的路径来修改。</span>
-<span style="font-size: 20px;">但最好不要有中文路径，不然会报错。</span></p>
-<h4 id="4模型结果可视化">
-<a class="header-anchor" href="#4%e6%a8%a1%e5%9e%8b%e7%bb%93%e6%9e%9c%e5%8f%af%e8%a7%86%e5%8c%96"></a>
-4.模型结果可视化
-</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">matplot_acc_loss</span><span class="p">(</span><span class="n">train_process</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">       <span class="c1"># 计算并保存每一次迭代的loss值和准确率</span>
+</span></span><span class="line"><span class="cl">       <span class="c1"># 计算并保存训练集的loss值</span>
+</span></span><span class="line"><span class="cl">       <span class="n">train_loss_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_loss</span> <span class="o">/</span> <span class="n">train_num</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">       <span class="c1"># 计算并保存训练集的准确率</span>
+</span></span><span class="line"><span class="cl">       <span class="n">train_acc_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_corrects</span><span class="o">.</span><span class="n">double</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">/</span> <span class="n">train_num</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="c1"># 计算并保存验证集的loss值</span>
+</span></span><span class="line"><span class="cl">       <span class="n">val_loss_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val_loss</span> <span class="o">/</span> <span class="n">val_num</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">       <span class="c1"># 计算并保存验证集的准确率</span>
+</span></span><span class="line"><span class="cl">       <span class="n">val_acc_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val_corrects</span><span class="o">.</span><span class="n">double</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">/</span> <span class="n">val_num</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">{}</span><span class="s2"> train loss:</span><span class="si">{:.4f}</span><span class="s2"> train acc: </span><span class="si">{:.4f}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">train_loss_all</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">train_acc_all</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">       <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">{}</span><span class="s2"> val loss:</span><span class="si">{:.4f}</span><span class="s2"> val acc: </span><span class="si">{:.4f}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">val_loss_all</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">val_acc_all</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="k">if</span> <span class="n">val_acc_all</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">best_acc</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 保存当前最高准确度</span>
+</span></span><span class="line"><span class="cl">           <span class="n">best_acc</span> <span class="o">=</span> <span class="n">val_acc_all</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">           <span class="c1"># 保存当前最高准确度的模型参数</span>
+</span></span><span class="line"><span class="cl">           <span class="n">best_model_wts</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="c1"># 计算训练和验证的耗时</span>
+</span></span><span class="line"><span class="cl">       <span class="n">time_use</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">since</span>
+</span></span><span class="line"><span class="cl">       <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;训练和验证耗费的时间</span><span class="si">{:.0f}</span><span class="s2">m</span><span class="si">{:.0f}</span><span class="s2">s&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time_use</span><span class="o">//</span><span class="mi">60</span><span class="p">,</span> <span class="n">time_use</span><span class="o">%</span><span class="mi">60</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="c1"># 选择最优参数，保存最优参数的模型</span>
+</span></span><span class="line"><span class="cl">   <span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">best_model_wts</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">best_model_wts</span><span class="p">,</span> <span class="s2">&#34;C:/code/test/GoogLeNet_1/best_model.pth&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="n">train_process</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;epoch&#34;</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                      <span class="s2">&#34;train_loss_all&#34;</span><span class="p">:</span><span class="n">train_loss_all</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                      <span class="s2">&#34;val_loss_all&#34;</span><span class="p">:</span><span class="n">val_loss_all</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                      <span class="s2">&#34;train_acc_all&#34;</span><span class="p">:</span><span class="n">train_acc_all</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                      <span class="s2">&#34;val_acc_all&#34;</span><span class="p">:</span><span class="n">val_acc_all</span><span class="p">,})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="n">train_process</span>
+</span></span></code></pre></div><h4 id="4模型的可视化">
+<a class="header-anchor" href="#4%e6%a8%a1%e5%9e%8b%e7%9a%84%e5%8f%af%e8%a7%86%e5%8c%96"></a>
+4.模型的可视化
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">matplot_acc_loss</span><span class="p">(</span><span class="n">train_process</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># 显示每一次迭代后的训练集和验证集的损失函数和准确率</span>
 </span></span><span class="line"><span class="cl">    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -539,54 +529,63 @@
 </span></span><span class="line"><span class="cl">    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&#34;acc&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</span></span></code></pre></div><h4 id="5模型的运行">
-<a class="header-anchor" href="#5%e6%a8%a1%e5%9e%8b%e7%9a%84%e8%bf%90%e8%a1%8c"></a>
-5.模型的运行
-</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span></code></pre></div><h5 id="5-代码测试">
+<a class="header-anchor" href="#5-%e4%bb%a3%e7%a0%81%e6%b5%8b%e8%af%95"></a>
+5. 代码测试
+</h5><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># 加载需要的模型</span>
-</span></span><span class="line"><span class="cl">    <span class="n">LeNet</span> <span class="o">=</span> <span class="n">LeNet</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">GoogLeNet</span> <span class="o">=</span> <span class="n">GoogLeNet</span><span class="p">(</span><span class="n">Inception</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># 加载数据集</span>
 </span></span><span class="line"><span class="cl">    <span class="n">train_data</span><span class="p">,</span> <span class="n">val_data</span> <span class="o">=</span> <span class="n">train_val_data_process</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># 利用现有的模型进行模型的训练</span>
-</span></span><span class="line"><span class="cl">    <span class="n">train_process</span> <span class="o">=</span> <span class="n">train_model_process</span><span class="p">(</span><span class="n">LeNet</span><span class="p">,</span> <span class="n">train_data</span><span class="p">,</span> <span class="n">val_data</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">train_process</span> <span class="o">=</span> <span class="n">train_model_process</span><span class="p">(</span><span class="n">GoogLeNet</span><span class="p">,</span> <span class="n">train_data</span><span class="p">,</span> <span class="n">val_data</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">matplot_acc_loss</span><span class="p">(</span><span class="n">train_process</span><span class="p">)</span>
-</span></span></code></pre></div><h3 id="完整代码展示">
-<a class="header-anchor" href="#%e5%ae%8c%e6%95%b4%e4%bb%a3%e7%a0%81%e5%b1%95%e7%a4%ba"></a>
-完整代码展示
-</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">copy</span>
+</span></span><span class="line"><span class="cl">    
+</span></span></code></pre></div><h3 id="完整代码">
+<a class="header-anchor" href="#%e5%ae%8c%e6%95%b4%e4%bb%a3%e7%a0%81"></a>
+完整代码
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">copy</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torchvision.datasets</span> <span class="kn">import</span> <span class="n">FashionMNIST</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torchvision.datasets</span> <span class="kn">import</span> <span class="n">ImageFolder</span>
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">transforms</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.utils.data</span> <span class="k">as</span> <span class="nn">Data</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">LeNet</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">GoogLeNet</span><span class="p">,</span><span class="n">Inception</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">train_val_data_process</span><span class="p">():</span>
-</span></span><span class="line"><span class="cl">    <span class="n">train_data</span> <span class="o">=</span> <span class="n">FashionMNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                              <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                              <span class="n">transform</span><span class="o">=</span><span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">227</span><span class="p">),</span> <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">()]),</span>
-</span></span><span class="line"><span class="cl">                              <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 定义数据集路径</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ROOT_TRAIN</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;data\train&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">normalize</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="p">[</span><span class="mf">0.162</span><span class="p">,</span> <span class="mf">0.151</span><span class="p">,</span> <span class="mf">0.138</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">                                     <span class="n">std</span><span class="o">=</span><span class="p">[</span><span class="mf">0.058</span><span class="p">,</span> <span class="mf">0.052</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 定义数据集处理方法变量</span>
+</span></span><span class="line"><span class="cl">    <span class="n">train_transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">((</span><span class="mi">224</span><span class="p">,</span><span class="mi">224</span><span class="p">)),</span> <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span><span class="n">normalize</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 加载数据集</span>
+</span></span><span class="line"><span class="cl">    <span class="n">train_data</span> <span class="o">=</span> <span class="n">ImageFolder</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="n">ROOT_TRAIN</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">train_transform</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">train_data</span><span class="p">,</span> <span class="n">val_data</span> <span class="o">=</span> <span class="n">Data</span><span class="o">.</span><span class="n">random_split</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="mf">0.8</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">train_data</span><span class="p">)),</span> <span class="nb">round</span><span class="p">(</span><span class="mf">0.2</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">train_data</span><span class="p">))])</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">train_dataloader</span> <span class="o">=</span> <span class="n">Data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">train_data</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                                       <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                       <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">                                       <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                                       <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                       <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">val_dataloader</span> <span class="o">=</span> <span class="n">Data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">val_data</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                                       <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                       <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">                                       <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                                       <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                       <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">train_dataloader</span><span class="p">,</span> <span class="n">val_dataloader</span>
-</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">train_model_process</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">train_dataloader</span><span class="p">,</span> <span class="n">val_dataloader</span><span class="p">,</span> <span class="n">num_epochs</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># 设定训练所用到的设备，有GPU用GPU没有GPU用CPU</span>
@@ -708,7 +707,8 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 选择最优参数，保存最优参数的模型</span>
 </span></span><span class="line"><span class="cl">    <span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">best_model_wts</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">best_model_wts</span><span class="p">,</span> <span class="s2">&#34;C:/code/test/LeNet/best_model.pth&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># torch.save(model.load_state_dict(best_model_wts), &#34;C:/Users/86159/Desktop/LeNet/best_model.pth&#34;)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">best_model_wts</span><span class="p">,</span> <span class="s2">&#34;C:/code/test/GoogLeNet_1/best_model.pth&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">train_process</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;epoch&#34;</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">),</span>
@@ -740,22 +740,22 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># 加载需要的模型</span>
-</span></span><span class="line"><span class="cl">    <span class="n">LeNet</span> <span class="o">=</span> <span class="n">LeNet</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">GoogLeNet</span> <span class="o">=</span> <span class="n">GoogLeNet</span><span class="p">(</span><span class="n">Inception</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># 加载数据集</span>
 </span></span><span class="line"><span class="cl">    <span class="n">train_data</span><span class="p">,</span> <span class="n">val_data</span> <span class="o">=</span> <span class="n">train_val_data_process</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># 利用现有的模型进行模型的训练</span>
-</span></span><span class="line"><span class="cl">    <span class="n">train_process</span> <span class="o">=</span> <span class="n">train_model_process</span><span class="p">(</span><span class="n">LeNet</span><span class="p">,</span> <span class="n">train_data</span><span class="p">,</span> <span class="n">val_data</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">train_process</span> <span class="o">=</span> <span class="n">train_model_process</span><span class="p">(</span><span class="n">GoogLeNet</span><span class="p">,</span> <span class="n">train_data</span><span class="p">,</span> <span class="n">val_data</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">matplot_acc_loss</span><span class="p">(</span><span class="n">train_process</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    
 </span></span></code></pre></div></div>
     <footer class="article-footer"><a
           data-aos="zoom-in"
-          href="/post/no.9/#comments"
+          href="/post/no.18/#comments"
           class="article-comment-link"
         >
           <span
             class="post-comments-count valine-comment-count"
-            data-xid="/post/no.9/"
+            data-xid="/post/no.18/"
             itemprop="commentCount"
           ></span>
           留言
@@ -768,27 +768,27 @@
   ><div class="article-nav-link-wrap left"><img
               data-src="https://d-sketon.top/img/_backwebp/bg1.webp"
               data-sizes="auto"
-              alt="AlexNet原理"
+              alt="GoogleNet模型实践——猫狗分类.3"
               class="lazyload"
             /><a
-          href="/post/no.8/"
-          aria-label="前一篇:AlexNet原理"
-          title="前一篇:AlexNet原理"
+          href="/post/no.19/"
+          aria-label="前一篇:GoogleNet模型实践——猫狗分类.3"
+          title="前一篇:GoogleNet模型实践——猫狗分类.3"
         ></a>
         <div class="article-nav-caption">前一篇</div>
-        <h3 class="article-nav-title">AlexNet原理</h3>
+        <h3 class="article-nav-title">GoogleNet模型实践——猫狗分类.3</h3>
       </div><div class="article-nav-link-wrap right"><img
               data-src="https://d-sketon.top/img/_backwebp/bg1.webp"
               data-sizes="auto"
-              alt="LeNet模型-模型代码搭建"
+              alt="GoogleNet模型实践——猫狗分类.1"
               class="lazyload"
             /><a
-          href="/post/no.11/"
-          aria-label="后一篇:LeNet模型-模型代码搭建"
-          title="后一篇:LeNet模型-模型代码搭建"
+          href="/post/no.17/"
+          aria-label="后一篇:GoogleNet模型实践——猫狗分类.1"
+          title="后一篇:GoogleNet模型实践——猫狗分类.1"
         ></a>
         <div class="article-nav-caption">后一篇</div>
-        <h3 class="article-nav-title">LeNet模型-模型代码搭建</h3>
+        <h3 class="article-nav-title">GoogleNet模型实践——猫狗分类.1</h3>
       </div></nav></article><section id="comments" data-aos="fade-up">
 <div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
   <div class="comment-selector">
@@ -855,8 +855,8 @@
     <li>
       <ul>
         <li><a href="#前言">前言</a></li>
-        <li><a href="#代码搭建">代码搭建</a></li>
-        <li><a href="#完整代码展示">完整代码展示</a></li>
+        <li><a href="#训练代码">训练代码</a></li>
+        <li><a href="#完整代码">完整代码</a></li>
       </ul>
     </li>
   </ul>
@@ -961,8 +961,8 @@
   <div><script data-pjax>
         window.REIMU_POST = {
           author: "落-luo",
-          title: "LeNet模型-训练代码搭建",
-          url: "http:\/\/localhost:1313\/post\/no.9\/",
+          title: "GoogleNet模型实践——猫狗分类.2",
+          url: "http:\/\/localhost:1313\/post\/no.18\/",
           description: "文中所有所用资料均来自bilibli的up主：炮哥带你学",
           cover: "http:\/\/localhost:1313\/images\/banner1.webp",
         };
