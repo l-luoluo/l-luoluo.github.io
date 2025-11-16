@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-11-12T15:00:00+08:00</lastmod>
+    <lastmod>2025-11-13T15:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -26,31 +26,25 @@
                 />
   </url><url>
     <loc>http://localhost:1313/categories/googlenet/</loc>
-    <lastmod>2025-11-12T15:00:00+08:00</lastmod>
+    <lastmod>2025-11-13T15:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/no.17/</loc>
-    <lastmod>2025-11-12T15:00:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/post/no.18/</loc>
-    <lastmod>2025-11-12T15:00:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/post/no.19/</loc>
-    <lastmod>2025-11-12T15:00:00+08:00</lastmod>
+    <loc>http://localhost:1313/post/no.20/</loc>
+    <lastmod>2025-11-13T15:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/pytorch%E4%B8%8E%E7%BB%8F%E5%85%B8%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2025-11-12T15:00:00+08:00</lastmod>
+    <lastmod>2025-11-13T15:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2025-11-12T15:00:00+08:00</lastmod>
+    <lastmod>2025-11-13T15:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/</loc>
-    <lastmod>2025-11-12T15:00:00+08:00</lastmod>
+    <lastmod>2025-11-13T15:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/%E7%82%AE%E5%93%A5%E5%B8%A6%E4%BD%A0%E5%AD%A6/</loc>
-    <lastmod>2025-11-12T15:00:00+08:00</lastmod>
+    <lastmod>2025-11-13T15:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-11-12T15:00:00+08:00</lastmod>
+    <lastmod>2025-11-13T15:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -71,6 +65,15 @@
                 hreflang="zh-cn"
                 href="http://localhost:1313/"
                 />
+  </url><url>
+    <loc>http://localhost:1313/post/no.17/</loc>
+    <lastmod>2025-11-12T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/no.18/</loc>
+    <lastmod>2025-11-12T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/no.19/</loc>
+    <lastmod>2025-11-12T15:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/no.16/</loc>
     <lastmod>2025-11-11T15:00:00+08:00</lastmod>

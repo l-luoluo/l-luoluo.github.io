@@ -12,12 +12,37 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Wed, 12 Nov 2025 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 13 Nov 2025 15:00:00 +0800</lastBuildDate>
     
     
     <atom:link href="http://localhost:1313/categories/%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>GoogleNet模型实践——水果分类</title>
+      <link>http://localhost:1313/post/no.20/</link>
+      <pubDate>Thu, 13 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.20/</guid>
+      <description>
+        <![CDATA[<h1>GoogleNet模型实践——水果分类</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="前言">
+<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
+前言
+</h3><p>这是GoogLeNet的另外一个模型实践，这次我们来做水果分类。
+关于<a href="https://l-luoluo.github.io/post/no.18/">训练代码</a>和<a href="https://l-luoluo.github.io/post/no.19/">测试代码</a>，还有<a href="https://l-luoluo.github.io/post/no.16/">模型代码</a> 请参考之前的文章。
+这里就绪详细介绍一下模型的搭建过程，只是简单的介绍一下，需要修改的部分参数</p>
+        
+        <hr><p>本文2025-11-13首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-13</p>]]>
+      </description>
+      
+        <category>GoogleNet</category><category>模型实践</category><category>模型搭建</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+      
+    </item>
     
     
 
@@ -180,8 +205,55 @@
           <h3 id="前言">
 <a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
 前言
-</h3><p>这篇文章主要是关于猫狗分类的详细的训练代码,关于模型的代码还是沿用前面的GoogleNet模型，
-其实训练代码和前面的文章是差不多的，只是修改了部分参数。</p>
+</h3><p>这篇文章主要是关于猫狗分类的详细的训练代码,关于模型的代码可以参考<a href="https://l-luoluo.github.io/post/no.16/">GoogleNet模型搭建</a>，其中有详细的代码</p>
+<h3 id="训练代码">
+<a class="header-anchor" href="#%e8%ae%ad%e7%bb%83%e4%bb%a3%e7%a0%81"></a>
+训练代码
+</h3><h4 id="1-导入必要的库">
+<a class="header-anchor" href="#1-%e5%af%bc%e5%85%a5%e5%bf%85%e8%a6%81%e7%9a%84%e5%ba%93"></a>
+1. 导入必要的库
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">copy</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torchvision.datasets</span> <span class="kn">import</span> <span class="n">ImageFolder</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">transforms</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.utils.data</span> <span class="k">as</span> <span class="nn">Data</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">GoogLeNet</span><span class="p">,</span><span class="n">Inception</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</span></span></code></pre></div><h4 id="2-数据预处理">
+<a class="header-anchor" href="#2-%e6%95%b0%e6%8d%ae%e9%a2%84%e5%a4%84%e7%90%86"></a>
+2. 数据预处理
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 定义数据集路径</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ROOT_TRAIN</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;data\train&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">normalize</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="p">[</span><span class="mf">0.162</span><span class="p">,</span> <span class="mf">0.151</span><span class="p">,</span> <span class="mf">0.138</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">                                     <span class="n">std</span><span class="o">=</span><span class="p">[</span><span class="mf">0.058</span><span class="p">,</span> <span class="mf">0.052</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 定义数据集处理方法变量</span>
+</span></span><span class="line"><span class="cl">    <span class="n">train_transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">((</span><span class="mi">224</span><span class="p">,</span><span class="mi">224</span><span class="p">)),</span> <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span><span class="n">normalize</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 加载数据集</span>
+</span></span><span class="line"><span class="cl">    <span class="n">train_data</span> <span class="o">=</span> <span class="n">ImageFolder</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="n">ROOT_TRAIN</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">train_transform</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">train_data</span><span class="p">,</span> <span class="n">val_data</span> <span class="o">=</span> <span class="n">Data</span><span class="o">.</span><span class="n">random_split</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="mf">0.8</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">train_data</span><span class="p">)),</span> <span class="nb">round</span><span class="p">(</span><span class="mf">0.2</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">train_data</span><span class="p">))])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">train_dataloader</span> <span class="o">=</span> <span class="n">Data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">train_data</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                       <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                       <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                       <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">val_dataloader</span> <span class="o">=</span> <span class="n">Data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">val_data</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                       <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                       <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                       <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">train_dataloader</span><span class="p">,</span> <span class="n">val_dataloader</span>
+</span></span></code></pre></div><p>这里与前面的文章不同的是，我们将数据集的来源由FashionMNIST改为了我们自己的数据集。
+并对数据集进行了预处理，其他部分与前面的文章相同。</p>
         
         <hr><p>本文2025-11-12首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-12</p>]]>
       </description>
