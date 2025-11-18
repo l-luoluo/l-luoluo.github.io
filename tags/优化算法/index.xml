@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>优化算法 on 心有所向，日复一日，必有精进</title>
+    <link>http://localhost:1313/tags/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content from 心有所向，日复一日，必有精进</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    
+    <managingEditor>xxx@example.com (落-luo)</managingEditor>
+    <webMaster>xxx@example.com (落-luo)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Sat, 01 Nov 2025 15:00:00 +0800</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/tags/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>梯度更新</title>
+      <link>http://localhost:1313/post/no.2/</link>
+      <pubDate>Sat, 01 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.2/</guid>
+      <description>
+        <![CDATA[<h1>梯度更新</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h4 id="梯度下降法">
+<a class="header-anchor" href="#%e6%a2%af%e5%ba%a6%e4%b8%8b%e9%99%8d%e6%b3%95"></a>
+梯度下降法
+</h4><p><span style="font-size: 18px; color: blue;">根据上一篇的文章我们知道，我们可以用最小二乘法根据损失函数与参数w来求w的最优解。具体该怎么做呢？我们可以联想到以下的场景：</span></p>
+        
+        <hr><p>本文2025-11-01首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-01</p>]]>
+      </description>
+      
+        <category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category><category>原理</category>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>原理 on 心有所向，日复一日，必有精进</title>
+    <link>http://localhost:1313/categories/%E5%8E%9F%E7%90%86/</link>
+    <description>Recent content from 心有所向，日复一日，必有精进</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    
+    <managingEditor>xxx@example.com (落-luo)</managingEditor>
+    <webMaster>xxx@example.com (落-luo)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Fri, 14 Nov 2025 15:00:00 +0800</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/categories/%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>ResNet模型原理</title>
+      <link>http://localhost:1313/post/no.21/</link>
+      <pubDate>Fri, 14 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.21/</guid>
+      <description>
+        <![CDATA[<h1>ResNet模型原理</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="resnet诞生背景">
+<a class="header-anchor" href="#resnet%e8%af%9e%e7%94%9f%e8%83%8c%e6%99%af"></a>
+ResNet诞生背景
+</h3><p>ResNet是2015年由微软的Kaiming He等人提出的，其主要目标是解决深度神经网络训练时的梯度消失问题。
+同时，ResNet还提出了一种新的网络结构，即残差块（Residual Block），用于解决深度神经网络训练时的梯度消失问题。
+后来，残差块被广泛应用于深度神经网络中，成为了一种非常重要的网络结构。</p>
+        
+        <hr><p>本文2025-11-14首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-14</p>]]>
+      </description>
+      
+        <category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category><category>原理</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>GoogleNet模型原理</title>
+      <link>http://localhost:1313/post/no.15/</link>
+      <pubDate>Tue, 11 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.15/</guid>
+      <description>
+        <![CDATA[<h1>GoogleNet模型原理</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h4 id="googlenet诞生背景">
+<a class="header-anchor" href="#googlenet%e8%af%9e%e7%94%9f%e8%83%8c%e6%99%af"></a>
+GoogleNet诞生背景
+</h4><p><img src="/img/NO.15/%E5%9B%BE_01.png" alt=""></p>
+<p>GoogleNet的模型的诞生主要是为了解决卷积核大小的问题，早期的模型使用的卷积核大小都是比较大的，比如11x11、5x5等，
+而为了验证卷积核大小对模型的影响，GoogleNet创新型的使用了多个不同大小的卷积核，比如1x1、3x3、5x5等，
+让模型自己去选择合适的卷积核大小，去更新相关的参数，从而提高了模型的表达能力。
+而这个创新型的设计，也使得GoogleNet的模型在当时的时间点上，成为了一个比较有代表性的模型。
+这个块提出者将他命名为Inception块，因为这个块的设计灵感来自于电影《盗梦空间》中的场景，
+其中主角在梦境中被一个inception结构的神经网络所干扰，导致他的梦境被改变。</p>
+        
+        <hr><p>本文2025-11-11首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-11</p>]]>
+      </description>
+      
+        <category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category><category>原理</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>VGG模型原理</title>
+      <link>http://localhost:1313/post/no.13/</link>
+      <pubDate>Mon, 10 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.13/</guid>
+      <description>
+        <![CDATA[<h1>VGG模型原理</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h4 id="vgg诞生背景">
+<a class="header-anchor" href="#vgg%e8%af%9e%e7%94%9f%e8%83%8c%e6%99%af"></a>
+VGG诞生背景
+</h4><p><img src="/img/NO.13/%E5%9B%BE1.png" alt=""></p>
+<p>VGG的模型比AlexNet的更大，参数更多
+在AlexNet的基础上，VGG提出了一种新的网络结构，即使用多个3x3的卷积核代替AlexNet中的11x11、5x5的卷积核，同时减少了参数数量。
+由于3x3的卷积核可以覆盖更多的像素，因此VGG的模型在保持参数数量的同时，也提高了模型的表达能力。
+卷积块的应用也使得VGG的模型可移植性比较好
+本篇文章主要介绍VGG-16模型,也就是下面图中D的结构</p>
+        
+        <hr><p>本文2025-11-10首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-10</p>]]>
+      </description>
+      
+        <category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category><category>原理</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>AlexNet原理</title>
+      <link>http://localhost:1313/post/no.8/</link>
+      <pubDate>Thu, 06 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.8/</guid>
+      <description>
+        <![CDATA[<h1>AlexNet原理</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="1-背景">
+<a class="header-anchor" href="#1-%e8%83%8c%e6%99%af"></a>
+1. 背景
+</h3><p><img src="/img/NO.8/%E5%9B%BE1.png" alt=""></p>
+<p><span style="font-size: 20px;">AlexNet 是 2012 年由 Alex Krizhevsky、Ilya Sutskever 和 Geoffrey Hinton 提出的卷积神经网络架构。它在 ImageNet 图像分类任务上取得了显著的成果，成为了卷积神经网络的一个重要里程碑。</span>
+<span style="font-size: 20px;">它在当年的 ImageNet 图像分类任务上，取得第一名的成绩，也向世界证明了卷积神经网络在图像识别任务上要优于传统的机器学习算法。</span></p>
+        
+        <hr><p>本文2025-11-06首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-06</p>]]>
+      </description>
+      
+        <category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category><category>原理</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>LeNet原理</title>
+      <link>http://localhost:1313/post/no.7/</link>
+      <pubDate>Thu, 06 Nov 2025 14:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.7/</guid>
+      <description>
+        <![CDATA[<h1>LeNet原理</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="1-lenet-5-诞生背景">
+<a class="header-anchor" href="#1-lenet-5-%e8%af%9e%e7%94%9f%e8%83%8c%e6%99%af"></a>
+1. LeNet-5 诞生背景
+</h3><p><img src="/img/NO.7/%E5%9B%BE1.png" alt=""></p>
+<p><span style="font-size: 20px;">Lenet-5 是 Yann LeCun 于 1998 年提出的卷积神经网络（Convolutional Neural Network，CNN）架构，用于识别手写数字。</span></p>
+        
+        <hr><p>本文2025-11-06首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-06</p>]]>
+      </description>
+      
+        <category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category><category>原理</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>CNN卷积神经网络算法原理：第三章</title>
+      <link>http://localhost:1313/post/no.6/</link>
+      <pubDate>Wed, 05 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.6/</guid>
+      <description>
+        <![CDATA[<h1>CNN卷积神经网络算法原理：第三章</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="图片在计算机中的本质">
+<a class="header-anchor" href="#%e5%9b%be%e7%89%87%e5%9c%a8%e8%ae%a1%e7%ae%97%e6%9c%ba%e4%b8%ad%e7%9a%84%e6%9c%ac%e8%b4%a8"></a>
+图片在计算机中的本质
+</h3><h4 id="单色图片">
+<a class="header-anchor" href="#%e5%8d%95%e8%89%b2%e5%9b%be%e7%89%87"></a>
+单色图片
+</h4><p><img src="/img/NO.6/%E5%9B%BE1.png" alt=""></p>
+<h4 id="彩色图片">
+<a class="header-anchor" href="#%e5%bd%a9%e8%89%b2%e5%9b%be%e7%89%87"></a>
+彩色图片
+</h4><p><img src="/img/NO.6/%E5%9B%BE2.png" alt=""></p>
+<p><span style="font-size: 20px;">其实从图片中我们可以看出，图片在计算机中的本质就是一个二维数组，每个元素就是一个像素点，每个像素点有三个通道，分别是RGB通道，每个通道的值范围是0-255，0表示该通道的亮度最低，255表示该通道的亮度最高。</span></p>
+        
+        <hr><p>本文2025-11-05首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-05</p>]]>
+      </description>
+      
+        <category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category><category>原理</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>CNN卷积神经网络算法原理：第二章</title>
+      <link>http://localhost:1313/post/no.5/</link>
+      <pubDate>Tue, 04 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.5/</guid>
+      <description>
+        <![CDATA[<h1>CNN卷积神经网络算法原理：第二章</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="前向传播">
+<a class="header-anchor" href="#%e5%89%8d%e5%90%91%e4%bc%a0%e6%92%ad"></a>
+前向传播
+</h3><p><strong>如下图所示，这就是神经网络前向传播的计算过程</strong></p>
+<p><img src="/img/NO.5/%E5%9B%BE1.png" alt=""></p>
+<p><strong>而下图所示，是一个具体的前向传播计算过程</strong></p>
+<p><img src="/img/NO.5/%E5%9B%BE2.png" alt=""></p>
+<h3 id="损失函数">
+<a class="header-anchor" href="#%e6%8d%9f%e5%a4%b1%e5%87%bd%e6%95%b0"></a>
+损失函数
+</h3><p><strong>在神经网络中我们一般使用的是均方误差损失函数，公式如下：</strong></p>
+        
+        <hr><p>本文2025-11-04首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-04</p>]]>
+      </description>
+      
+        <category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category><category>原理</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>CNN卷积神经网络算法原理：第一章</title>
+      <link>http://localhost:1313/post/no.4/</link>
+      <pubDate>Mon, 03 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.4/</guid>
+      <description>
+        <![CDATA[<h1>CNN卷积神经网络算法原理：第一章</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h4 id="全连接神经网络整体结构">
+<a class="header-anchor" href="#%e5%85%a8%e8%bf%9e%e6%8e%a5%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e6%95%b4%e4%bd%93%e7%bb%93%e6%9e%84"></a>
+全连接神经网络整体结构
+</h4><p>全连接神经网络的整体结构如下：</p>
+<p><img src="/img/NO.4/%E5%9B%BE1.png" alt=""></p>
+<p><img src="/img/NO.4/%E5%9B%BE2.png" alt=""></p>
+<p>上述图片就是一个全连接神经网络的整体结构，它基本上有以下几个部分：</p>
+<ol>
+<li>输入层：输入层主要是接收外部输入的数据</li>
+<li>隐藏层：隐藏层可以有多个，每个隐藏层由多个神经元组成，每个神经元接收来自上一层的所有节点的输入</li>
+<li>输出层：输出层的节点数等于分类的类别数，每个节点对应一个类别。</li>
+</ol>
+<h4 id="全连接神经网络的单元结构">
+<a class="header-anchor" href="#%e5%85%a8%e8%bf%9e%e6%8e%a5%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e7%9a%84%e5%8d%95%e5%85%83%e7%bb%93%e6%9e%84"></a>
+全连接神经网络的单元结构
+</h4><p>每个神经元的计算过程如下：</p>
+        
+        <hr><p>本文2025-11-03首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-03</p>]]>
+      </description>
+      
+        <category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category><category>原理</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>梯度更新</title>
+      <link>http://localhost:1313/post/no.2/</link>
+      <pubDate>Sat, 01 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.2/</guid>
+      <description>
+        <![CDATA[<h1>梯度更新</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h4 id="梯度下降法">
+<a class="header-anchor" href="#%e6%a2%af%e5%ba%a6%e4%b8%8b%e9%99%8d%e6%b3%95"></a>
+梯度下降法
+</h4><p><span style="font-size: 18px; color: blue;">根据上一篇的文章我们知道，我们可以用最小二乘法根据损失函数与参数w来求w的最优解。具体该怎么做呢？我们可以联想到以下的场景：</span></p>
+        
+        <hr><p>本文2025-11-01首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-01</p>]]>
+      </description>
+      
+        <category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category><category>原理</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>线性回归原理详解</title>
+      <link>http://localhost:1313/post/no.1/</link>
+      <pubDate>Thu, 30 Oct 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.1/</guid>
+      <description>
+        <![CDATA[<h1>线性回归原理详解</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h4 id="线性回归模型">
+<a class="header-anchor" href="#%e7%ba%bf%e6%80%a7%e5%9b%9e%e5%bd%92%e6%a8%a1%e5%9e%8b"></a>
+线性回归模型
+</h4><p><img src="/img/NO.1/%E5%9B%BE1.png" alt=""></p>
+<p><span style="font-size: 18px; color: blue;">参考人类的学习方式，我们一般学会识别一个物体，都是通过观察大量的样本，然后根据样本中的特征进行识别的；同理机器学习也是如此，其中我们将事物的名称命名为标签及为y或，而特征则为x。机器学习就是通过学习大量的样本，然后根据样本中的标签去获得样品的特征，从而对新的样本进行预测。</span>
+<span style="font-size: 18px; color: blue;">就像我们如何判断一个人是否为男性，我们一般会根据他的特征来判断，比如他是否有长的头发、是否有喉结等；而机器学习就是通过学习大量的样本，然后根据样本中的特征去判断新的样本是否为男性。</span>
+<span style="font-size: 18px; color: blue;">所以线性回归模型就可以简化为y关于x的求解，就是已知x，然后根据x去预测y。而机器学习的目的就是确定x的系数，从而对新的样本进行预测。</span></p>
+        
+        <hr><p>本文2025-10-30首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-10-30</p>]]>
+      </description>
+      
+        <category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category><category>原理</category>
+      
+    </item>
+    
+  </channel>
+</rss>
