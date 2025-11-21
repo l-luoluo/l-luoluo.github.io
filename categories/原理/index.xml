@@ -12,12 +12,37 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Fri, 14 Nov 2025 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 15 Nov 2025 15:00:00 +0800</lastBuildDate>
     
     
     <atom:link href="http://localhost:1313/categories/%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>数据操作</title>
+      <link>http://localhost:1313/post/no.23/</link>
+      <pubDate>Sat, 15 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.23/</guid>
+      <description>
+        <![CDATA[<h1>数据操作</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="n维数组样例">
+<a class="header-anchor" href="#n%e7%bb%b4%e6%95%b0%e7%bb%84%e6%a0%b7%e4%be%8b"></a>
+N维数组样例
+</h3><p>一般情况下，我们会使用N维数组来表示一个样本，其中N为样本的维度。
+N=0代表着样本的数量，N=1代表着样本的特征维度，N=2代表着样本的特征矩阵维度。
+N=3代表着样本的特征矩阵的维度，N=4代表着样本的特征矩阵的维度的维度，以此类推。</p>
+        
+        <hr><p>本文2025-11-15首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-15</p>]]>
+      </description>
+      
+        <category>跟着李沐学AI</category><category>动手学深度学V2</category><category>原理</category>
+      
+    </item>
     
     
 
@@ -263,32 +288,6 @@ VGG诞生背景
 </h4><p><span style="font-size: 18px; color: blue;">根据上一篇的文章我们知道，我们可以用最小二乘法根据损失函数与参数w来求w的最优解。具体该怎么做呢？我们可以联想到以下的场景：</span></p>
         
         <hr><p>本文2025-11-01首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-01</p>]]>
-      </description>
-      
-        <category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category><category>原理</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>线性回归原理详解</title>
-      <link>http://localhost:1313/post/no.1/</link>
-      <pubDate>Thu, 30 Oct 2025 15:00:00 &#43;0800</pubDate>
-      <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no.1/</guid>
-      <description>
-        <![CDATA[<h1>线性回归原理详解</h1><p>作者：落-luo（xxx@example.com）</p>
-        
-          <h4 id="线性回归模型">
-<a class="header-anchor" href="#%e7%ba%bf%e6%80%a7%e5%9b%9e%e5%bd%92%e6%a8%a1%e5%9e%8b"></a>
-线性回归模型
-</h4><p><img src="/img/NO.1/%E5%9B%BE1.png" alt=""></p>
-<p><span style="font-size: 18px; color: blue;">参考人类的学习方式，我们一般学会识别一个物体，都是通过观察大量的样本，然后根据样本中的特征进行识别的；同理机器学习也是如此，其中我们将事物的名称命名为标签及为y或，而特征则为x。机器学习就是通过学习大量的样本，然后根据样本中的标签去获得样品的特征，从而对新的样本进行预测。</span>
-<span style="font-size: 18px; color: blue;">就像我们如何判断一个人是否为男性，我们一般会根据他的特征来判断，比如他是否有长的头发、是否有喉结等；而机器学习就是通过学习大量的样本，然后根据样本中的特征去判断新的样本是否为男性。</span>
-<span style="font-size: 18px; color: blue;">所以线性回归模型就可以简化为y关于x的求解，就是已知x，然后根据x去预测y。而机器学习的目的就是确定x的系数，从而对新的样本进行预测。</span></p>
-        
-        <hr><p>本文2025-10-30首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-10-30</p>]]>
       </description>
       
         <category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category><category>原理</category>

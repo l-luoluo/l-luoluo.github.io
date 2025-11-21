@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据操作 on 心有所向，日复一日，必有精进</title>
+    <link>http://localhost:1313/tags/%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/</link>
+    <description>Recent content from 心有所向，日复一日，必有精进</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    
+    <managingEditor>xxx@example.com (落-luo)</managingEditor>
+    <webMaster>xxx@example.com (落-luo)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Sat, 15 Nov 2025 15:00:00 +0800</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/tags/%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>数据操作</title>
+      <link>http://localhost:1313/post/no.23/</link>
+      <pubDate>Sat, 15 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.23/</guid>
+      <description>
+        <![CDATA[<h1>数据操作</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="n维数组样例">
+<a class="header-anchor" href="#n%e7%bb%b4%e6%95%b0%e7%bb%84%e6%a0%b7%e4%be%8b"></a>
+N维数组样例
+</h3><p>一般情况下，我们会使用N维数组来表示一个样本，其中N为样本的维度。
+N=0代表着样本的数量，N=1代表着样本的特征维度，N=2代表着样本的特征矩阵维度。
+N=3代表着样本的特征矩阵的维度，N=4代表着样本的特征矩阵的维度的维度，以此类推。</p>
+        
+        <hr><p>本文2025-11-15首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-15</p>]]>
+      </description>
+      
+        <category>跟着李沐学AI</category><category>动手学深度学V2</category><category>原理</category>
+      
+    </item>
+    
+  </channel>
+</rss>
