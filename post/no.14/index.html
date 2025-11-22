@@ -517,18 +517,7 @@
 同时也可以提高模型的训练效率。
 这里使用了Kaiming初始化方法，对卷积层的权重进行初始化。</p>
 </div>
-    <footer class="article-footer"><a
-          data-aos="zoom-in"
-          href="/post/no.14/#comments"
-          class="article-comment-link"
-        >
-          <span
-            class="post-comments-count valine-comment-count"
-            data-xid="/post/no.14/"
-            itemprop="commentCount"
-          ></span>
-          留言
-        </a><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+    <footer class="article-footer"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
       <a
         class="article-tag-list-link"
         href="/tags/%e5%8d%b7%e7%a7%af%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c"
@@ -589,13 +578,13 @@
       </div></nav></article><section id="comments" data-aos="fade-up">
 <div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
   <div class="comment-selector">
-    <div class="comment-selector-wrap"><div class="selector-item" data-selector="valine">
-          <span>valine</span>
+    <div class="comment-selector-wrap"><div class="selector-item" data-selector="giscus">
+          <span>giscus</span>
         </div></div>
   </div>
 </div>
 
-<div class="comment-content"><div class="comment valine-comment" data-aos="fade-up"
+<div class="comment-content"><div class="comment giscus-comment" data-aos="fade-up"
      >
     </div></div>
 </section></section>
@@ -799,47 +788,57 @@
     return script;
   };
   var commentConfigKeys = ['valine', 'waline', 'twikoo', 'gitalk', 'giscus'];
-  var commentConfig = {valine: {
+  var commentConfig = {giscus: {
       enable: true,
       load: () => {
-        const container = document.querySelector('.valine-comment');
+        const container = document.querySelector('.giscus-comment');
         if (!container) return;
-        if (container.style.display === 'block') return; 
         container.style.display = 'block';
 
-        const script = loadScript(
-          'https:\/\/npm.webcache.cn\/valine@1.5.1\/dist\/Valine.min.js',
-          !'webcache|valine@1.5.1\/dist\/Valine.min.js'.startsWith('local') ? 'sha384-3ma91AExDeMAZ1rjTjaP8V2A2obQE\u002bs5ltKRwYlwdpArz9xVbp0tF3b0VV2ACNPn' : undefined
-        );
-        script.onload = () => {
-          const GUEST_INFO = ['nick', 'mail', 'link'];
-          const guest_info = 'nick,mail,link'.split(',').filter((item) => {
-            return GUEST_INFO.indexOf(item) > -1
-          });
-          const recordIP = JSON.parse('true');
-          const highlight = JSON.parse('true');
-          const visitor = JSON.parse('false');
-          const serverURLs = undefined;
+        
+        const existingScript = container.querySelector('script[src*="giscus.app/client.js"]');
+        if (existingScript) existingScript.remove();
+        const existingFrame = document.querySelector('iframe.giscus-frame');
+        if (existingFrame) existingFrame.remove();
 
-          new Valine({
-            el: '.valine-comment',
-            appId: "9REN8P3seMAzGqFJ0OCeduKs-gzGzoHsz",
-            appKey: "Kb3aBDzx4PFWwxcXjaV1TEar",
-            placeholder: "Just go go",
-            pageSize: '10',
-            avatar: 'mp',
-            lang: document.documentElement.lang || 'en',
-            recordIP: recordIP,
-            highlight: highlight,
-            visitor: visitor,
-            requiredFields: guest_info,
-            path: window.location.pathname,
-            serverURLs,
-          });
-        };
-        document.head.appendChild(script);
+        
+        const giscusScript = document.createElement('script');
+        const domMode = document.documentElement.getAttribute("data-theme");
+
+        const docLang = document.documentElement.lang || 'en';
+        const langBase = docLang.split('-')[0];
+        const supportedLangs = ['ar', 'be', 'bg', 'ca', 'cs', 'da', 'de', 'en', 
+        'eo', 'es', 'eu', 'fa', 'fr', 'gr', 'hbs', 'he', 'hu', 'id', 'it', 'ja', 
+        'kh', 'ko', 'nl', 'pl', 'pt', 'ro', 'ru', 'th', 'tr', 'uk', 'uz', 'vi', 'zh-CN', 'zh-HK', 'zh-TW'];
+        const giscusLang = supportedLangs.includes(docLang) ? docLang : supportedLangs.includes(langBase) ? langBase : 'en';
+
+        giscusScript.src = 'https://giscus.app/client.js';
+        giscusScript.setAttribute('data-repo', 'l-luoluo\/l-luoluo.github.io');
+        giscusScript.setAttribute('data-repo-id', 'R_kgDOQOU67w');
+        giscusScript.setAttribute('data-category', 'Announcements');
+        giscusScript.setAttribute('data-category-id', 'DIC_kwDOQOU6784CyE2X');
+        giscusScript.setAttribute('data-mapping', '0');
+        giscusScript.setAttribute('data-strict', '0');
+        giscusScript.setAttribute('data-reactions-enabled', '1');
+        giscusScript.setAttribute('data-emit-metadata', '0');
+        giscusScript.setAttribute('data-input-position', 'bottom');
+        giscusScript.setAttribute('data-theme', domMode === 'dark' ? 'dark' : 'light');
+        giscusScript.setAttribute('data-lang', giscusLang);
+        giscusScript.setAttribute('crossorigin', 'anonymous');
+        giscusScript.async = true;
+        container.appendChild(giscusScript);
+        document.body.addEventListener('light-theme-set', () => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: 'light' } } }, 'https://giscus.app');
+        });
+        document.body.addEventListener('dark-theme-set', () => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: 'dark' } } }, 'https://giscus.app');
+        });
       }
-    },};
+    }};
   commentConfig.enable = commentConfigKeys.some(key => commentConfig?.[key]?.enable);
 
   var defaultComment = '';
