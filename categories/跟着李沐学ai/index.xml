@@ -12,12 +12,57 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Sat, 15 Nov 2025 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 16 Nov 2025 15:00:00 +0800</lastBuildDate>
     
     
     <atom:link href="http://localhost:1313/categories/%E8%B7%9F%E7%9D%80%E6%9D%8E%E6%B2%90%E5%AD%A6ai/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>数据预处理</title>
+      <link>http://localhost:1313/post/no.24/</link>
+      <pubDate>Sun, 16 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.24/</guid>
+      <description>
+        <![CDATA[<h1>数据预处理</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="链接">
+<a class="header-anchor" href="#%e9%93%be%e6%8e%a5"></a>
+链接
+</h3><p><a href="https://courses.d2l.ai/zh-v2/">动手学深度学V2</a></p>
+<h3 id="数据预处理">
+<a class="header-anchor" href="#%e6%95%b0%e6%8d%ae%e9%a2%84%e5%a4%84%e7%90%86"></a>
+数据预处理
+</h3><h4 id="1创建一个简单的数据集">
+<a class="header-anchor" href="#1%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e7%ae%80%e5%8d%95%e7%9a%84%e6%95%b0%e6%8d%ae%e9%9b%86"></a>
+1.创建一个简单的数据集
+</h4><p><img src="/img/NO.24/%E5%9B%BE_01.png" alt=""></p>
+<h4 id="2加载数据集">
+<a class="header-anchor" href="#2%e5%8a%a0%e8%bd%bd%e6%95%b0%e6%8d%ae%e9%9b%86"></a>
+2.加载数据集
+</h4><p><img src="/img/NO.24/%E5%9B%BE_02.png" alt=""></p>
+<h4 id="3数据预处理">
+<a class="header-anchor" href="#3%e6%95%b0%e6%8d%ae%e9%a2%84%e5%a4%84%e7%90%86"></a>
+3.数据预处理
+</h4><p>为了处理缺失的数据，我们一般会使用以下方法：</p>
+<ol>
+<li>删除缺失值</li>
+<li>填充缺失值（插值）
+在实际应用中，我们通常会使用均值、中位数或众数来填充缺失值。
+所以下面是一个使用均值填充缺失值的示例：</li>
+</ol>
+<p><img src="/img/NO.24/%E5%9B%BE_03.png" alt=""></p>
+        
+        <hr><p>本文2025-11-16首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-16</p>]]>
+      </description>
+      
+        <category>跟着李沐学AI</category><category>动手学深度学V2</category><category>原理</category>
+      
+    </item>
     
     
 
@@ -30,7 +75,11 @@
       <description>
         <![CDATA[<h1>数据操作</h1><p>作者：落-luo（xxx@example.com）</p>
         
-          <h3 id="n维数组样例">
+          <h3 id="链接">
+<a class="header-anchor" href="#%e9%93%be%e6%8e%a5"></a>
+链接
+</h3><p><a href="https://courses.d2l.ai/zh-v2/">动手学深度学V2</a></p>
+<h3 id="n维数组样例">
 <a class="header-anchor" href="#n%e7%bb%b4%e6%95%b0%e7%bb%84%e6%a0%b7%e4%be%8b"></a>
 N维数组样例
 </h3><p>一般情况下，我们会使用N维数组来表示一个样本，其中N为样本的维度。

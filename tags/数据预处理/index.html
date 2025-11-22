@@ -8,11 +8,11 @@
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
 /><title>
-  GoogleNet模型原理 | 落-luo
+  数据预处理 | 落-luo
 </title>
 <meta
   name="description"
-  content="文中所有所用资料均来自bilibli的up主：炮哥带你学"
+  content="少女祈祷中..."
 /><script>
   window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"http://localhost:1313/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"i18n_languages\":[{\"Lang\":\"en\",\"LanguageName\":\"English\",\"LanguageCode\":\"\",\"Title\":\"\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false},{\"Lang\":\"ja\",\"LanguageName\":\"日本語\",\"LanguageCode\":\"\",\"Title\":\"\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false},{\"Lang\":\"zh-cn\",\"LanguageName\":\"简体中文\",\"LanguageCode\":\"\",\"Title\":\"\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false},{\"Lang\":\"zh-tw\",\"LanguageName\":\"繁體中文\",\"LanguageCode\":\"\",\"Title\":\"\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false}],\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
   
@@ -37,12 +37,12 @@
     crossorigin="anonymous"
   /><link rel="stylesheet" href="/css/loader.css" />
 <meta property="og:type" content="website" />
-  <meta property="og:title" content="GoogleNet模型原理 | 落-luo" />
+  <meta property="og:title" content="数据预处理 | 落-luo" />
   <meta
     property="og:description"
-    content="文中所有所用资料均来自bilibli的up主：炮哥带你学"
+    content="少女祈祷中..."
   />
-  <meta property="og:url" content="http://localhost:1313/post/no.15/" />
+  <meta property="og:url" content="http://localhost:1313/tags/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/" />
   <meta
     property="og:site_name"
     content="心有所向，日复一日，必有精进"
@@ -52,9 +52,9 @@
     content="/"
   />
   <meta property="article:author" content="落-luo" />
-  <meta property="article:published_time" content="2025-11-11T15:00:00&#43;08:00" />
-  <meta property="article:modified_time" content="2025-11-11T15:00:00&#43;08:00" /><meta property="article:tag" content="卷积神经网络算法原理GoogleNet经典模型" /><meta name="twitter:card" content="summary" />
-  <meta name="twitter:image" content="/" />
+  <meta property="article:published_time" content="2025-11-16T15:00:00&#43;08:00" />
+  <meta property="article:modified_time" content="2025-11-16T15:00:00&#43;08:00" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/" /><link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/index.xml" title="心有所向，日复一日，必有精进">
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.css" />
 <link
     rel="preload"
@@ -131,7 +131,7 @@
         <span class="main-nav-link">友链</span>
       </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
   </nav>
-  <nav id="sub-nav" aria-label="Secondary navigation"></nav><nav id="i18n-nav" aria-label="Language selection">
+  <nav id="sub-nav" aria-label="Secondary navigation"><a id="nav-rss-link" class="nav-icon" href="/tags/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/index.xml" title="RSS 订阅" aria-label="RSS 订阅" target="_blank"></a></nav><nav id="i18n-nav" aria-label="Language selection">
       <div class="custom-dropdown">
         <div class="select-selected" id="select-selected" role="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language menu">
           <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
@@ -181,31 +181,19 @@
         });
       </script>
     </nav></div>
-<header id="header" aria-label="Site header"><picture></picture><img crossorigin="anonymous" fetchpriority="high" src="/images/banner1.webp" alt="GoogleNet模型原理"><div id="header-outer">
+<header id="header" aria-label="Site header"><picture></picture><img crossorigin="anonymous" fetchpriority="high" src="/images/banner1.webp" alt="数据预处理"><div id="header-outer">
     <div id="header-title"><span id="logo">
-            <h1 data-aos="slide-up">GoogleNet模型原理</h1>
-          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+            <h1 data-aos="slide-up">标签</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"><span id="subtitle">数据预处理</span></h2></div>
   </div>
 </header><div id="content"
           aria-label="Page content"
           
-          class="sidebar-left"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+          class="sidebar-left"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container "><div class="sidebar-wrapper">
     <div
       class="sidebar-wrap"
       data-aos="fade-up"
-    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
-<div class="sidebar-toc-wrapper toc-div-class">
-  <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-</div></div>
-          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+    ><div class="sidebar-author">
   <img
     data-src="/avatar/avatar1.webp"
     data-sizes="auto"
@@ -271,216 +259,434 @@
       ></a>
       <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
       <div class="sidebar-menu-link">友链</div>
-    </div></div></div><div class="sidebar-btn-wrapper" style="position:static">
-            <div class="sidebar-toc-btn current"></div>
-            <div class="sidebar-common-btn"></div>
-          </div></div>
-  </div><div class="sidebar-widget"></div></div></aside>
-<section id="main" aria-label="Main content"><article
-  class="h-entry article"
-  itemscope
-  itemtype="https://schema.org/BlogPosting"
->
+    </div></div></div>
+  </div><div class="sidebar-widget"><div class="widget-wrapper">
+    <div
+      class="widget-wrap"
+      data-aos="fade-up"
+    >
+      <div style="display: flex; justify-content: space-between;">
+        <h3 class="widget-title">分类</h3></div>
+      <div class="widget">
+        <ul class="category-list"><li class="category-list-item">
+                <a class="category-list-link" href="/categories/pytorch%E4%B8%8E%E7%BB%8F%E5%85%B8%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" 
+                  title="Pytorch与经典卷积神经网络"
+                  >Pytorch与经典卷积神经网络</a
+                >
+              </li><li class="category-list-item">
+                <a class="category-list-link" href="/categories/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6v2/" 
+                  title="动手学深度学V2"
+                  >动手学深度学V2</a
+                >
+              </li><li class="category-list-item">
+                <a class="category-list-link" href="/categories/%E5%8E%9F%E7%90%86/" 
+                  title="原理"
+                  >原理</a
+                >
+              </li><li class="category-list-item">
+                <a class="category-list-link" href="/categories/%E5%AE%9E%E8%B7%B5/" 
+                  title="实践"
+                  >实践</a
+                >
+              </li><li class="category-list-item">
+                <a class="category-list-link" href="/categories/%E7%82%AE%E5%93%A5%E5%B8%A6%E4%BD%A0%E5%AD%A6/" 
+                  title="炮哥带你学"
+                  >炮哥带你学</a
+                >
+              </li><li class="category-list-item">
+                <a class="category-list-link" href="/categories/%E8%B7%9F%E7%9D%80%E6%9D%8E%E6%B2%90%E5%AD%A6ai/" 
+                  title="跟着李沐学AI"
+                  >跟着李沐学AI</a
+                >
+              </li></ul>
+      </div>
+    </div>
+  </div><div class="widget-wrapper">
+    <div
+      class="widget-wrap"
+      data-aos="fade-up"
+    >
+      <div style="display: flex; justify-content: space-between;">
+        <h3 class="widget-title">标签</h3><a class="widget-link" href="/tags/">查看更多</a></div>
+      <div class="widget">
+        <ul class="tag-list" itemprop="keywords"><li class="tag-item">
+                <a
+                  class="tag-link"
+                  href="/tags/alexnet/"
+                  aria-label="标签: AlexNet"
+                  title="AlexNet"
+                >
+                  AlexNet
+                </a>
+              </li><li class="tag-item">
+                <a
+                  class="tag-link"
+                  href="/tags/googlenet/"
+                  aria-label="标签: GoogleNet"
+                  title="GoogleNet"
+                >
+                  GoogleNet
+                </a>
+              </li><li class="tag-item">
+                <a
+                  class="tag-link"
+                  href="/tags/lenet-5/"
+                  aria-label="标签: LeNet-5"
+                  title="LeNet-5"
+                >
+                  LeNet-5
+                </a>
+              </li><li class="tag-item">
+                <a
+                  class="tag-link"
+                  href="/tags/resnet/"
+                  aria-label="标签: ResNet"
+                  title="ResNet"
+                >
+                  ResNet
+                </a>
+              </li><li class="tag-item">
+                <a
+                  class="tag-link"
+                  href="/tags/vgg/"
+                  aria-label="标签: VGG"
+                  title="VGG"
+                >
+                  VGG
+                </a>
+              </li><li class="tag-item">
+                <a
+                  class="tag-link"
+                  href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/"
+                  aria-label="标签: 代码实现"
+                  title="代码实现"
+                >
+                  代码实现
+                </a>
+              </li><li class="tag-item">
+                <a
+                  class="tag-link"
+                  href="/tags/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/"
+                  aria-label="标签: 优化算法"
+                  title="优化算法"
+                >
+                  优化算法
+                </a>
+              </li><li class="tag-item">
+                <a
+                  class="tag-link"
+                  href="/tags/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"
+                  aria-label="标签: 卷积神经网络"
+                  title="卷积神经网络"
+                >
+                  卷积神经网络
+                </a>
+              </li><li class="tag-item">
+                <a
+                  class="tag-link"
+                  href="/tags/%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/"
+                  aria-label="标签: 数据操作"
+                  title="数据操作"
+                >
+                  数据操作
+                </a>
+              </li><li class="tag-item">
+                <a
+                  class="tag-link"
+                  href="/tags/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/"
+                  aria-label="标签: 数据预处理"
+                  title="数据预处理"
+                >
+                  数据预处理
+                </a>
+              </li></ul>
+      </div>
+    </div>
+  </div><div class="widget-wrapper">
   <div
-    class="article-inner"
+    class="widget-wrap"
     data-aos="fade-up"
   >
-    <div class="article-meta"><div class="article-date">
-  <span
-    class="article-date-link icon-calendar"
-    data-aos="zoom-in"
-  >
-    <time datetime="2025-11-11 15:00:00 &#43;0800 CST" itemprop="datePublished"
-      >2025-11-11</time
+    <h3 class="widget-title">标签云</h3><div class="widget tagcloud"><a
+            style="font-size:10px"
+            href="/tags/alexnet/"
+            aria-label="标签: AlexNet"
+            >AlexNet</a
+          ><a
+            style="font-size:10px"
+            href="/tags/googlenet/"
+            aria-label="标签: GoogleNet"
+            >GoogleNet</a
+          ><a
+            style="font-size:10px"
+            href="/tags/lenet-5/"
+            aria-label="标签: LeNet-5"
+            >LeNet-5</a
+          ><a
+            style="font-size:10px"
+            href="/tags/resnet/"
+            aria-label="标签: ResNet"
+            >ResNet</a
+          ><a
+            style="font-size:10px"
+            href="/tags/vgg/"
+            aria-label="标签: VGG"
+            >VGG</a
+          ><a
+            style="font-size:10px"
+            href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/"
+            aria-label="标签: 代码实现"
+            >代码实现</a
+          ><a
+            style="font-size:10px"
+            href="/tags/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/"
+            aria-label="标签: 优化算法"
+            >优化算法</a
+          ><a
+            style="font-size:10px"
+            href="/tags/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"
+            aria-label="标签: 卷积神经网络"
+            >卷积神经网络</a
+          ><a
+            style="font-size:10px"
+            href="/tags/%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/"
+            aria-label="标签: 数据操作"
+            >数据操作</a
+          ><a
+            style="font-size:10px"
+            href="/tags/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/"
+            aria-label="标签: 数据预处理"
+            >数据预处理</a
+          ><a
+            style="font-size:10px"
+            href="/tags/%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/"
+            aria-label="标签: 模型搭建"
+            >模型搭建</a
+          ><a
+            style="font-size:10px"
+            href="/tags/%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%95/"
+            aria-label="标签: 模型测试"
+            >模型测试</a
+          ><a
+            style="font-size:10px"
+            href="/tags/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"
+            aria-label="标签: 模型训练"
+            >模型训练</a
+          ><a
+            style="font-size:10px"
+            href="/tags/%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/"
+            aria-label="标签: 算法原理"
+            >算法原理</a
+          ><a
+            style="font-size:10px"
+            href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"
+            aria-label="标签: 线性回归"
+            >线性回归</a
+          ><a
+            style="font-size:10px"
+            href="/tags/%E7%BB%8F%E5%85%B8%E6%A8%A1%E5%9E%8B/"
+            aria-label="标签: 经典模型"
+            >经典模型</a
+          ></div>
+  </div>
+</div><div class="widget-wrapper">
+    <div
+      class="widget-wrap"
+      data-aos="fade-up"
     >
-    <time style="display: none;" id="post-update-time"
-      >2025-11-11</time
+      <h3 class="widget-title">最新文章</h3>
+      <div class="widget">
+        <ul><li>
+              <a href="/post/no.24/" title="数据预处理">数据预处理</a>
+            </li><li>
+              <a href="/post/no.23/" title="数据操作">数据操作</a>
+            </li><li>
+              <a href="/post/no.22./" title="ResNet模型搭建">ResNet模型搭建</a>
+            </li><li>
+              <a href="/post/no.21/" title="ResNet模型原理">ResNet模型原理</a>
+            </li><li>
+              <a href="/post/no.20/" title="GoogleNet模型实践——水果分类">GoogleNet模型实践——水果分类</a>
+            </li></ul>
+      </div>
+    </div>
+  </div></div></div></aside>
+<section id="main" aria-label="Main content"><div
+    class="archives-outer-wrap"
+    data-aos="fade-up"
+  ><div class="tag-wrap"><div
+      class="archives-tag-list-item"
+      data-aos="zoom-in"
     >
-  </span></div>
-<div class="article-category"><a
-      class="article-category-link"
-      href="/categories/%e7%82%ae%e5%93%a5%e5%b8%a6%e4%bd%a0%e5%ad%a6"
+      <a class="archives-tag-list-link" href="/tags/alexnet/"
+        >AlexNet</a
+      >
+    </div><div
+      class="archives-tag-list-item"
       data-aos="zoom-in"
-      >炮哥带你学</a
-    ><a
-      class="article-category-link"
-      href="/categories/pytorch%e4%b8%8e%e7%bb%8f%e5%85%b8%e5%8d%b7%e7%a7%af%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c"
+    >
+      <a class="archives-tag-list-link" href="/tags/googlenet/"
+        >GoogleNet</a
+      >
+    </div><div
+      class="archives-tag-list-item"
       data-aos="zoom-in"
-      >PYTORCH与经典卷积神经网络</a
-    ><a
-      class="article-category-link"
-      href="/categories/%e5%8e%9f%e7%90%86"
+    >
+      <a class="archives-tag-list-link" href="/tags/lenet-5/"
+        >LeNet-5</a
+      >
+    </div><div
+      class="archives-tag-list-item"
       data-aos="zoom-in"
-      >原理</a
-    ></div>
-</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h4 id="googlenet诞生背景">
-<a class="header-anchor" href="#googlenet%e8%af%9e%e7%94%9f%e8%83%8c%e6%99%af"></a>
-GoogleNet诞生背景
-</h4><p><img src="/img/NO.15/%E5%9B%BE_01.png" alt=""></p>
-<p>GoogleNet的模型的诞生主要是为了解决卷积核大小的问题，早期的模型使用的卷积核大小都是比较大的，比如11x11、5x5等，
-而为了验证卷积核大小对模型的影响，GoogleNet创新型的使用了多个不同大小的卷积核，比如1x1、3x3、5x5等，
-让模型自己去选择合适的卷积核大小，去更新相关的参数，从而提高了模型的表达能力。
-而这个创新型的设计，也使得GoogleNet的模型在当时的时间点上，成为了一个比较有代表性的模型。
-这个块提出者将他命名为Inception块，因为这个块的设计灵感来自于电影《盗梦空间》中的场景，
-其中主角在梦境中被一个inception结构的神经网络所干扰，导致他的梦境被改变。</p>
-<h4 id="inception块结构">
-<a class="header-anchor" href="#inception%e5%9d%97%e7%bb%93%e6%9e%84"></a>
-Inception块结构
-</h4><p><img src="/img/NO.15/%E5%9B%BE_02.png" alt=""></p>
-<h5 id="inception块详细参数">
-<a class="header-anchor" href="#inception%e5%9d%97%e8%af%a6%e7%bb%86%e5%8f%82%e6%95%b0"></a>
-Inception块详细参数
-</h5><p><img src="/img/NO.15/%E5%9B%BE_03.png" alt=""></p>
-<p><img src="/img/NO.15/%E5%9B%BE_04.png" alt=""></p>
-<p><img src="/img/NO.15/%E5%9B%BE_05.png" alt=""></p>
-<h4 id="11卷积核的优点">
-<a class="header-anchor" href="#11%e5%8d%b7%e7%a7%af%e6%a0%b8%e7%9a%84%e4%bc%98%e7%82%b9"></a>
-1*1卷积核的优点
-</h4><p><img src="/img/NO.15/%E5%9B%BE_06.png" alt=""></p>
-<p><img src="/img/NO.15/%E5%9B%BE_07.png" alt=""></p>
-<h4 id="全局平均池化优缺点">
-<a class="header-anchor" href="#%e5%85%a8%e5%b1%80%e5%b9%b3%e5%9d%87%e6%b1%a0%e5%8c%96%e4%bc%98%e7%bc%ba%e7%82%b9"></a>
-全局平均池化优缺点
-</h4><h5 id="全局平均池化的优点">
-<a class="header-anchor" href="#%e5%85%a8%e5%b1%80%e5%b9%b3%e5%9d%87%e6%b1%a0%e5%8c%96%e7%9a%84%e4%bc%98%e7%82%b9"></a>
-全局平均池化的优点
-</h5><p><img src="/img/NO.15/%E5%9B%BE_08.png" alt=""></p>
-<h5 id="全局平均池化的缺点">
-<a class="header-anchor" href="#%e5%85%a8%e5%b1%80%e5%b9%b3%e5%9d%87%e6%b1%a0%e5%8c%96%e7%9a%84%e7%bc%ba%e7%82%b9"></a>
-全局平均池化的缺点
-</h5><p><img src="/img/NO.15/%E5%9B%BE_09.png" alt=""></p>
-<h4 id="googlenet详细参数">
-<a class="header-anchor" href="#googlenet%e8%af%a6%e7%bb%86%e5%8f%82%e6%95%b0"></a>
-GoogleNet详细参数
-</h4><h5 id="第1个inception块详细参数">
-<a class="header-anchor" href="#%e7%ac%ac1%e4%b8%aainception%e5%9d%97%e8%af%a6%e7%bb%86%e5%8f%82%e6%95%b0"></a>
-第1个inception块详细参数
-</h5><p><img src="/img/NO.15/%E5%9B%BE_10.png" alt=""></p>
-<h5 id="第2个inception块详细参数">
-<a class="header-anchor" href="#%e7%ac%ac2%e4%b8%aainception%e5%9d%97%e8%af%a6%e7%bb%86%e5%8f%82%e6%95%b0"></a>
-第2个inception块详细参数
-</h5><p><img src="/img/NO.15/%E5%9B%BE_11.png" alt=""></p>
-<h5 id="第3个inception块详细参数">
-<a class="header-anchor" href="#%e7%ac%ac3%e4%b8%aainception%e5%9d%97%e8%af%a6%e7%bb%86%e5%8f%82%e6%95%b0"></a>
-第3个inception块详细参数
-</h5><p><img src="/img/NO.15/%E5%9B%BE_12.png" alt=""></p>
-<h5 id="第4个inception块详细参数">
-<a class="header-anchor" href="#%e7%ac%ac4%e4%b8%aainception%e5%9d%97%e8%af%a6%e7%bb%86%e5%8f%82%e6%95%b0"></a>
-第4个inception块详细参数
-</h5><p><img src="/img/NO.15/%E5%9B%BE_13.png" alt=""></p>
-<h5 id="第5个inception块详细参数">
-<a class="header-anchor" href="#%e7%ac%ac5%e4%b8%aainception%e5%9d%97%e8%af%a6%e7%bb%86%e5%8f%82%e6%95%b0"></a>
-第5个inception块详细参数
-</h5><p><img src="/img/NO.15/%E5%9B%BE_14.png" alt=""></p>
-<h5 id="第6个inception块详细参数">
-<a class="header-anchor" href="#%e7%ac%ac6%e4%b8%aainception%e5%9d%97%e8%af%a6%e7%bb%86%e5%8f%82%e6%95%b0"></a>
-第6个inception块详细参数
-</h5><p><img src="/img/NO.15/%E5%9B%BE_15.png" alt=""></p>
-<h5 id="第7个inception块详细参数">
-<a class="header-anchor" href="#%e7%ac%ac7%e4%b8%aainception%e5%9d%97%e8%af%a6%e7%bb%86%e5%8f%82%e6%95%b0"></a>
-第7个inception块详细参数
-</h5><p><img src="/img/NO.15/%E5%9B%BE_16.png" alt=""></p>
-<h5 id="第8个inception块详细参数">
-<a class="header-anchor" href="#%e7%ac%ac8%e4%b8%aainception%e5%9d%97%e8%af%a6%e7%bb%86%e5%8f%82%e6%95%b0"></a>
-第8个inception块详细参数
-</h5><p><img src="/img/NO.15/%E5%9B%BE_17.png" alt=""></p>
-<h5 id="第9个inception块详细参数">
-<a class="header-anchor" href="#%e7%ac%ac9%e4%b8%aainception%e5%9d%97%e8%af%a6%e7%bb%86%e5%8f%82%e6%95%b0"></a>
-第9个inception块详细参数
-</h5><p><img src="/img/NO.15/%E5%9B%BE_18.png" alt=""></p>
-<h4 id="全连接层参数">
-<a class="header-anchor" href="#%e5%85%a8%e8%bf%9e%e6%8e%a5%e5%b1%82%e5%8f%82%e6%95%b0"></a>
-全连接层参数
-</h4><p><img src="/img/NO.15/%E5%9B%BE_19.png" alt=""></p>
-<h4 id="总结">
-<a class="header-anchor" href="#%e6%80%bb%e7%bb%93"></a>
-总结
-</h4><p><img src="/img/NO.15/%E5%9B%BE_20.png" alt=""></p>
-<p>关于1*1卷积核的优点，全局平均池化的优缺点可以观看炮哥的视频：<a href="https://www.bilibili.com/video/BV1e34y1M7wR?spm_id_from=333.788.videopod.episodes&amp;vd_source=dd1d3ef45b7fa14b9604277983db3fc3&amp;p=78">1*1卷积的优点</a>
-这些东西有点抽象，不太好用文字来叙述出来，这也是大模型的一个缺点吧，就是解释起来比较困难，不太好理解。所以看不懂图中的东西，可以看看去炮哥的视频，说不定就能理解了</p>
-</div>
-    <footer class="article-footer"><a
-          data-aos="zoom-in"
-          href="/post/no.15/#comments"
-          class="article-comment-link"
-        >
-          <span
-            class="post-comments-count valine-comment-count"
-            data-xid="/post/no.15/"
-            itemprop="commentCount"
-          ></span>
-          留言
-        </a><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
-      <a
-        class="article-tag-list-link"
-        href="/tags/%e5%8d%b7%e7%a7%af%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c"
-        rel="tag"
+    >
+      <a class="archives-tag-list-link" href="/tags/resnet/"
+        >ResNet</a
+      >
+    </div><div
+      class="archives-tag-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-tag-list-link" href="/tags/vgg/"
+        >VGG</a
+      >
+    </div><div
+      class="archives-tag-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/"
+        >代码实现</a
+      >
+    </div><div
+      class="archives-tag-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-tag-list-link" href="/tags/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/"
+        >优化算法</a
+      >
+    </div><div
+      class="archives-tag-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-tag-list-link" href="/tags/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"
         >卷积神经网络</a
       >
-    </li><li class="article-tag-list-item" data-aos="zoom-in">
-      <a
-        class="article-tag-list-link"
-        href="/tags/%e7%ae%97%e6%b3%95%e5%8e%9f%e7%90%86"
-        rel="tag"
+    </div><div
+      class="archives-tag-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/"
+        >数据操作</a
+      >
+    </div><div
+      class="archives-tag-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/"
+        >数据预处理</a
+      >
+    </div><div
+      class="archives-tag-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-tag-list-link" href="/tags/%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/"
+        >模型搭建</a
+      >
+    </div><div
+      class="archives-tag-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-tag-list-link" href="/tags/%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%95/"
+        >模型测试</a
+      >
+    </div><div
+      class="archives-tag-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-tag-list-link" href="/tags/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/"
+        >模型训练</a
+      >
+    </div><div
+      class="archives-tag-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86/"
         >算法原理</a
       >
-    </li><li class="article-tag-list-item" data-aos="zoom-in">
-      <a
-        class="article-tag-list-link"
-        href="/tags/googlenet"
-        rel="tag"
-        >GOOGLENET</a
+    </div><div
+      class="archives-tag-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/"
+        >线性回归</a
       >
-    </li><li class="article-tag-list-item" data-aos="zoom-in">
-      <a
-        class="article-tag-list-link"
-        href="/tags/%e7%bb%8f%e5%85%b8%e6%a8%a1%e5%9e%8b"
-        rel="tag"
+    </div><div
+      class="archives-tag-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-tag-list-link" href="/tags/%E7%BB%8F%E5%85%B8%E6%A8%A1%E5%9E%8B/"
         >经典模型</a
       >
-    </li></ul>
-</footer>
-  </div><nav
-    id="article-nav"
-    aria-label="Article navigation"
-    data-aos="fade-up"
-  ><div class="article-nav-link-wrap left"><img
-              data-src="https://d-sketon.top/img/_backwebp/bg1.webp"
-              data-sizes="auto"
-              alt="VGG模型-模型搭建"
-              class="lazyload"
-            /><a
-          href="/post/no.14/"
-          aria-label="前一篇:VGG模型-模型搭建"
-          title="前一篇:VGG模型-模型搭建"
-        ></a>
-        <div class="article-nav-caption">前一篇</div>
-        <h3 class="article-nav-title">VGG模型-模型搭建</h3>
-      </div><div class="article-nav-link-wrap right"><img
-              data-src="https://d-sketon.top/img/_backwebp/bg1.webp"
-              data-sizes="auto"
-              alt="GoogleNet模型搭建"
-              class="lazyload"
-            /><a
-          href="/post/no.16/"
-          aria-label="后一篇:GoogleNet模型搭建"
-          title="后一篇:GoogleNet模型搭建"
-        ></a>
-        <div class="article-nav-caption">后一篇</div>
-        <h3 class="article-nav-title">GoogleNet模型搭建</h3>
-      </div></nav></article><section id="comments" data-aos="fade-up">
-<div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
-  <div class="comment-selector">
-    <div class="comment-selector-wrap"><div class="selector-item" data-selector="valine">
-          <span>valine</span>
-        </div></div>
-  </div>
-</div>
-
-<div class="comment-content"><div class="comment valine-comment" data-aos="fade-up"
-     >
     </div></div>
-</section></section>
+<div class="category-wrap"><div
+      class="archives-category-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-category-list-link" href="/categories/pytorch%E4%B8%8E%E7%BB%8F%E5%85%B8%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"
+        >Pytorch与经典卷积神经网络</a
+      >
+    </div><div
+      class="archives-category-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-category-list-link" href="/categories/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6v2/"
+        >动手学深度学V2</a
+      >
+    </div><div
+      class="archives-category-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-category-list-link" href="/categories/%E5%8E%9F%E7%90%86/"
+        >原理</a
+      >
+    </div><div
+      class="archives-category-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-category-list-link" href="/categories/%E5%AE%9E%E8%B7%B5/"
+        >实践</a
+      >
+    </div><div
+      class="archives-category-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-category-list-link" href="/categories/%E7%82%AE%E5%93%A5%E5%B8%A6%E4%BD%A0%E5%AD%A6/"
+        >炮哥带你学</a
+      >
+    </div><div
+      class="archives-category-list-item"
+      data-aos="zoom-in"
+    >
+      <a class="archives-category-list-link" href="/categories/%E8%B7%9F%E7%9D%80%E6%9D%8E%E6%B2%90%E5%AD%A6ai/"
+        >跟着李沐学AI</a
+      >
+    </div></div><section class="archives-wrap" data-aos="fade-up">
+    <div class="archive-year-wrap">
+      <span class="archive-year">2025</span>
+    </div>
+    <ul><li class="archive-article">
+          <div class="archive-article-date">
+            <span>
+              <time
+                class="dt-published"
+                datetime="2025-11-16 15:00:00 &#43;0800 CST"
+                itemprop="datePublished"
+                >2025-11</time
+              >
+            </span>
+          </div><a class="archive-article-title" href="/post/no.24/"
+              >数据预处理</a
+            ></li></ul>
+  </section></div><nav id="page-nav" aria-label="Pagination navigation" data-aos="fade-up"><span class="page-number current">1</span></nav>
+</section>
         </div><footer id="footer" aria-label="Site footer">
   <div style="width: 100%; overflow: hidden">
     <div class="footer-line"></div>
@@ -527,19 +733,7 @@ GoogleNet详细参数
             <div class="arrow-up"></div>
           </div><div id="mask" class="hide"></div>
       </div><nav id="mobile-nav" aria-label="Mobile navigation">
-  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
-<div class="sidebar-toc-wrapper toc-div-class">
-  <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-</div></div>
-        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <div class="sidebar-wrap"><div class="sidebar-author">
   <img
     data-src="/avatar/avatar1.webp"
     data-sizes="auto"
@@ -605,10 +799,7 @@ GoogleNet详细参数
       ></a>
       <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
       <div class="sidebar-menu-link">友链</div>
-    </div></div></div></div><div class="sidebar-btn-wrapper">
-        <div class="sidebar-toc-btn current"></div>
-        <div class="sidebar-common-btn"></div>
-      </div></nav>
+    </div></div></div></nav>
 </div><script
     src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
     integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
@@ -646,9 +837,9 @@ GoogleNet详细参数
   <div><script data-pjax>
         window.REIMU_POST = {
           author: "落-luo",
-          title: "GoogleNet模型原理",
-          url: "http:\/\/localhost:1313\/post\/no.15\/",
-          description: "文中所有所用资料均来自bilibli的up主：炮哥带你学",
+          title: "数据预处理",
+          url: "http:\/\/localhost:1313\/tags\/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86\/",
+          description: "",
           cover: "http:\/\/localhost:1313\/images\/banner1.webp",
         };
       </script><script src="/js/insert_highlight.js" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

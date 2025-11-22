@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>动手学深度学V2 on 心有所向，日复一日，必有精进</title>
-    <link>http://localhost:1313/categories/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6v2/</link>
+    <title>数据预处理 on 心有所向，日复一日，必有精进</title>
+    <link>http://localhost:1313/tags/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/</link>
     <description>Recent content from 心有所向，日复一日，必有精进</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Sun, 16 Nov 2025 15:00:00 +0800</lastBuildDate>
     
     
-    <atom:link href="http://localhost:1313/categories/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6v2/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/tags/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -58,35 +58,6 @@
 <p><img src="/img/NO.24/%E5%9B%BE_03.png" alt=""></p>
         
         <hr><p>本文2025-11-16首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-16</p>]]>
-      </description>
-      
-        <category>跟着李沐学AI</category><category>动手学深度学V2</category><category>原理</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>数据操作</title>
-      <link>http://localhost:1313/post/no.23/</link>
-      <pubDate>Sat, 15 Nov 2025 15:00:00 &#43;0800</pubDate>
-      <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no.23/</guid>
-      <description>
-        <![CDATA[<h1>数据操作</h1><p>作者：落-luo（xxx@example.com）</p>
-        
-          <h3 id="链接">
-<a class="header-anchor" href="#%e9%93%be%e6%8e%a5"></a>
-链接
-</h3><p><a href="https://courses.d2l.ai/zh-v2/">动手学深度学V2</a></p>
-<h3 id="n维数组样例">
-<a class="header-anchor" href="#n%e7%bb%b4%e6%95%b0%e7%bb%84%e6%a0%b7%e4%be%8b"></a>
-N维数组样例
-</h3><p>一般情况下，我们会使用N维数组来表示一个样本，其中N为样本的维度。
-N=0代表着样本的数量，N=1代表着样本的特征维度，N=2代表着样本的特征矩阵维度。
-N=3代表着样本的特征矩阵的维度，N=4代表着样本的特征矩阵的维度的维度，以此类推。</p>
-        
-        <hr><p>本文2025-11-15首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-15</p>]]>
       </description>
       
         <category>跟着李沐学AI</category><category>动手学深度学V2</category><category>原理</category>
