@@ -12,12 +12,59 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Mon, 17 Nov 2025 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 18 Nov 2025 15:00:00 +0800</lastBuildDate>
     
     
     <atom:link href="http://localhost:1313/categories/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6v2/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>线性代数——代码实现</title>
+      <link>http://localhost:1313/post/no.26/</link>
+      <pubDate>Tue, 18 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.26/</guid>
+      <description>
+        <![CDATA[<h1>线性代数——代码实现</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="链接">
+<a class="header-anchor" href="#%e9%93%be%e6%8e%a5"></a>
+链接
+</h3><p><a href="https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/linear-algebra.slides.html#/">动手学深度学V2</a></p>
+<h3 id="需要导入的库">
+<a class="header-anchor" href="#%e9%9c%80%e8%a6%81%e5%af%bc%e5%85%a5%e7%9a%84%e5%ba%93"></a>
+需要导入的库
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
+</span></span></code></pre></div><h4 id="1标量">
+<a class="header-anchor" href="#1%e6%a0%87%e9%87%8f"></a>
+1.标量
+</h4><p>标量由只有一个元素的张量表示</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">3.0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">2.0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="n">y</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">(tensor([5.]), tensor([6.]), tensor([1.5000]), tensor([9.]))
+</span></span></code></pre></div><h4 id="2向量">
+<a class="header-anchor" href="#2%e5%90%91%e9%87%8f"></a>
+2.向量
+</h4><p>可以将向量视为标量值组成的列表</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tensor([0, 1, 2, 3])
+</span></span></code></pre></div><h5 id="21-访问向量的元素">
+<a class="header-anchor" href="#21-%e8%ae%bf%e9%97%ae%e5%90%91%e9%87%8f%e7%9a%84%e5%85%83%e7%b4%a0"></a>
+2.1 访问向量的元素
+</h5><p>可以通过张量的索引来访问任一元素</p>
+        
+        <hr><p>本文2025-11-18首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-18</p>]]>
+      </description>
+      
+        <category>跟着李沐学AI</category><category>动手学深度学V2</category>
+      
+    </item>
     
     
 
