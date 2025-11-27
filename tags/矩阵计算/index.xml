@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>矩阵计算 on 心有所向，日复一日，必有精进</title>
+    <link>http://localhost:1313/tags/%E7%9F%A9%E9%98%B5%E8%AE%A1%E7%AE%97/</link>
+    <description>Recent content from 心有所向，日复一日，必有精进</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    
+    <managingEditor>xxx@example.com (落-luo)</managingEditor>
+    <webMaster>xxx@example.com (落-luo)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Tue, 18 Nov 2025 15:00:00 +0800</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/tags/%E7%9F%A9%E9%98%B5%E8%AE%A1%E7%AE%97/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>矩阵计算</title>
+      <link>http://localhost:1313/post/no.27/</link>
+      <pubDate>Tue, 18 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.27/</guid>
+      <description>
+        <![CDATA[<h1>矩阵计算</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="链接">
+<a class="header-anchor" href="#%e9%93%be%e6%8e%a5"></a>
+链接
+</h3><p><a href="https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_6.pdf">矩阵计算</a></p>
+<h4 id="1-标量导数">
+<a class="header-anchor" href="#1-%e6%a0%87%e9%87%8f%e5%af%bc%e6%95%b0"></a>
+1. 标量导数
+</h4><p>标量函数的导数是一个标量，它是切线的斜率，用于表示函数在某个点的变化率。</p>
+<p><img src="/img/NO.27/%E5%9B%BE_01.png" alt=""></p>
+<h4 id="2亚导数">
+<a class="header-anchor" href="#2%e4%ba%9a%e5%af%bc%e6%95%b0"></a>
+2.亚导数
+</h4><p>亚导数是指在某个点上函数的导数不存在时，我们可以用一个小于导数的量来代替导数，这个量就叫做亚导数。
+也就是将导数拓展到不可微的函数</p>
+        
+        <hr><p>本文2025-11-18首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-18</p>]]>
+      </description>
+      
+        <category>跟着李沐学AI</category><category>动手学深度学V2</category><category>原理</category>
+      
+    </item>
+    
+  </channel>
+</rss>

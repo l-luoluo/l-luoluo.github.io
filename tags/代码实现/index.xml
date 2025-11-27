@@ -12,12 +12,83 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Tue, 18 Nov 2025 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 19 Nov 2025 15:00:00 +0800</lastBuildDate>
     
     
     <atom:link href="http://localhost:1313/tags/%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>自动求导-代码</title>
+      <link>http://localhost:1313/post/no.29/</link>
+      <pubDate>Wed, 19 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.29/</guid>
+      <description>
+        <![CDATA[<h1>自动求导-代码</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="链接">
+<a class="header-anchor" href="#%e9%93%be%e6%8e%a5"></a>
+链接
+</h3><p><a href="https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/autograd.slides.html#/">自动求导-代码</a></p>
+<h3 id="代码实现">
+<a class="header-anchor" href="#%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0"></a>
+代码实现
+</h3><p>假设我们想对函数$y=2x⊤x$关于列向量$x$求导</p>
+<h4 id="1">
+<a class="header-anchor" href="#1"></a>
+1.
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">4.0</span><span class="p">)</span> <span class="c1"># 定义一个x，为4维向量</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tensor([0., 1., 2., 3.])
+</span></span></code></pre></div><h4 id="2">
+<a class="header-anchor" href="#2"></a>
+2.
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x</span><span class="o">.</span><span class="n">requires_grad_</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># 开启x的梯度计算</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span> <span class="c1"># 查看x的梯度</span>
+</span></span></code></pre></div><h3 id="3">
+<a class="header-anchor" href="#3"></a>
+3.
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># 计算y</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tensor(28., grad_fn=&lt;MulBackward0&gt;)
+</span></span></code></pre></div><h4 id="4">
+<a class="header-anchor" href="#4"></a>
+4.
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">y</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span> <span class="c1"># 对y进行反向传播</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span> <span class="c1"># 查看x的梯度</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">x</span> <span class="c1"># 验证x的梯度是否正确</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tensor([ 0.,  4.,  8., 12.])
+</span></span><span class="line"><span class="cl">tensor([True, True, True, True])
+</span></span></code></pre></div><h4 id="5">
+<a class="header-anchor" href="#5"></a>
+5.
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 计算另外一个x</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span><span class="o">.</span><span class="n">grad</span><span class="o">.</span><span class="n">zero_</span><span class="p">()</span> <span class="c1"># 清空x的梯度</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl"><span class="n">y</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span> 
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tensor([1., 1., 1., 1.])
+</span></span></code></pre></div><h4 id="6">
+<a class="header-anchor" href="#6"></a>
+6.
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x</span><span class="o">.</span><span class="n">grad</span><span class="o">.</span><span class="n">zero_</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> 
+</span></span><span class="line"><span class="cl"><span class="n">y</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span> 
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tensor([0., 2., 4., 6.])
+</span></span></code></pre></div>
+        
+        <hr><p>本文2025-11-19首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-19</p>]]>
+      </description>
+      
+        <category>跟着李沐学AI</category><category>动手学深度学V2</category>
+      
+    </item>
     
     
 
@@ -33,7 +104,7 @@
           <h3 id="链接">
 <a class="header-anchor" href="#%e9%93%be%e6%8e%a5"></a>
 链接
-</h3><p><a href="https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/linear-algebra.slides.html#/">动手学深度学V2</a></p>
+</h3><p><a href="https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_preliminaries/linear-algebra.slides.html#/">线性代数</a></p>
 <h3 id="需要导入的库">
 <a class="header-anchor" href="#%e9%9c%80%e8%a6%81%e5%af%bc%e5%85%a5%e7%9a%84%e5%ba%93"></a>
 需要导入的库

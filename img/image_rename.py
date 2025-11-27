@@ -67,7 +67,7 @@ def batch_rename_images(
 if __name__ == "__main__":
     # 直接修改这里的参数即可使用
     batch_rename_images(
-        folder="D:/boke/my-blog/hugo-reimu-template/content/img/NO.25",  # 目标文件夹路径
+        folder="D:/boke/my-blog/hugo-reimu-template/content/img/NO.30",  # 目标文件夹路径
         prefix="图",  # 自定义前缀（如"风景"、"旅行"）
         start_num=1,  # 起始序号
         num_digits=2,  # 序号位数（如3位：001, 002...）

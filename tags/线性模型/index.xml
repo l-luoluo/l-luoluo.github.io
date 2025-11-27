@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>线性模型 on 心有所向，日复一日，必有精进</title>
+    <link>http://localhost:1313/tags/%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/</link>
+    <description>Recent content from 心有所向，日复一日，必有精进</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    
+    <managingEditor>xxx@example.com (落-luo)</managingEditor>
+    <webMaster>xxx@example.com (落-luo)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Thu, 20 Nov 2025 15:00:00 +0800</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/tags/%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>线性模型</title>
+      <link>http://localhost:1313/post/no.30/</link>
+      <pubDate>Thu, 20 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.30/</guid>
+      <description>
+        <![CDATA[<h1>线性模型</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="链接">
+<a class="header-anchor" href="#%e9%93%be%e6%8e%a5"></a>
+链接
+</h3><p><a href="https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_8.pdf">线性模型</a></p>
+<h4 id="线性模型">
+<a class="header-anchor" href="#%e7%ba%bf%e6%80%a7%e6%a8%a1%e5%9e%8b"></a>
+线性模型
+</h4><p><img src="/img/NO.30/%E5%9B%BE_01.png" alt=""></p>
+<p><img src="/img/NO.30/%E5%9B%BE_02.png" alt=""></p>
+<p><img src="/img/NO.30/%E5%9B%BE_03.png" alt=""></p>
+<h4 id="损失函数">
+<a class="header-anchor" href="#%e6%8d%9f%e5%a4%b1%e5%87%bd%e6%95%b0"></a>
+损失函数
+</h4><p>为了衡量模型的预测值与真实值之间的差异，我们引入了损失函数。
+损失函数是一个标量值，用于衡量模型的预测值与真实值之间的差异。</p>
+        
+        <hr><p>本文2025-11-20首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-20</p>]]>
+      </description>
+      
+        <category>跟着李沐学AI</category><category>动手学深度学V2</category><category>原理</category>
+      
+    </item>
+    
+  </channel>
+</rss>

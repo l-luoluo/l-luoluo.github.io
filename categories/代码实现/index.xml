@@ -12,7 +12,7 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Sun, 09 Nov 2025 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 20 Nov 2025 15:00:00 +0800</lastBuildDate>
     
     
     <atom:link href="http://localhost:1313/categories/%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/index.xml" rel="self" type="application/rss&#43;xml" />
@@ -22,211 +22,80 @@
     
 
     <item>
-      <title>AlexNet模型-模型代码搭建</title>
-      <link>http://localhost:1313/post/no.12/</link>
-      <pubDate>Sun, 09 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <title>线性回归-代码</title>
+      <link>http://localhost:1313/post/no.31/</link>
+      <pubDate>Thu, 20 Nov 2025 15:00:00 &#43;0800</pubDate>
       <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no.12/</guid>
+      <guid>http://localhost:1313/post/no.31/</guid>
       <description>
-        <![CDATA[<h1>AlexNet模型-模型代码搭建</h1><p>作者：落-luo（xxx@example.com）</p>
+        <![CDATA[<h1>线性回归-代码</h1><p>作者：落-luo（xxx@example.com）</p>
         
-          <h3 id="前言">
-<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
-前言
-</h3><p>之后的文章只会介绍模型的代码搭建，而<a href="https://l-luoluo.github.io/post/no.9/">训练代码</a>和<a href="https://l-luoluo.github.io/post/no.10/">测试代码</a>
-在链接里面有详细的代码，这里就不重复介绍了。</p>
-<h3 id="模型代码搭建">
-<a class="header-anchor" href="#%e6%a8%a1%e5%9e%8b%e4%bb%a3%e7%a0%81%e6%90%ad%e5%bb%ba"></a>
-模型代码搭建
-</h3><h4 id="1-导入所需的库">
-<a class="header-anchor" href="#1-%e5%af%bc%e5%85%a5%e6%89%80%e9%9c%80%e7%9a%84%e5%ba%93"></a>
-1. 导入所需的库
-</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+          <h3 id="链接">
+<a class="header-anchor" href="#%e9%93%be%e6%8e%a5"></a>
+链接
+</h3><p><a href="https://courses.d2l.ai/zh-v2/assets/notebooks/chapter_linear-networks/linear-regression.slides.html#/">线性回归</a></p>
+<h3 id="代码实现">
+<a class="header-anchor" href="#%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0"></a>
+代码实现
+</h3><h4 id="1">
+<a class="header-anchor" href="#1"></a>
+1.
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">math</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torchsummary</span> <span class="kn">import</span> <span class="n">summary</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
-</span></span></code></pre></div><h4 id="2-模型搭建">
-<a class="header-anchor" href="#2-%e6%a8%a1%e5%9e%8b%e6%90%ad%e5%bb%ba"></a>
-2. 模型搭建
-</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">AlexNet</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">d2l</span> <span class="kn">import</span> <span class="n">torch</span> <span class="k">as</span> <span class="n">d2l</span>
+</span></span></code></pre></div><h4 id="2">
+<a class="header-anchor" href="#2"></a>
+2.
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</span></span></code></pre></div><h4 id="3">
+<a class="header-anchor" href="#3"></a>
+3.
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Timer</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">    <span class="c1">#记录多次运行时间</span>
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">(</span><span class="n">AlexNet</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">ReLU</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">c1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">out_channels</span><span class="o">=</span><span class="mi">96</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">s2</span> <span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">c3</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="mi">96</span><span class="p">,</span> <span class="n">out_channels</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">padding</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">s4</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">c5</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">out_channels</span><span class="o">=</span><span class="mi">384</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">c6</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="mi">384</span><span class="p">,</span> <span class="n">out_channels</span><span class="o">=</span><span class="mi">384</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">c7</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="mi">384</span><span class="p">,</span> <span class="n">out_channels</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">s8</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Flatten</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">fc1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">6</span><span class="o">*</span><span class="mi">6</span><span class="o">*</span><span class="mi">256</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">4096</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">4096</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">fc3</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-</span></span></code></pre></div><p><span style="font-size: 20px;">其中c代表卷积层，s代表池化层，fc代表全连接层。</span></p>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">times</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#启动计时器</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">tik</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#停止计时器并将时间记录在列表中</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">tik</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">avg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#返回平均时间</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">times</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">times</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#返回时间总和</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">times</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">cumsum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">#返回累计时间   </span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">times</span><span class="p">)</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</span></span></code></pre></div><h4 id="4">
+<a class="header-anchor" href="#4"></a>
+4.
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 我们使用for循环，每次执行一位的加法</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">timer</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">timer</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1"> sec&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#39;0.11435 sec&#39;
+</span></span></code></pre></div><p><strong>第二种方法</strong></p>
         
-        <hr><p>本文2025-11-09首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-09</p>]]>
+        <hr><p>本文2025-11-20首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-20</p>]]>
       </description>
       
-        <category>AlexNet</category><category>代码实现</category><category>模型搭建</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>LeNet模型-模型代码搭建</title>
-      <link>http://localhost:1313/post/no.11/</link>
-      <pubDate>Sat, 08 Nov 2025 15:00:00 &#43;0800</pubDate>
-      <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no.11/</guid>
-      <description>
-        <![CDATA[<h1>LeNet模型-模型代码搭建</h1><p>作者：落-luo（xxx@example.com）</p>
-        
-          <h3 id="前言">
-<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
-前言
-</h3><p>这篇文章主要为LeNet模型的代码搭建，代码主要参考了炮哥带你学的视频，但是我自己也添加了一些注释，希望可以帮助到大家。
-代码运行的详细环境搭建可以参考炮哥的视频<a href="https://www.bilibili.com/video/BV1e34y1M7wR?spm_id_from=333.788.videopod.episodes&amp;vd_source=dd1d3ef45b7fa14b9604277983db3fc3&amp;p=22">代码环境搭建</a></p>
-        
-        <hr><p>本文2025-11-08首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-08</p>]]>
-      </description>
-      
-        <category>LeNet-5</category><category>代码实现</category><category>模型搭建</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>LeNet模型-测试代码搭建</title>
-      <link>http://localhost:1313/post/no.10/</link>
-      <pubDate>Sat, 08 Nov 2025 15:00:00 &#43;0800</pubDate>
-      <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no.10/</guid>
-      <description>
-        <![CDATA[<h1>LeNet模型-测试代码搭建</h1><p>作者：落-luo（xxx@example.com）</p>
-        
-          <h3 id="前言">
-<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
-前言
-</h3><p><strong>同样这一套的代码依旧是一套通用的代码，可以反复于其他模型的测试。</strong></p>
-<h3 id="测试代码搭建">
-<a class="header-anchor" href="#%e6%b5%8b%e8%af%95%e4%bb%a3%e7%a0%81%e6%90%ad%e5%bb%ba"></a>
-测试代码搭建
-</h3><h4 id="1-导入必要的库">
-<a class="header-anchor" href="#1-%e5%af%bc%e5%85%a5%e5%bf%85%e8%a6%81%e7%9a%84%e5%ba%93"></a>
-1. 导入必要的库
-</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.utils.data</span> <span class="k">as</span> <span class="nn">Data</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">transforms</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torchvision.datasets</span> <span class="kn">import</span> <span class="n">FashionMNIST</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">LeNet</span>
-</span></span></code></pre></div><p>同样的，这里的模型文件也需要和测试代码在同一个目录下，并且要和模型文件的文件名一致。
-可以参考</p>
-        
-        <hr><p>本文2025-11-08首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-08</p>]]>
-      </description>
-      
-        <category>LeNet-5</category><category>代码实现</category><category>模型测试</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>LeNet模型-训练代码搭建</title>
-      <link>http://localhost:1313/post/no.9/</link>
-      <pubDate>Fri, 07 Nov 2025 15:00:00 &#43;0800</pubDate>
-      <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no.9/</guid>
-      <description>
-        <![CDATA[<h1>LeNet模型-训练代码搭建</h1><p>作者：落-luo（xxx@example.com）</p>
-        
-          <h3 id="前言">
-<a class="header-anchor" href="#%e5%89%8d%e8%a8%80"></a>
-前言
-</h3><p>本片文章主要是通用的模型训练代码搭建，这个代码搭建完成后，我们就可以直接使用这个代码来训练我们的模型了。
-而且后面的模型都可以复用这一套的代码，只需要修改一下模型的参数即可。</p>
-        
-        <hr><p>本文2025-11-07首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-07</p>]]>
-      </description>
-      
-        <category>LeNet-5</category><category>代码实现</category><category>模型训练</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>线性回归模型案例的代码复现</title>
-      <link>http://localhost:1313/post/no.3/</link>
-      <pubDate>Sun, 02 Nov 2025 15:00:00 &#43;0800</pubDate>
-      <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no.3/</guid>
-      <description>
-        <![CDATA[<h1>线性回归模型案例的代码复现</h1><p>作者：落-luo（xxx@example.com）</p>
-        
-          <h4 id="案例">
-<a class="header-anchor" href="#%e6%a1%88%e4%be%8b"></a>
-案例
-</h4><p><img src="/img/NO.1/%E5%9B%BE2.png" alt=""></p>
-<p>上述就是我们要解决的问题，即通过线性回归模型来对未知的y值进行预测。下面我们将通过代码复现一下这个案例。</p>
-<h4 id="代码复现">
-<a class="header-anchor" href="#%e4%bb%a3%e7%a0%81%e5%a4%8d%e7%8e%b0"></a>
-代码复现
-</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">#</span> <span class="err">定义数据集</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="err">#</span> <span class="err">定义数据特征</span>
-</span></span><span class="line"><span class="cl"><span class="err">x_data</span> <span class="err">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="err">#</span> <span class="err">定义数据标签</span>
-</span></span><span class="line"><span class="cl"><span class="err">y_data</span> <span class="err">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="err">#</span> <span class="err">初始化参数W</span>
-</span></span><span class="line"><span class="cl"><span class="err">w</span> <span class="err">=</span> <span class="mi">4</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="err">#定义线性回归模型</span>
-</span></span><span class="line"><span class="cl"><span class="err">def</span> <span class="err">forword(x):</span>
-</span></span><span class="line"><span class="cl">    <span class="err">return</span> <span class="err">x</span> <span class="err">*</span> <span class="err">w</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="err">#定义损失函数</span>
-</span></span><span class="line"><span class="cl"><span class="err">def</span> <span class="err">cost(xs,</span> <span class="err">ys):</span>
-</span></span><span class="line"><span class="cl">    <span class="err">costvalue</span> <span class="err">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">    <span class="err">for</span> <span class="err">x</span> <span class="err">,</span> <span class="err">y</span> <span class="err">in</span> <span class="err">zip(xs,</span> <span class="err">ys):</span>
-</span></span><span class="line"><span class="cl">        <span class="err">y_pred</span> <span class="err">=</span> <span class="err">forword(x)</span>
-</span></span><span class="line"><span class="cl">        <span class="err">costvalue</span> <span class="err">+=</span> <span class="err">(y_pred</span> <span class="err">-</span> <span class="err">y)**</span><span class="mi">2</span>
-</span></span><span class="line"><span class="cl">    <span class="err">return</span> <span class="err">costvalue</span> <span class="err">/</span> <span class="err">len(xs)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="err">#定义计算梯度的函数</span>
-</span></span><span class="line"><span class="cl"><span class="err">def</span> <span class="err">gradient(xs,</span> <span class="err">ys):</span>
-</span></span><span class="line"><span class="cl">    <span class="err">grad</span> <span class="err">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">    <span class="err">for</span> <span class="err">x,</span> <span class="err">y</span> <span class="err">in</span> <span class="err">zip(xs,</span> <span class="err">ys):</span>
-</span></span><span class="line"><span class="cl">        <span class="err">grad</span> <span class="err">+=</span> <span class="mi">2</span> <span class="err">*</span> <span class="err">x</span> <span class="err">*</span> <span class="err">(x</span> <span class="err">*</span> <span class="err">w</span> <span class="err">-</span> <span class="err">y)</span>
-</span></span><span class="line"><span class="cl">    <span class="err">return</span> <span class="err">grad</span> <span class="err">/</span> <span class="err">len(xs)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="err">for</span> <span class="err">epoch</span> <span class="err">in</span> <span class="err">range(</span><span class="mi">100</span><span class="err">):</span>
-</span></span><span class="line"><span class="cl">    <span class="err">#计算误差损失</span>
-</span></span><span class="line"><span class="cl">    <span class="err">cost_val</span> <span class="err">=</span> <span class="err">cost(x_data,</span> <span class="err">y_data)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="err">grad_val</span> <span class="err">=</span> <span class="err">gradient(x_data,</span> <span class="err">y_data)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="err">w</span> <span class="err">=w</span><span class="mf">-0.01</span> <span class="err">*</span> <span class="err">grad_val</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="err">print(&#39;训练轮次：&#39;,</span> <span class="err">epoch,</span> <span class="s2">&#34;w=&#34;</span><span class="err">,</span> <span class="err">w,</span><span class="s2">&#34;loss&#34;</span><span class="err">,</span> <span class="err">cost_val)</span>
-</span></span><span class="line"><span class="cl">    
-</span></span></code></pre></div><h4 id="结果">
-<a class="header-anchor" href="#%e7%bb%93%e6%9e%9c"></a>
-结果
-</h4><p>运行上述的代码，我们不难得出当w接近2时，损失函数也接近0，这也验证了我们的模型是正确的。</p>
-        
-        <hr><p>本文2025-11-02首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-02</p>]]>
-      </description>
-      
-        <category>线性回归</category><category>代码实现</category><category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category>
+        <category>跟着李沐学AI</category><category>动手学深度学V2</category><category>代码实现</category>
       
     </item>
     
