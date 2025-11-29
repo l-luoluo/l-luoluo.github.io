@@ -12,12 +12,75 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Wed, 19 Nov 2025 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 21 Nov 2025 15:00:00 +0800</lastBuildDate>
     
     
     <atom:link href="http://localhost:1313/categories/%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>基础优化方法</title>
+      <link>http://localhost:1313/post/no.32/</link>
+      <pubDate>Fri, 21 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.32/</guid>
+      <description>
+        <![CDATA[<h1>基础优化方法</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="链接">
+<a class="header-anchor" href="#%e9%93%be%e6%8e%a5"></a>
+链接
+</h3><p><a href="https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_9.pdf">基础优化方法</a></p>
+<h3 id="1梯度下降">
+<a class="header-anchor" href="#1%e6%a2%af%e5%ba%a6%e4%b8%8b%e9%99%8d"></a>
+1.梯度下降
+</h3><p>梯度下降是一种优化算法，用于最小化损失函数。它的基本思想是通过迭代更新参数，使损失函数达到最小值。</p>
+<p>梯度下降的更新规则如下：
+</p>
+        
+        <hr><p>本文2025-11-21首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-21</p>]]>
+      </description>
+      
+        <category>跟着李沐学AI</category><category>动手学深度学V2</category><category>原理</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>线性回归</title>
+      <link>http://localhost:1313/post/no.30/</link>
+      <pubDate>Thu, 20 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.30/</guid>
+      <description>
+        <![CDATA[<h1>线性回归</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="链接">
+<a class="header-anchor" href="#%e9%93%be%e6%8e%a5"></a>
+链接
+</h3><p><a href="https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_8.pdf">线性回归</a></p>
+<h4 id="线性模型">
+<a class="header-anchor" href="#%e7%ba%bf%e6%80%a7%e6%a8%a1%e5%9e%8b"></a>
+线性模型
+</h4><p><img src="/img/NO.30/%E5%9B%BE_01.png" alt=""></p>
+<p><img src="/img/NO.30/%E5%9B%BE_02.png" alt=""></p>
+<p><img src="/img/NO.30/%E5%9B%BE_03.png" alt=""></p>
+<h4 id="损失函数">
+<a class="header-anchor" href="#%e6%8d%9f%e5%a4%b1%e5%87%bd%e6%95%b0"></a>
+损失函数
+</h4><p>为了衡量模型的预测值与真实值之间的差异，我们引入了损失函数。
+损失函数是一个标量值，用于衡量模型的预测值与真实值之间的差异。</p>
+        
+        <hr><p>本文2025-11-20首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-20</p>]]>
+      </description>
+      
+        <category>跟着李沐学AI</category><category>动手学深度学V2</category><category>原理</category>
+      
+    </item>
     
     
 
@@ -266,55 +329,6 @@ VGG诞生背景
 本篇文章主要介绍VGG-16模型,也就是下面图中D的结构</p>
         
         <hr><p>本文2025-11-10首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-10</p>]]>
-      </description>
-      
-        <category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category><category>原理</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>AlexNet原理</title>
-      <link>http://localhost:1313/post/no.8/</link>
-      <pubDate>Thu, 06 Nov 2025 15:00:00 &#43;0800</pubDate>
-      <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no.8/</guid>
-      <description>
-        <![CDATA[<h1>AlexNet原理</h1><p>作者：落-luo（xxx@example.com）</p>
-        
-          <h3 id="1-背景">
-<a class="header-anchor" href="#1-%e8%83%8c%e6%99%af"></a>
-1. 背景
-</h3><p><img src="/img/NO.8/%E5%9B%BE1.png" alt=""></p>
-<p><span style="font-size: 20px;">AlexNet 是 2012 年由 Alex Krizhevsky、Ilya Sutskever 和 Geoffrey Hinton 提出的卷积神经网络架构。它在 ImageNet 图像分类任务上取得了显著的成果，成为了卷积神经网络的一个重要里程碑。</span>
-<span style="font-size: 20px;">它在当年的 ImageNet 图像分类任务上，取得第一名的成绩，也向世界证明了卷积神经网络在图像识别任务上要优于传统的机器学习算法。</span></p>
-        
-        <hr><p>本文2025-11-06首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-06</p>]]>
-      </description>
-      
-        <category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category><category>原理</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>LeNet原理</title>
-      <link>http://localhost:1313/post/no.7/</link>
-      <pubDate>Thu, 06 Nov 2025 14:00:00 &#43;0800</pubDate>
-      <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no.7/</guid>
-      <description>
-        <![CDATA[<h1>LeNet原理</h1><p>作者：落-luo（xxx@example.com）</p>
-        
-          <h3 id="1-lenet-5-诞生背景">
-<a class="header-anchor" href="#1-lenet-5-%e8%af%9e%e7%94%9f%e8%83%8c%e6%99%af"></a>
-1. LeNet-5 诞生背景
-</h3><p><img src="/img/NO.7/%E5%9B%BE1.png" alt=""></p>
-<p><span style="font-size: 20px;">Lenet-5 是 Yann LeCun 于 1998 年提出的卷积神经网络（Convolutional Neural Network，CNN）架构，用于识别手写数字。</span></p>
-        
-        <hr><p>本文2025-11-06首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-06</p>]]>
       </description>
       
         <category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category><category>原理</category>
