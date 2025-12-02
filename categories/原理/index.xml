@@ -12,12 +12,48 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Fri, 21 Nov 2025 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 23 Nov 2025 15:00:00 +0800</lastBuildDate>
     
     
     <atom:link href="http://localhost:1313/categories/%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>softmax回归</title>
+      <link>http://localhost:1313/post/no.34/</link>
+      <pubDate>Sun, 23 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.34/</guid>
+      <description>
+        <![CDATA[<h1>softmax回归</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="链接">
+<a class="header-anchor" href="#%e9%93%be%e6%8e%a5"></a>
+链接
+</h3><p><a href="https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_10.pdf">softmax回归</a></p>
+<h4 id="1softmax回归诞生">
+<a class="header-anchor" href="#1softmax%e5%9b%9e%e5%bd%92%e8%af%9e%e7%94%9f"></a>
+1.softmax回归诞生
+</h4><ul>
+<li>softmax回归是一种用于多分类问题的线性模型。</li>
+<li>在实际应用中，我们通常会遇到多分类问题，例如识别图像中的物体、分类文本等。</li>
+<li>但线性回归只能处理二分类问题，不能直接处理多分类问题。</li>
+<li>因此，我们需要创造出一个新的模型，能够处理多分类问题。</li>
+<li>softmax回归就是为了解决这个问题而诞生的。</li>
+<li>它的基本思想是将每个类别的输出转换为一个概率值，然后选择概率最高的类别作为预测结果。</li>
+<li>其本质还是一个线性模型，只是在输出层添加了一个softmax函数，将线性输出转换为概率分布。</li>
+</ul>
+<p><img src="/img/NO.34/%E5%9B%BE_01.png" alt=""></p>
+        
+        <hr><p>本文2025-11-23首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-23</p>]]>
+      </description>
+      
+        <category>跟着李沐学AI</category><category>动手学深度学V2</category><category>原理</category>
+      
+    </item>
     
     
 
@@ -301,34 +337,6 @@ GoogleNet诞生背景
 其中主角在梦境中被一个inception结构的神经网络所干扰，导致他的梦境被改变。</p>
         
         <hr><p>本文2025-11-11首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-11</p>]]>
-      </description>
-      
-        <category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category><category>原理</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>VGG模型原理</title>
-      <link>http://localhost:1313/post/no.13/</link>
-      <pubDate>Mon, 10 Nov 2025 15:00:00 &#43;0800</pubDate>
-      <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no.13/</guid>
-      <description>
-        <![CDATA[<h1>VGG模型原理</h1><p>作者：落-luo（xxx@example.com）</p>
-        
-          <h4 id="vgg诞生背景">
-<a class="header-anchor" href="#vgg%e8%af%9e%e7%94%9f%e8%83%8c%e6%99%af"></a>
-VGG诞生背景
-</h4><p><img src="/img/NO.13/%E5%9B%BE1.png" alt=""></p>
-<p>VGG的模型比AlexNet的更大，参数更多
-在AlexNet的基础上，VGG提出了一种新的网络结构，即使用多个3x3的卷积核代替AlexNet中的11x11、5x5的卷积核，同时减少了参数数量。
-由于3x3的卷积核可以覆盖更多的像素，因此VGG的模型在保持参数数量的同时，也提高了模型的表达能力。
-卷积块的应用也使得VGG的模型可移植性比较好
-本篇文章主要介绍VGG-16模型,也就是下面图中D的结构</p>
-        
-        <hr><p>本文2025-11-10首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-10</p>]]>
       </description>
       
         <category>炮哥带你学</category><category>pytorch与经典卷积神经网络</category><category>原理</category>
