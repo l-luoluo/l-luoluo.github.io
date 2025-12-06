@@ -12,12 +12,46 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Sun, 23 Nov 2025 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 24 Nov 2025 15:00:00 +0800</lastBuildDate>
     
     
     <atom:link href="http://localhost:1313/categories/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6v2/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>感知机</title>
+      <link>http://localhost:1313/post/no.36/</link>
+      <pubDate>Mon, 24 Nov 2025 15:00:00 &#43;0800</pubDate>
+      <author>xxx@example.com (落-luo)</author>
+      <guid>http://localhost:1313/post/no.36/</guid>
+      <description>
+        <![CDATA[<h1>感知机</h1><p>作者：落-luo（xxx@example.com）</p>
+        
+          <h3 id="链接">
+<a class="header-anchor" href="#%e9%93%be%e6%8e%a5"></a>
+链接
+</h3><ul>
+<li><a href="https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_12.pdf">感知机</a></li>
+</ul>
+<h3 id="1感知机模型">
+<a class="header-anchor" href="#1%e6%84%9f%e7%9f%a5%e6%9c%ba%e6%a8%a1%e5%9e%8b"></a>
+1.感知机模型
+</h3><ul>
+<li>感知机简单来说就是一个线性分类模型，其输入为实例的特征向量，输出为实例的类别。</li>
+<li>在神经网络中，感知机模型被用作基础的神经元模型，用于构建更复杂的神经网络。</li>
+<li>它通常也被叫做隐藏层神经元</li>
+</ul>
+<p><img src="/img/NO.36/%E5%9B%BE_01.png" alt=""></p>
+        
+        <hr><p>本文2025-11-24首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-24</p>]]>
+      </description>
+      
+        <category>跟着李沐学AI</category><category>动手学深度学V2</category><category>原理</category>
+      
+    </item>
     
     
 
@@ -928,39 +962,6 @@
       </description>
       
         <category>跟着李沐学AI</category><category>动手学深度学V2</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>矩阵计算</title>
-      <link>http://localhost:1313/post/no.27/</link>
-      <pubDate>Tue, 18 Nov 2025 15:00:00 &#43;0800</pubDate>
-      <author>xxx@example.com (落-luo)</author>
-      <guid>http://localhost:1313/post/no.27/</guid>
-      <description>
-        <![CDATA[<h1>矩阵计算</h1><p>作者：落-luo（xxx@example.com）</p>
-        
-          <h3 id="链接">
-<a class="header-anchor" href="#%e9%93%be%e6%8e%a5"></a>
-链接
-</h3><p><a href="https://courses.d2l.ai/zh-v2/assets/pdfs/part-0_6.pdf">矩阵计算</a></p>
-<h4 id="1-标量导数">
-<a class="header-anchor" href="#1-%e6%a0%87%e9%87%8f%e5%af%bc%e6%95%b0"></a>
-1. 标量导数
-</h4><p>标量函数的导数是一个标量，它是切线的斜率，用于表示函数在某个点的变化率。</p>
-<p><img src="/img/NO.27/%E5%9B%BE_01.png" alt=""></p>
-<h4 id="2亚导数">
-<a class="header-anchor" href="#2%e4%ba%9a%e5%af%bc%e6%95%b0"></a>
-2.亚导数
-</h4><p>亚导数是指在某个点上函数的导数不存在时，我们可以用一个小于导数的量来代替导数，这个量就叫做亚导数。
-也就是将导数拓展到不可微的函数</p>
-        
-        <hr><p>本文2025-11-18首发于<a href='http://localhost:1313/'>心有所向，日复一日，必有精进</a>，最后修改于2025-11-18</p>]]>
-      </description>
-      
-        <category>跟着李沐学AI</category><category>动手学深度学V2</category><category>原理</category>
       
     </item>
     
